@@ -49,6 +49,9 @@ call plug#begin("~/.vim/plugged")
 		Plug 'tpope/vim-rhubarb'
 		Plug 'junegunn/gv.vim'
 		Plug 'rhysd/git-messenger.vim'
+
+		" Autoformat JS
+		Plug 'dense-analysis/ale'
 	endif
 call plug#end()
 

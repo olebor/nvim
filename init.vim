@@ -7,6 +7,7 @@
 
 if !exists('g:vscode')
 	source $HOME/.config/nvim/plug-config/polyglot.vim
+	source $HOME/.config/nvim/plug-config/ale.vim
 endif
 source $HOME/.config/nvim/vim-plug/plugins.vim
 source $HOME/.config/nvim/keys/mappings.vim
@@ -19,10 +20,12 @@ if exists('g:vscode')
 	"source $HOME/.config/nvim/plug-config/highlightyank.vim
 else
 	" Maybe not when in vscode?
+"	source $HOME/.config/nvim/plug-config/ale.vim
 	source $HOME/.config/nvim/themes/dracula.vim
 	source $HOME/.config/nvim/plug-config/coc/coc.vim
 	source $HOME/.config/nvim/plug-config/coc/coc-extensions.vim
 	source $HOME/.config/nvim/plug-config/terraform.vim
+	source $HOME/.config/nvim/plug-config/start-screen.vim
 
 	source $HOME/.config/nvim/plug-config/fzf.vim
 	source $HOME/.config/nvim/plug-config/nerdtree.vim
