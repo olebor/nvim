@@ -23,17 +23,37 @@ call plug#begin("~/.vim/plugged")
 		Plug 'leafgarland/typescript-vim'
 		Plug 'peitalin/vim-jsx-typescript'
 
+		" Better Syntax Support
+		Plug 'sheerun/vim-polyglot'
+
 		" File Explorer with Icons
 		Plug 'scrooloose/nerdtree'
 		Plug 'ryanoasis/vim-devicons'
 
 		" File Search
-		Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+		"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+		"Plug 'junegunn/fzf.vim'
+		Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+		Plug 'yuki-ycino/fzf-preview.vim', { 'branch': 'release', 'do': ':UpdateRemotePlugins' }
 		Plug 'junegunn/fzf.vim'
-
+	
 		Plug 'vim-airline/vim-airline'
 
 		" Terraform
 		Plug 'hashivim/vim-terraform'
+		" Start Screen
+		Plug 'mhinz/vim-startify'
+		" Git
+		Plug 'airblade/vim-gitgutter'
+		Plug 'tpope/vim-fugitive'
+		Plug 'tpope/vim-rhubarb'
+		Plug 'junegunn/gv.vim'
+		Plug 'rhysd/git-messenger.vim'
 	endif
 call plug#end()
+
+" Automatically install missing plugins on startup
+autocmd VimEnter *
+  \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+  \|   PlugInstall --sync | q
+  \| endif

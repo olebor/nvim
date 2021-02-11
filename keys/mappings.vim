@@ -41,6 +41,7 @@ else
   " I hate escape more than anything else
   inoremap jk <Esc>
   inoremap kj <Esc>
+"  imap jj <Esc>
 
   " Easy CAPS
   " inoremap <c-u> <ESC>viwUi
