@@ -8,13 +8,11 @@ source $HOME/.config/nvim/vim-plug/plugins.vim
 source $HOME/.config/nvim/keys/mappings.vim
 source $HOME/.config/nvim/general/settings.vim
 
-" Enable theming support
-if (has("termguicolors"))
- set termguicolors
-endif
-
-" Theme
-colorscheme dracula
+" Maybe not when in vscode?
+source $HOME/.config/nvim/themes/dracula.vim
+source $HOME/.config/nvim/plug-config/coc/coc.vim
+source $HOME/.config/nvim/plug-config/coc/coc-extensions.vim
+source $HOME/.config/nvim/plug-config/terraform.vim
 
 " NERDTree (file tree)
 let g:NERDTreeShowHidden = 1
@@ -47,5 +45,3 @@ function! OpenTerminal()
 endfunction
 nnoremap <c-n> :call OpenTerminal()<CR>
 
-" Terraform
-let g:terraform_fmt_on_save=1
