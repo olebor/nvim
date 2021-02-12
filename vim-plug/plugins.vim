@@ -34,7 +34,8 @@ call plug#begin("~/.vim/plugged")
 
 		" File Search
 		Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-		Plug 'yuki-ycind/fzf-preview.vim', { 'branch': 'release', 'do': ':UpdateRemotePlugins' }
+		"Plug 'yuki-ycind/fzf-preview.vim', { 'branch': 'release', 'do': ':UpdateRemotePlugins' }
+		Plug 'yuki-yano/fzf-preview.vim', { 'branch': 'release/remote', 'do': ':UpdateRemotePlugins' }
 		Plug 'junegunn/fzf.vim'
 	
 		Plug 'vim-airline/vim-airline'
