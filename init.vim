@@ -34,4 +34,5 @@ else
 	source $HOME/.config/nvim/plug-config/gitgutter.vim
 	source $HOME/.config/nvim/plug-config/vim-rooter.vim
 	source $HOME/.config/nvim/plug-config/rainbow.vim
+	source $HOME/.config/nvim/plug-config/nerdcommenter.vim
 endif
