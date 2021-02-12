@@ -1,4 +1,4 @@
-nnoremap <C-p> :FZF<CR>
+nnoremap <C-p> :GFiles<CR>
 "let g:fzf_action = {
 "  \ 'ctrl-t': 'tab split',
 "  \ 'ctrl-s': 'split',
