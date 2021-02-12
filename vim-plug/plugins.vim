@@ -13,11 +13,13 @@ call plug#begin("~/.vim/plugged")
 	else
 		" Theme
 		Plug 'dracula/vim'
+		"Plug 'phanviet/vim-monokai-pro'
 
 		" Auto pairs for '(' '[' '{'
 		Plug 'jiangmiao/auto-pairs'
 		" Language Client
 		Plug 'neoclide/coc.nvim', {'branch': 'release'}
+		Plug 'neoclide/coc-eslint'
 
 		" TypeScript Highlighting
 		Plug 'leafgarland/typescript-vim'
@@ -31,8 +33,6 @@ call plug#begin("~/.vim/plugged")
 		Plug 'ryanoasis/vim-devicons'
 
 		" File Search
-		"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-		"Plug 'junegunn/fzf.vim'
 		Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 		Plug 'yuki-ycino/fzf-preview.vim', { 'branch': 'release', 'do': ':UpdateRemotePlugins' }
 		Plug 'junegunn/fzf.vim'
@@ -41,6 +41,10 @@ call plug#begin("~/.vim/plugged")
 
 		" Terraform
 		Plug 'hashivim/vim-terraform'
+
+		" Comment Block
+		Plug 'preservim/nerdcommenter'
+
 		" Start Screen
 		Plug 'mhinz/vim-startify'
 		" Git
@@ -50,8 +54,10 @@ call plug#begin("~/.vim/plugged")
 		Plug 'junegunn/gv.vim'
 		Plug 'rhysd/git-messenger.vim'
 
+		" Rainbow 
+		Plug 'junegunn/rainbow_parentheses.vim'
 		" Autoformat JS
-		Plug 'dense-analysis/ale'
+		"Plug 'dense-analysis/ale'
 	endif
 call plug#end()
 

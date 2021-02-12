@@ -22,6 +22,7 @@ else
 	" Maybe not when in vscode?
 "	source $HOME/.config/nvim/plug-config/ale.vim
 	source $HOME/.config/nvim/themes/dracula.vim
+"	source $HOME/.config/nvim/themes/monokai_pro.vim
 	source $HOME/.config/nvim/plug-config/coc/coc.vim
 	source $HOME/.config/nvim/plug-config/coc/coc-extensions.vim
 	source $HOME/.config/nvim/plug-config/terraform.vim
@@ -32,4 +33,5 @@ else
 	source $HOME/.config/nvim/plug-config/terminal.vim
 	source $HOME/.config/nvim/plug-config/gitgutter.vim
 	source $HOME/.config/nvim/plug-config/vim-rooter.vim
+	source $HOME/.config/nvim/plug-config/rainbow.vim
 endif
