@@ -1,23 +1,28 @@
-" auto-install vim-plug
+" Autoinstall vim-plug 
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
 	silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
 		\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-	"autocmd VimEnter * PlugInstall
 	autocmd VimEnter * PlugInstall | source $MYVIMRC
 endif
 
 call plug#begin("~/.vim/plugged")
 	if exists('g:vscode')
-		" Easy motion for VSCode
-		" Plug 'asvetliakov/vim-easymotion'
+		" Section for VSCode Plugins
 	else
-		" Theme
+		" Theme and visuals
 		Plug 'dracula/vim'
 		"Plug 'phanviet/vim-monokai-pro'
 
+		" Cool Icons
+		Plug 'kyazdani42/nvim-web-devicons'
+		Plug 'ryanoasis/vim-devicons'
+		" Easymotion
+		Plug 'easymotion/vim-easymotion'
+
 		" Auto pairs for '(' '[' '{'
 		Plug 'jiangmiao/auto-pairs'
-		" Language Client
+
+		" Language Tools 
 		Plug 'neoclide/coc.nvim', {'branch': 'release'}
 		Plug 'neoclide/coc-eslint'
 
@@ -28,9 +33,8 @@ call plug#begin("~/.vim/plugged")
 		" Better Syntax Support
 		Plug 'sheerun/vim-polyglot'
 
-		" File Explorer with Icons
-		"Plug 'scrooloose/nerdtree'
-		Plug 'ryanoasis/vim-devicons'
+		" Bar with icons and stuff
+		Plug 'romgrk/barbar.nvim'
 
 		" File Search
 		Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -47,6 +51,9 @@ call plug#begin("~/.vim/plugged")
 
 		" Start Screen
 		Plug 'mhinz/vim-startify'
+		" See what keys do like in emacs
+		Plug 'liuchengxu/vim-which-key'
+
 		" Git
 		Plug 'airblade/vim-gitgutter'
 		Plug 'tpope/vim-fugitive'
@@ -56,8 +63,6 @@ call plug#begin("~/.vim/plugged")
 
 		" Rainbow 
 		Plug 'junegunn/rainbow_parentheses.vim'
-		" Autoformat JS
-		"Plug 'dense-analysis/ale'
 	endif
 call plug#end()
 

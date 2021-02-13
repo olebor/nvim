@@ -7,9 +7,9 @@
 
 if !exists('g:vscode')
 	source $HOME/.config/nvim/plug-config/polyglot.vim
-	source $HOME/.config/nvim/plug-config/ale.vim
 endif
 
+" Common Settings
 source $HOME/.config/nvim/vim-plug/plugins.vim
 source $HOME/.config/nvim/keys/mappings.vim
 source $HOME/.config/nvim/general/settings.vim
@@ -20,17 +20,26 @@ if exists('g:vscode')
 	"source $HOME/.config/nvim/plug-config/easymotion.vim
 	"source $HOME/.config/nvim/plug-config/highlightyank.vim
 else
-	" Maybe not when in vscode?
+	" Theme Stuff
 	source $HOME/.config/nvim/themes/dracula.vim
+
+	" General Stuff
+	source $HOME/.config/nvim/keys/which-key.vim
+	source $HOME/.config/nvim/plug-config/start-screen.vim
+	source $HOME/.config/nvim/plug-config/barbar.vim
+
+	" Language Tools
 	source $HOME/.config/nvim/plug-config/coc/coc.vim
 	source $HOME/.config/nvim/plug-config/coc/coc-extensions.vim
 	source $HOME/.config/nvim/plug-config/terraform.vim
-	source $HOME/.config/nvim/plug-config/start-screen.vim
+	source $HOME/.config/nvim/plug-config/nerdcommenter.vim
+	source $HOME/.config/nvim/plug-config/rainbow.vim
 
+	" File Management
 	source $HOME/.config/nvim/plug-config/fzf.vim
-	source $HOME/.config/nvim/plug-config/terminal.vim
 	source $HOME/.config/nvim/plug-config/gitgutter.vim
 	source $HOME/.config/nvim/plug-config/vim-rooter.vim
-	source $HOME/.config/nvim/plug-config/rainbow.vim
-	source $HOME/.config/nvim/plug-config/nerdcommenter.vim
+
+	" Misc
+	source $HOME/.config/nvim/plug-config/terminal.vim
 endif

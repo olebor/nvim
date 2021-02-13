@@ -82,5 +82,6 @@
   "explorer.keyMappings.global": {
     "<cr>": ["expandable?", "expand", "open"],
     "v": "open:vsplit"
-  }
+  },
+  "eslint.autoFixOnSave": true
 }
