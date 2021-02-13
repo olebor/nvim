@@ -29,12 +29,11 @@ call plug#begin("~/.vim/plugged")
 		Plug 'sheerun/vim-polyglot'
 
 		" File Explorer with Icons
-		Plug 'scrooloose/nerdtree'
+		"Plug 'scrooloose/nerdtree'
 		Plug 'ryanoasis/vim-devicons'
 
 		" File Search
 		Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-		"Plug 'yuki-ycind/fzf-preview.vim', { 'branch': 'release', 'do': ':UpdateRemotePlugins' }
 		Plug 'yuki-yano/fzf-preview.vim', { 'branch': 'release/remote', 'do': ':UpdateRemotePlugins' }
 		Plug 'junegunn/fzf.vim'
 	
