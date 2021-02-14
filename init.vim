@@ -42,4 +42,6 @@ else
 
 	" Misc
 	source $HOME/.config/nvim/plug-config/terminal.vim
+	" TODO: Sjekk hva som er bra med denne
+	source $HOME/.config/nvim/plug-config/floaterm.vim
 endif

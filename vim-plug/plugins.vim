@@ -60,7 +60,8 @@ call plug#begin("~/.vim/plugged")
 		Plug 'tpope/vim-rhubarb'
 		Plug 'junegunn/gv.vim'
 		Plug 'rhysd/git-messenger.vim'
-
+		" Terminal
+		Plug 'voldikss/vim-floaterm'
 		" Rainbow 
 		Plug 'junegunn/rainbow_parentheses.vim'
 	endif
