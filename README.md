@@ -28,6 +28,14 @@ git clone git@gitlab.com:olebor/nvim.git ~/.config/nvim
   chmod +x /usr/local/bin/nvim
   ```
 
+  With APT
+
+  ```
+  sudo add-apt-repository ppa:neovim-ppa/unstable
+  sudo apt-get update
+  sudo apt-get install neovim
+  ```
+
 - Arch
 
   ```
