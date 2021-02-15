@@ -19,7 +19,6 @@ map <down> <nop>
 map <left> <nop>
 map <right> <nop>
 
-
 if exists('g:vscode')
 	" Simulate same TAB behavior in VSCode
 	nmap <Tab> :Tabnext<CR>
