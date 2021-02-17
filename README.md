@@ -44,6 +44,31 @@ git clone git@gitlab.com:olebor/nvim.git ~/.config/nvim
 
 ## Other useful stuff
 
+## FZF and Search
+
+https://www.chrisatmachine.com/Neovim/08-fzf/
+
+- Mac
+
+  ```
+  brew install fzf
+  $(brew --prefix)/opt/fzf/install
+  brew install ripgrep
+  brew install --HEAD universal-ctags/universal-ctags/universal-ctags
+  brew install the_silver_searcher
+  brew install fd
+  ```
+
+- Ubuntu
+
+  ```
+  sudo apt install fzf
+  sudo apt install ripgrep
+  sudo apt install universal-ctags
+  sudo apt install silversearcher-ag
+  sudo apt install fd-find
+  ```
+
 ### Change key repeat delay
 
 - Mac
