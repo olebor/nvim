@@ -40,6 +40,7 @@ call plug#begin("~/.vim/plugged")
 		Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 		Plug 'yuki-yano/fzf-preview.vim', { 'branch': 'release/remote', 'do': ':UpdateRemotePlugins' }
 		Plug 'junegunn/fzf.vim'
+		Plug 'airblade/vim-rooter'
 	
 		Plug 'vim-airline/vim-airline'
 
