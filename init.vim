@@ -1,4 +1,4 @@
-"    ____      _ __        _
+"     ____      _ __        _
 "   /  _/___  (_) /__   __(_)___ ___
 "   / // __ \/ / __/ | / / / __ `__ \
 " _/ // / / / / /__| |/ / / / / / / /
@@ -6,6 +6,7 @@
 
 
 if !exists('g:vscode')
+	let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 	source $HOME/.config/nvim/plug-config/polyglot.vim
 endif
 
@@ -21,7 +22,10 @@ if exists('g:vscode')
 	"source $HOME/.config/nvim/plug-config/highlightyank.vim
 else
 	" Theme Stuff
-	source $HOME/.config/nvim/themes/dracula.vim
+	" source $HOME/.config/nvim/themes/dracula.vim
+	" source $HOME/.config/nvim/themes/gruvbox.vim
+	" source $HOME/.config/nvim/themes/monokai_pro.vim
+	source $HOME/.config/nvim/themes/molokai.vim
 
 	" General Stuff
 	source $HOME/.config/nvim/keys/which-key.vim
