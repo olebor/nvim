@@ -23,7 +23,7 @@ set smartindent                         " Makes indenting smart
 set autoindent                          " Good auto indent
 set list                                " Enable whitespace characters
 "set listchars=tab:>-,trail:~,extends:>,precedes:<,space:·
-set listchars=tab:>-,trail:~,extends:>,precedes:<,space:·
+set listchars=tab:\|\ ,trail:~,extends:>,precedes:<,space:·
 set laststatus=2                        " Always display the status line
 set number                              " Line numbers
 " set relativenumber                      " Relative line numbers"
