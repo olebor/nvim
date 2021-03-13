@@ -83,7 +83,12 @@
   "explorer.file.showHiddenFiles": true,
   "explorer.keyMappings.global": {
     "<cr>": ["expandable?", "expand", "open"],
-    "v": "open:vsplit"
+    "v": "open:vsplit",
+	"mm": "rename",
+	"mc": "copyFile",
+	"md": "delete",
+	"ma": "addFile",
+	"mA": "addDirectory"
   },
   "eslint.autoFixOnSave": true
 }
