@@ -47,6 +47,9 @@ call plug#begin("~/.vim/plugged")
 	
 		Plug 'vim-airline/vim-airline'
 
+		" Smooth scroll
+		Plug 'psliwka/vim-smoothie'
+	
 		" Terraform
 		Plug 'hashivim/vim-terraform'
 
