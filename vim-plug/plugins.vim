@@ -19,6 +19,7 @@ call plug#begin("~/.vim/plugged")
 		" Cool Icons
 		Plug 'kyazdani42/nvim-web-devicons'
 		Plug 'ryanoasis/vim-devicons'
+
 		" Easymotion
 		Plug 'easymotion/vim-easymotion'
 
@@ -37,7 +38,8 @@ call plug#begin("~/.vim/plugged")
 		Plug 'sheerun/vim-polyglot'
 
 		" Bar with icons and stuff
-		Plug 'romgrk/barbar.nvim'
+		" Plug 'romgrk/barbar.nvim'
+		Plug 'akinsho/nvim-bufferline.lua'
 
 		" File Search
 		Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -58,6 +60,7 @@ call plug#begin("~/.vim/plugged")
 
 		" Start Screen
 		Plug 'mhinz/vim-startify'
+
 		" See what keys do like in emacs
 		Plug 'liuchengxu/vim-which-key'
 
@@ -71,7 +74,8 @@ call plug#begin("~/.vim/plugged")
 
 		" Terminal
 		Plug 'voldikss/vim-floaterm'
-		" Rainbow 
+
+		" Rainbow
 		Plug 'junegunn/rainbow_parentheses.vim'
 	endif
 call plug#end()

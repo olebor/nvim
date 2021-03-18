@@ -30,7 +30,8 @@ else
 	" General Stuff
 	source $HOME/.config/nvim/keys/which-key.vim
 	source $HOME/.config/nvim/plug-config/start-screen.vim
-	source $HOME/.config/nvim/plug-config/barbar.vim
+	" source $HOME/.config/nvim/plug-config/barbar.vim
+	luafile $HOME/.config/nvim/lua/bufferline/init.lua
 
 	" Language Tools
 	source $HOME/.config/nvim/plug-config/coc/coc.vim
