@@ -25,11 +25,6 @@ let g:which_key_map['?'] = 'search word'
 let g:which_key_use_floating_win = 0
 let g:which_key_max_size = 0
 
-" let g:which_key_position = 'botright'
-" let g:which_key_position = 'topleft'
-" let g:hich_key_vertical = 1
-
-" Change the colors if you want
 
 " Hide status line
 autocmd! FileType which_key
@@ -45,14 +40,12 @@ let g:which_key_map['='] = [ '<C-W>='                                          ,
 let g:which_key_map['e'] = [ ':CocCommand explorer --toggle --sources=file+'   , 'explorer' ]
 let g:which_key_map['h'] = [ '<C-W>s'                                          , 'split below']
 let g:which_key_map['n'] = [ ':let @/ = ""'                                    , 'no highlight' ]
-let g:which_key_map['o'] = [ ':RnvimrToggle'                                   , 'open' ]
-let g:which_key_map['p'] = [ ':GFiles'                                         , 'search files' ]
-let g:which_key_map['P'] = [ ':Files'                                         , 'search files' ]
+let g:which_key_map['p'] = [ ':Telescope git_files'                            , 'git_files']
+let g:which_key_map['P'] = [ ':Telescope find_files'                           , 'search files' ]
 let g:which_key_map['q'] = [ '<Plug>(coc-fix-current)'                         , 'quickfix' ]
 let g:which_key_map['T'] = [ ':TSHighlightCapturesUnderCursor'                 , 'treesitter highlight' ]
 let g:which_key_map['u'] = [ ':UndotreeToggle'                                 , 'undo tree']
 let g:which_key_map['v'] = [ '<C-W>v'                                          , 'split right']
-let g:which_key_map['W'] = [ ':call WindowSwap#EasyWindowSwap()'               , 'move window' ]
 
 " Group mappings
 
@@ -102,14 +95,6 @@ let g:which_key_map.b = {
       \ }
 
 
-" f is for find and replace
-let g:which_key_map.f = {
-      \ 'name' : '+find & replace' ,
-      \ 'f' : [':Farr --source=vimgrep'    , 'file'],
-      \ 'p' : [':Farr --source=rgnvim'     , 'project'],
-      \ }
-
-
 " m is for mark
 let g:which_key_map.m = {
       \ 'name' : '+mark' ,
@@ -122,77 +107,49 @@ let g:which_key_map.m = {
       " CoC throws an error
       " \ 'a' : [':CocCommand bookmark.annotate', 'annotate bookmark'],
 
-" " s is for search
-" let g:which_key_map.s = {
-"       \ 'name' : '+search' ,
-"       \ '/' : [':History/'              , 'history'],
-"       \ ';' : [':Commands'              , 'commands'],
-"       \ 'a' : [':Ag'                    , 'text Ag'],
-"       \ 'b' : [':BLines'                , 'current buffer'],
-"       \ 'B' : [':Buffers'               , 'open buffers'],
-"       \ 'c' : [':Commits'               , 'commits'],
-"       \ 'C' : [':BCommits'              , 'buffer commits'],
-"       \ 'f' : [':Files'                 , 'files'],
-"       \ 'g' : [':GFiles'                , 'git files'],
-"       \ 'G' : [':GFiles?'               , 'modified git files'],
-"       \ 'h' : [':History'               , 'file history'],
-"       \ 'H' : [':History:'              , 'command history'],
-"       \ 'l' : [':Lines'                 , 'lines'] ,
-"       \ 'm' : [':Marks'                 , 'marks'] ,
-"       \ 'M' : [':Maps'                  , 'normal maps'] ,
-"       \ 'p' : [':Helptags'              , 'help tags'] ,
-"       \ 'P' : [':Tags'                  , 'project tags'],
-"       \ 's' : [':CocList snippets'      , 'snippets'],
-"       \ 'S' : [':Colors'                , 'color schemes'],
-"       \ 't' : [':Rg'                    , 'text Rg'],
-"       \ 'T' : [':BTags'                 , 'buffer tags'],
-"       \ 'w' : [':Windows'               , 'search windows'],
-"       \ 'y' : [':Filetypes'             , 'file types'],
-"       \ 'z' : [':FZF'                   , 'FZF'],
-"       \ }
-      " \ 's' : [':Snippets'     , 'snippets'],
 
-" s is for search
+
+" s is for search powered by telescope
 let g:which_key_map.s = {
       \ 'name' : '+search' ,
-      \ '/' : [':History/'                              , 'history'],
-      \ ';' : [':FzfPreviewCommandPalette'              , 'commands'],
-      \ 'a' : [':Ag'                    , 'text Ag'],
-      \ 'b' : [':CocCommand fzf-preview.BufferLines'                , 'current buffer'],
-      \ 'B' : [':CocCommand fzf-preview.Buffers'               , 'open buffers'],
-      \ 'c' : [':Commits'               , 'commits'],
-      \ 'C' : [':BCommits'              , 'buffer commits'],
-      \ 'd' : [':CocCommand fzf-preview.DirectoryFiles'              , 'directories'],
-      \ 'f' : [':CocCommand fzf-preview.ProjectFiles'                 , 'files'],
-      \ 'g' : [':CocCommand fzf-preview.GitFiles'                , 'git files'],
-      \ 'G' : [':GFiles?'               , 'modified git files'],
-      \ 'h' : [':History'               , 'file history'],
-      \ 'H' : [':History:'              , 'command history'],
-      \ 'l' : [':Lines'                 , 'lines'] ,
-      \ 'm' : [':CocCommand fzf-preview.Marks', 'lis gt marks'],
-      \ 'M' : [':Maps'                  , 'normal maps'] ,
-      \ 'p' : [':Helptags'              , 'help tags'] ,
-      \ 'P' : [':Tags'                  , 'project tags'],
-      \ 'q' : [':CocCommand fzf-preview.QuickFix'                  , 'quickfix list'],
-      \ 's' : [':CocList snippets'      , 'snippets'],
-      \ 'S' : [':Colors'                , 'color schemes'],
-      \ 't' : [':Rg'                    , 'text Rg'],
-      \ 'T' : [':BTags'                 , 'buffer tags'],
-      \ 'w' : [':Windows'               , 'search windows'],
-      \ 'y' : [':Filetypes'             , 'file types'],
-      \ 'z' : [':FZF'                   , 'FZF'],
+      \ '.' : [':Telescope filetypes'                   , 'filetypes'],
+      \ ';' : [':Telescope commands'                    , 'commands'],
+      \ 'a' : [':Telescope lsp_code_actions'            , 'code_actions'],
+      \ 'A' : [':Telescope builtin'                     , 'all'],
+      \ 'b' : [':Telescope buffers'                     , 'buffers'],
+      \ 'B' : [':Telescope git_branches'                , 'git branches'],
+      \ 'd' : [':Telescope lsp_document_diagnostics'    , 'document_diagnostics'],
+      \ 'D' : [':Telescope lsp_workspace_diagnostics'   , 'workspace_diagnostics'],
+      \ 'c' : [':Telescope git_commits'                 , 'git_commits'],
+      \ 'C' : [':Telescope git_bcommits'                , 'git_bcommits'],
+      \ 'f' : [':Telescope find_files'                  , 'files'],
+      \ 'F' : [':Telescope git_files'                   , 'git_files'],
+      \ 'g' : [':Telescope tags'                        , 'tags'],
+      \ 'G' : [':Telescope current_buffer_tags'         , 'buffer_tags'],
+      \ 'h' : [':Telescope command_history'             , 'history'],
+      \ 'H' : [':Telescope help_tags'                   , 'help_tags'],
+      \ 'i' : [':Telescope media_files'                 , 'media files'],
+      \ 'k' : [':Telescope keymaps'                     , 'keymaps'],
+      \ 'l' : [':Telescope loclist'                     , 'loclist'],
+      \ 'm' : [':Telescope marks'                       , 'marks'],
+      \ 'M' : [':Telescope man_pages'                   , 'man_pages'],
+      \ 'o' : [':Telescope vim_options'                 , 'vim_options'],
+      \ 'O' : [':Telescope oldfiles'                    , 'oldfiles'],
+      \ 'p' : [':Telescope fd'                          , 'fd'],
+      \ 'P' : [':Telescope spell_suggest'               , 'spell_suggest'],
+      \ 's' : [':Telescope git_status'                  , 'git_status'],
+      \ 'S' : [':Telescope grep_string'                 , 'grep_string'],
+      \ 't' : [':Telescope live_grep'                   , 'text'],
+      \ 'y' : [':Telescope symbols'                     , 'symbols'],
+      \ 'Y' : [':Telescope lsp_workspace_symbols'       , 'lsp_workspace_symbols'],
+      \ 'r' : [':Telescope registers'                   , 'registers'],
+      \ 'R' : [':Telescope reloader'                    , 'reloader'],
+      \ 'w' : [':Telescope file_browser'                , 'buf_fuz_find'],
+      \ 'u' : [':Telescope colorscheme'                 , 'colorschemes'],
+      \ 'z' : [':Telescope current_buffer_fuzzy_find'   , 'buf_fuz_find'],
       \ }
-" 
-" :CocCommand fzf-preview.AllBuffers
-" :CocCommand fzf-preview.Changes
-" :CocCommand fzf-preview.Yankround
-" :CocCommand fzf-preview.CocReferences
-" :CocCommand fzf-preview.CocDiagnostics
-" :CocCommand fzf-preview.CocCurrentDiagnostics
-" :CocCommand fzf-preview.CocTypeDefinitions
-" \ 'l' : [':CocCommand fzf-preview.Bookmarks', 'list bookmarks'],
-" $FZF_PREVIEW_PREVIEW_BAT_THEME = 'ansi-dark'
-" 
+
+
 " g is for git
 let g:which_key_map.g = {
       \ 'name' : '+git' ,

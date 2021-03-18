@@ -41,10 +41,16 @@ call plug#begin("~/.vim/plugged")
 		" Plug 'romgrk/barbar.nvim'
 		Plug 'akinsho/nvim-bufferline.lua'
 
+		" Telescope
+		Plug 'nvim-lua/popup.nvim'
+		Plug 'nvim-lua/plenary.nvim'
+		Plug 'nvim-telescope/telescope.nvim'
+		Plug 'nvim-telescope/telescope-media-files.nvim'
+
 		" File Search
-		Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-		Plug 'yuki-yano/fzf-preview.vim', { 'branch': 'release/remote', 'do': ':UpdateRemotePlugins' }
-		Plug 'junegunn/fzf.vim'
+		" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+		" Plug 'yuki-yano/fzf-preview.vim', { 'branch': 'release/remote', 'do': ':UpdateRemotePlugins' }
+		" Plug 'junegunn/fzf.vim'
 		Plug 'airblade/vim-rooter'
 	
 		Plug 'vim-airline/vim-airline'
