@@ -67,6 +67,8 @@ call plug#begin("~/.vim/plugged")
 		Plug 'tpope/vim-rhubarb'
 		Plug 'junegunn/gv.vim'
 		Plug 'rhysd/git-messenger.vim'
+		Plug 'APZelos/blamer.nvim'
+
 		" Terminal
 		Plug 'voldikss/vim-floaterm'
 		" Rainbow 
