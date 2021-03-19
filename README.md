@@ -16,6 +16,11 @@ git clone git@gitlab.com:olebor/nvim.git ~/.config/nvim
   brew install --HEAD neovim # Nightly version
 
   brew upgrade neovim --fetch-HEAD # Sometimes you need to update
+
+
+  curl -L https://github.com/neovim/neovim/releases/download/nightly/nvim-macos.tar.gz --output nvim-macos.tar.gz
+  rm -rf ~/.dev/nvim-osx64
+  tar xvvf nvim-macos.tar.gz -C ~/.dev/
   ```
 
 - Ubuntu
