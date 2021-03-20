@@ -37,7 +37,7 @@ let g:which_key_map['7'] = [ '<plug>NERDCommenterInvert'                       ,
 let g:which_key_map['.'] = [ ':e $MYVIMRC'                                     , 'open init' ]
 let g:which_key_map[';'] = [ ':Commands'                                       , 'commands' ]
 let g:which_key_map['='] = [ '<C-W>='                                          , 'balance windows' ]
-let g:which_key_map['e'] = [ ':CocCommand explorer --toggle --sources=file+'   , 'explorer' ]
+let g:which_key_map['e'] = [ ':NvimTreeToggle'                                 , 'explorer' ]
 let g:which_key_map['h'] = [ '<C-W>s'                                          , 'split below']
 let g:which_key_map['n'] = [ ':let @/ = ""'                                    , 'no highlight' ]
 let g:which_key_map['p'] = [ ':Telescope git_files'                            , 'git_files']
@@ -53,7 +53,7 @@ let g:which_key_map['v'] = [ '<C-W>v'                                          ,
 let g:which_key_map.a = {
       \ 'name' : '+actions' ,
       \ 'c' : [':ColorizerToggle'        , 'colorizer'],
-      \ 'e' : [':CocCommand explorer'    , 'explorer'],
+      \ 'e' : [':NvimTreeToggle'         , 'explorer'],
       \ 'h' : [':let @/ = ""'            , 'remove search highlight'],
       \ 'l' : [':Bracey'                 , 'start live server'],
       \ 'L' : [':BraceyStop'             , 'stop live server'],

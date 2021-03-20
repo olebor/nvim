@@ -58,6 +58,9 @@ call plug#begin("~/.vim/plugged")
 	
 		Plug 'vim-airline/vim-airline'
 
+		" File Explorer
+		Plug 'kyazdani42/nvim-tree.lua'
+		
 		" Smooth scroll
 		Plug 'psliwka/vim-smoothie'
 	

@@ -44,6 +44,7 @@ else
 	source $HOME/.config/nvim/plug-config/fzf.vim
 	source $HOME/.config/nvim/plug-config/gitgutter.vim
 	source $HOME/.config/nvim/plug-config/vim-rooter.vim
+	luafile $HOME/.config/nvim/lua/nv-nvimtree/init.lua
 
 	luafile $HOME/.config/nvim/lua/nv-telescope/init.lua
 	" luafile $HOME/.config/nvim/lua/nv-treesitter/init.lua
