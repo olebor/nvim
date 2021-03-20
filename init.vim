@@ -47,7 +47,7 @@ else
 	luafile $HOME/.config/nvim/lua/nv-nvimtree/init.lua
 
 	luafile $HOME/.config/nvim/lua/nv-telescope/init.lua
-	" luafile $HOME/.config/nvim/lua/nv-treesitter/init.lua
+	luafile $HOME/.config/nvim/lua/nv-treesitter/init.lua
 
 	" Misc
 	source $HOME/.config/nvim/plug-config/terminal.vim

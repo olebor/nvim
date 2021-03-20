@@ -8,7 +8,6 @@ ts_config.setup {
         "css",
         "bash",
         "cpp",
-        "rust",
         "lua"
     },
     highlight = {

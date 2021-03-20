@@ -59,6 +59,14 @@ git clone git@gitlab.com:olebor/nvim.git ~/.config/nvim
   sudo apt-get install -y nodejs
   ```
 
+### Treesitter
+
+- Mac
+
+  ```
+  brew install treesitter
+  ```
+
 ## FZF and Search
 
 https://www.chrisatmachine.com/Neovim/08-fzf/
