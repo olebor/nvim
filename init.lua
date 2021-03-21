@@ -23,7 +23,7 @@ else
 	-- " General Stuff
 	vim.cmd('source $HOME/.config/nvim/keys/which-key.vim')
 	vim.cmd('source $HOME/.config/nvim/plug-config/start-screen.vim')
-	require('bufferline')
+	require('nv-bufferline')
 
 	-- " Language Tools
 	vim.cmd('source $HOME/.config/nvim/plug-config/coc/coc.vim')
