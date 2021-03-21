@@ -1,8 +1,8 @@
 
 
 " Better indenting
-vnoremap < <gv
-vnoremap > >gv
+" vnoremap < <gv
+" vnoremap > >gv
 
 
 if exists('g:vscode')
@@ -16,11 +16,11 @@ else
 	"  inoremap <expr> <c-k> ("\<C-p>")
 
 	" I hate escape more than anything else
-	inoremap jk <Esc>
-	inoremap kj <Esc>
+	" inoremap jk <Esc>
+	" inoremap kj <Esc>
 
 	" Remap ESC
-	inoremap jj <Esc>
+	" inoremap jj <Esc>
 
 	" Easy CAPS
 	" inoremap <c-u> <ESC>viwUi
@@ -42,7 +42,7 @@ else
 	" Alternate way to quit
 	nnoremap <silent> <C-Q> :wq!<CR>
 	" Use control-c instead of escape
-	nnoremap <silent> <C-c> <Esc>
+	" nnoremap <silent> <C-c> <Esc>
 	" <TAB>: completion.
 	inoremap <silent> <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 
