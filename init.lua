@@ -7,6 +7,7 @@ end
 vim.cmd('source $HOME/.config/nvim/vim-plug/plugins.vim')
 vim.cmd('source $HOME/.config/nvim/keys/mappings.vim')
 vim.cmd('source $HOME/.config/nvim/general/settings.vim')
+require('keymappings')
 
 if vim.g.vscode then
 	-- VS Code extension
