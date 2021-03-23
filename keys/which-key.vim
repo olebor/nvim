@@ -4,7 +4,6 @@ let @s = 'veS"'
 
 " Timeout
 let g:which_key_timeout = 100
-
 let g:which_key_display_names = {'<CR>': '↵', '<TAB>': '⇆'}
 
 " Map leader to which_key
@@ -13,9 +12,9 @@ vnoremap <silent> <leader> :silent <c-u> :silent WhichKeyVisual '<Space>'<CR>
 
 " Create map to add keys to
 let g:which_key_map =  {}
+
 " Define a separator
 let g:which_key_sep = '→'
-" set timeoutlen=100
 
 " Coc Search & refactor
 nnoremap <leader>? :CocSearch <C-R>=expand("<cword>")<CR><CR>
@@ -35,7 +34,6 @@ autocmd  FileType which_key set laststatus=0 noshowmode noruler
 " Single mappings
 let g:which_key_map['7'] = [ '<plug>NERDCommenterInvert'                       , 'comment' ]
 let g:which_key_map['.'] = [ ':e $MYVIMRC'                                     , 'open init' ]
-let g:which_key_map[';'] = [ ':Commands'                                       , 'commands' ]
 let g:which_key_map['='] = [ '<C-W>='                                          , 'balance windows' ]
 let g:which_key_map['e'] = [ ':NvimTreeToggle'                                 , 'explorer' ]
 let g:which_key_map['h'] = [ '<C-W>s'                                          , 'split below']
@@ -43,8 +41,6 @@ let g:which_key_map['n'] = [ ':let @/ = ""'                                    ,
 let g:which_key_map['p'] = [ ':Telescope git_files'                            , 'git_files']
 let g:which_key_map['P'] = [ ':Telescope find_files'                           , 'search files' ]
 let g:which_key_map['w'] = [ ':Bwipeout'                                       , 'Wipe buffer' ]
-let g:which_key_map['T'] = [ ':TSHighlightCapturesUnderCursor'                 , 'treesitter highlight' ]
-let g:which_key_map['u'] = [ ':UndotreeToggle'                                 , 'undo tree']
 let g:which_key_map['v'] = [ '<C-W>v'                                          , 'split right']
 
 " Group mappings
@@ -55,17 +51,9 @@ let g:which_key_map.a = {
       \ 'c' : [':ColorizerToggle'        , 'colorizer'],
       \ 'e' : [':NvimTreeToggle'         , 'explorer'],
       \ 'h' : [':let @/ = ""'            , 'remove search highlight'],
-      \ 'l' : [':Bracey'                 , 'start live server'],
-      \ 'L' : [':BraceyStop'             , 'stop live server'],
-      \ 'm' : [':MarkdownPreview'        , 'markdown preview'],
-      \ 'M' : [':MarkdownPreviewStop'    , 'markdown preview stop'],
       \ 'n' : [':set nonumber!'          , 'line-numbers'],
       \ 's' : [':s/\%V\(.*\)\%V/"\1"/'   , 'surround'],
       \ 'r' : [':set norelativenumber!'  , 'relative line nums'],
-      \ 't' : [':FloatermToggle'         , 'terminal'],
-      \ 'v' : [':Codi'                   , 'virtual repl on'],
-      \ 'V' : [':Codi!'                  , 'virtual repl off'],
-      \ 'w' : [':StripWhitespace'        , 'strip whitespace'],
       \ }
 
 " b is for buffer
@@ -154,7 +142,6 @@ let g:which_key_map.s = {
 let g:which_key_map.g = {
       \ 'name' : '+git' ,
       \ 'a' : [':Git add .'                        , 'add all'],
-      \ 'A' : [':CocCommand fzf-preview.GitStatus' , 'actions'],
       \ 'b' : [':Git blame'                        , 'blame'],
       \ 'B' : [':GBrowse'                          , 'browse'],
       \ 'c' : [':Git commit'                       , 'commit'],
@@ -169,18 +156,16 @@ let g:which_key_map.g = {
       \ 'k' : ['<Plug>(GitGutterPrevHunk)'         , 'prev hunk'],
       \ 'l' : [':Git log'                          , 'log'],
       \ 'm' : ['<Plug>(git-messenger)'             , 'message'],
+      \ 'n' : [':Neogit'                           , 'Neogit'],
       \ 'p' : [':Git push'                         , 'push'],
       \ 'P' : [':Git pull'                         , 'pull'],
       \ 'r' : [':GRemove'                          , 'remove'],
       \ 's' : ['<Plug>(GitGutterStageHunk)'        , 'stage hunk'],
-      \ 'S' : [':CocCommand fzf-preview.GitStatus' , 'status'],
       \ 't' : [':GitGutterSignsToggle'             , 'toggle signs'],
       \ 'u' : ['<Plug>(GitGutterUndoHunk)'         , 'undo hunk'],
       \ 'v' : [':GV'                               , 'view commits'],
       \ 'V' : [':GV!'                              , 'view buffer commits'],
       \ }
-      " \ 'A' : [':Git add %'                        , 'add current'],
-      " \ 'S' : [':!git status'                      , 'status'],
 
 " l is for language server protocol
 let g:which_key_map.l = {
