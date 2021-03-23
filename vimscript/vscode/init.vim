@@ -5,3 +5,24 @@ nmap <S-Tab> :Tabprev<CR>
 " Better nav for omnicomplete
 inoremap <expr> <c-j> ("\<C-n>")
 inoremap <expr> <c-k> ("\<C-p>")
+
+" Window Nav - Not sure if needed
+imap <C-h> <C-w>h
+imap <C-j> <C-w>j
+imap <C-k> <C-w>k
+imap <C-l> <C-w>l
+
+" g Leader key
+let mapleader=" "
+" let localleader=" "
+nnoremap <Space> <Nop>
+
+" Better indenting
+vnoremap < <gv
+vnoremap > >gv
+
+" Disable Arrow keys in Normal mode
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
