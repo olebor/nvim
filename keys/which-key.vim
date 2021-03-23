@@ -42,7 +42,7 @@ let g:which_key_map['h'] = [ '<C-W>s'                                          ,
 let g:which_key_map['n'] = [ ':let @/ = ""'                                    , 'no highlight' ]
 let g:which_key_map['p'] = [ ':Telescope git_files'                            , 'git_files']
 let g:which_key_map['P'] = [ ':Telescope find_files'                           , 'search files' ]
-let g:which_key_map['q'] = [ '<Plug>(coc-fix-current)'                         , 'quickfix' ]
+let g:which_key_map['w'] = [ ':Bwipeout'                                       , 'Wipe buffer' ]
 let g:which_key_map['T'] = [ ':TSHighlightCapturesUnderCursor'                 , 'treesitter highlight' ]
 let g:which_key_map['u'] = [ ':UndotreeToggle'                                 , 'undo tree']
 let g:which_key_map['v'] = [ '<C-W>v'                                          , 'split right']

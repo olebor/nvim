@@ -63,7 +63,10 @@ call plug#begin("~/.vim/plugged")
 		
 		" Smooth scroll
 		Plug 'psliwka/vim-smoothie'
-	
+		
+		" Intuitive buffer closing
+		Plug 'moll/vim-bbye'
+
 		" Terraform
 		Plug 'hashivim/vim-terraform'
 
