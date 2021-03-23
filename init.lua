@@ -7,7 +7,7 @@ if vim.g.vscode then
 	--"source $HOME/.config/nvim/plug-config/highlightyank.vim
 else
 	vim.cmd('let $NVIM_TUI_ENABLE_TRUE_COLOR=1')
-	-- vim.cmd('source $HOME/.config/nvim/plug-config/polyglot.vim')
+	vim.cmd('source $HOME/.config/nvim/plug-config/polyglot.vim')
 	
 	-- General
 	vim.cmd('source $HOME/.config/nvim/vim-plug/plugins.vim')
