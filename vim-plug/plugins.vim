@@ -86,6 +86,7 @@ call plug#begin("~/.vim/plugged")
 		Plug 'junegunn/gv.vim'
 		Plug 'rhysd/git-messenger.vim'
 		Plug 'APZelos/blamer.nvim'
+		Plug 'TimUntersberger/neogit'
 
 		" Terminal
 		Plug 'voldikss/vim-floaterm'
