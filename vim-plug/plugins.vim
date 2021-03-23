@@ -38,7 +38,7 @@ call plug#begin("~/.vim/plugged")
 		Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 
 		" Better Syntax Support
-		Plug 'sheerun/vim-polyglot'
+		" Plug 'sheerun/vim-polyglot'
 
 		" Bar with icons and stuff
 		" Plug 'romgrk/barbar.nvim'
