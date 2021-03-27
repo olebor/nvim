@@ -41,7 +41,7 @@ else
 	-- require('lsp.css-ls')
 	-- require('lsp.docker-ls')
 	-- require('lsp.html-ls')
-	-- require('lsp.efm-general-ls')
+	require('lsp.efm-general-ls')
 	-- require('lsp.virtual_text')
 
 	-- " Language Tools
