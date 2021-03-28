@@ -64,7 +64,8 @@ call plug#begin("~/.vim/plugged")
 		" Plug 'junegunn/fzf.vim'
 		Plug 'airblade/vim-rooter'
 	
-		Plug 'vim-airline/vim-airline'
+		" Plug 'vim-airline/vim-airline'
+		Plug 'glepnir/galaxyline.nvim'
 
 		" File Explorer
 		Plug 'kyazdani42/nvim-tree.lua'

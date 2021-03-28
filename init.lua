@@ -24,9 +24,10 @@ else
 
 	-- " General Stuff
 	vim.cmd('source $HOME/.config/nvim/keys/which-key.vim')
+	vim.cmd('source ~/.config/nvim/vimscript/functions.vim')
 	vim.cmd('source $HOME/.config/nvim/plug-config/start-screen.vim')
 	require('nv-bufferline')
-
+	require('nv-galaxyline')
 	-- LSP
 	require('lsp')
 	require('lsp.bash-ls')
