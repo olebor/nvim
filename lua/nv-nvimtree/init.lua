@@ -1,5 +1,4 @@
 -- vim.cmd [[packadd nvim-tree.lua]]
-
 vim.g.nvim_tree_side = "left"
 vim.g.nvim_tree_width = 40
 vim.g.nvim_tree_ignore = {".git", "node_modules", ".cache"}
@@ -14,37 +13,22 @@ vim.g.nvim_tree_root_folder_modifier = ":~"
 vim.g.nvim_tree_tab_open = 1
 vim.g.nvim_tree_allow_resize = 1
 
-vim.g.nvim_tree_show_icons = {
-    git = 1,
-    folders = 1,
-    files = 1
-}
+vim.g.nvim_tree_show_icons = {git = 1, folders = 1, files = 1}
 
 vim.g.nvim_tree_icons = {
 	default = " ",
 	symlink = " ",
-	git = {
-		unstaged = "",
-		staged = "✓",
-		unmerged = "",
-		renamed = "➜",
-		ntracked = "★"
-	},
-	folder = {
-		default = "",
-		open = "",
-		symlink = ""
-	}
+	git = {unstaged = "", staged = "✓", unmerged = "", renamed = "➜", ntracked = "★"},
+	folder = {default = "", open = "", symlink = ""}
 }
 
 local get_lua_cb = function(cb_name)
-    return string.format(":lua require'nvim-tree'.on_keypress('%s')<CR>", cb_name)
+	return string.format(":lua require'nvim-tree'.on_keypress('%s')<CR>", cb_name)
 end
 
 vim.g.nvim_tree_bindings = {
 	-- Overrides
 	["l"] = get_lua_cb("edit"),
-
 
 	-- Default Bindings
 	["<CR>"] = get_lua_cb("edit"),
@@ -74,22 +58,15 @@ vim.g.nvim_tree_bindings = {
 	["q"] = get_lua_cb("close")
 }
 
-
-
 -- tree folder name , icon color
 -- cmd("hi NvimTreeFolderIcon guifg = #61afef")
 -- cmd("hi NvimTreeFolderName guifg = #61afef")
 -- cmd("hi NvimTreeIndentMarker guifg=#545862")
--- 
--- 
 -- cmd("hi CustomExplorerBg guibg=#242830")
--- 
-vim.api.nvim_exec(
-	[[
+
+vim.api.nvim_exec([[
 augroup NvimTree 
   au!
   au FileType NvimTree setlocal winhighlight=Normal:CustomExplorerBg
  augroup END
- ]],
-	false
-)
+ ]], false)

@@ -2,9 +2,9 @@
 if vim.g.vscode then
 	-- VS Code extension
 	vim.cmd('source $HOME/.config/nvim/vimscript/vscode/init.vim')
-	--"source $HOME/.config/nvim/vscode/settings.vim
-	--"source $HOME/.config/nvim/plug-config/easymotion.vim
-	--"source $HOME/.config/nvim/plug-config/highlightyank.vim
+	-- "source $HOME/.config/nvim/vscode/settings.vim
+	-- "source $HOME/.config/nvim/plug-config/easymotion.vim
+	-- "source $HOME/.config/nvim/plug-config/highlightyank.vim
 else
 	vim.cmd('let $NVIM_TUI_ENABLE_TRUE_COLOR=1')
 	vim.cmd('source $HOME/.config/nvim/plug-config/polyglot.vim')
@@ -17,9 +17,9 @@ else
 	require('nv-compe')
 
 	-- Theme Stuff
-	--" source $HOME/.config/nvim/themes/dracula.vim
-	--" source $HOME/.config/nvim/themes/gruvbox.vim
-	--" source $HOME/.config/nvim/themes/monokai_pro.vim
+	-- " source $HOME/.config/nvim/themes/dracula.vim
+	-- " source $HOME/.config/nvim/themes/gruvbox.vim
+	-- " source $HOME/.config/nvim/themes/monokai_pro.vim
 	vim.cmd('source $HOME/.config/nvim/themes/molokai.vim')
 
 	-- " General Stuff

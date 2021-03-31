@@ -1,7 +1,6 @@
 -- TODO figure out why this don't work
 vim.fn.sign_define("LspDiagnosticsSignError",
-                   {
-					texthl = "LspDiagnosticsSignError", text = "", numhl = "LspDiagnosticsSignError"})
+                   {texthl = "LspDiagnosticsSignError", text = "", numhl = "LspDiagnosticsSignError"})
 vim.fn.sign_define("LspDiagnosticsSignWarning",
                    {texthl = "LspDiagnosticsSignWarning", text = "", numhl = "LspDiagnosticsSignWarning"})
 vim.fn.sign_define("LspDiagnosticsSignInformation",
@@ -32,9 +31,9 @@ autocmd BufWritePre *.lua lua vim.lsp.buf.formatting_sync(nil, 100) ]]
 -- autocmd FileType java nnoremap ca <Cmd>lua require('jdtls').code_action()<CR>
 
 local function documentHighlight(client, bufnr)
-    -- Set autocommands conditional on server_capabilities
-    if client.resolved_capabilities.document_highlight then
-        vim.api.nvim_exec([[
+	-- Set autocommands conditional on server_capabilities
+	if client.resolved_capabilities.document_highlight then
+		vim.api.nvim_exec([[
       hi LspReferenceRead cterm=bold ctermbg=red guibg=#464646
       hi LspReferenceText cterm=bold ctermbg=red guibg=#464646
       hi LspReferenceWrite cterm=bold ctermbg=red guibg=#464646
@@ -45,18 +44,18 @@ local function documentHighlight(client, bufnr)
       augroup END
     ]], false)
 
-    end
+	end
 
 end
 local lsp_config = {}
 
 function lsp_config.common_on_attach(client, bufnr)
-    documentHighlight(client, bufnr)
+	documentHighlight(client, bufnr)
 end
 
 function lsp_config.tsserver_on_attach(client, bufnr)
-    lsp_config.common_on_attach(client, bufnr)
-    client.resolved_capabilities.document_formatting = false
+	lsp_config.common_on_attach(client, bufnr)
+	client.resolved_capabilities.document_formatting = false
 end
 
 -- Use a loop to conveniently both setup defined servers

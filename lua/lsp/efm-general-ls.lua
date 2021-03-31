@@ -2,16 +2,15 @@
 -- TODO this file needs to be refactored eache lang should be it's own file
 
 
+
 -- lua
 local lua_arguments = {}
 local luaFormat = {
-    formatCommand = "lua-format -i --no-keep-simple-function-one-line --column-limit=120",
+    formatCommand = "lua-format -i --no-keep-simple-function-one-line --indent-width=1 --use-tab --column-limit=120",
     formatStdin = true
 }
 
-if O.lua.formatter == 'lua-format' then
-	table.insert(lua_arguments, luaFormat)
-end
+if O.lua.formatter == 'lua-format' then table.insert(lua_arguments, luaFormat) end
 
 -- sh
 local sh_arguments = {}
@@ -23,13 +22,9 @@ local shellcheck = {
     lintFormats = {'%f:%l:%c: %trror: %m', '%f:%l:%c: %tarning: %m', '%f:%l:%c: %tote: %m'}
 }
 
-if O.sh.formatter == 'shfmt' then
-	table.insert(sh_arguments, shfmt)
-end
+if O.sh.formatter == 'shfmt' then table.insert(sh_arguments, shfmt) end
 
-if O.sh.linter == 'shellcheck' then
-	table.insert(sh_arguments, shellcheck)
-end
+if O.sh.linter == 'shellcheck' then table.insert(sh_arguments, shellcheck) end
 
 -- tsserver/web javascript react, vue, json, html, css, yaml
 local prettier = {formatCommand = "prettier --stdin-filepath ${INPUT}", formatStdin = true}
@@ -47,14 +42,9 @@ local eslint = {
 
 local tsserver_args = {}
 
-if O.tsserver.formatter == 'prettier' then
-	table.insert(tsserver_args, prettier)
-end
+if O.tsserver.formatter == 'prettier' then table.insert(tsserver_args, prettier) end
 
-if O.tsserver.linter == 'eslint' then
-	table.insert(tsserver_args, eslint)
-end
-
+if O.tsserver.linter == 'eslint' then table.insert(tsserver_args, eslint) end
 
 -- local markdownlint = {
 --     -- TODO default to global lintrc
@@ -69,29 +59,15 @@ local markdownPandocFormat = {formatCommand = 'pandoc -f markdown -t gfm -sp --t
 require"lspconfig".efm.setup {
     -- init_options = {initializationOptions},
     cmd = {DATA_PATH .. "/lspinstall/efm/efm-langserver"},
-    init_options = {
-		documentFormatting = true,
-		codeAction = false
-	},
-    filetypes = {
-		"lua",
-		"typescript",
-		"javascriptreact",
-		"javascript",
-		"sh",
-		"html",
-		"css",
-		"json",
-		"yaml",
-		"markdown"
-	},
+    init_options = {documentFormatting = true, codeAction = false},
+    filetypes = {"lua", "typescript", "javascriptreact", "javascript", "sh", "html", "css", "json", "yaml", "markdown"},
     settings = {
         rootMarkers = {".git/"},
         languages = {
             lua = lua_arguments,
-			sh = sh_arguments,
-			typescript = tsserver_args,
-			typescriptreact = tsserver_args,
+            sh = sh_arguments,
+            typescript = tsserver_args,
+            typescriptreact = tsserver_args,
             javascript = tsserver_args,
             javascriptreact = tsserver_args,
             html = {prettier},
