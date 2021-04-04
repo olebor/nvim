@@ -26,16 +26,6 @@ git clone git@gitlab.com:olebor/nvim.git ~/.config/nvim
 - Ubuntu
 
   ```
-  # curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage -o /tmp/nvim.appimage
-  curl -LO https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage -o /tm/nvim.appimage
-  sudo mv /tmp/nvim.appimage /usr/local/bin/nvim
-
-  chmod +x /usr/local/bin/nvim
-  ```
-
-  With APT
-
-  ```
   sudo add-apt-repository ppa:neovim-ppa/unstable
   sudo apt-get update
   sudo apt-get install neovim
@@ -45,6 +35,13 @@ git clone git@gitlab.com:olebor/nvim.git ~/.config/nvim
 
   ```
   yay -S neovim-git # Latest
+  ```
+
+- Linux Appimage
+  ```
+  curl -L -o /tmp/nvim.appimage https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
+  sudo mv /tmp/nvim.appimage /usr/local/bin/nvim
+  chmod +x /usr/local/bin/nvim
   ```
 
 ## Other useful stuff
