@@ -26,13 +26,21 @@ call plug#begin("~/.vim/plugged")
 		" Auto pairs for '(' '[' '{'
 		Plug 'jiangmiao/auto-pairs'
 
+
+		" LSP
+		Plug 'neovim/nvim-lspconfig'
+		Plug 'glepnir/lspsaga.nvim'
+		Plug 'onsails/lspkind-nvim'
+		Plug 'kosayoda/nvim-lightbulb'
+		Plug 'kabouzeid/nvim-lspinstall'
+
 		" Language Tools 
-		Plug 'neoclide/coc.nvim', {'branch': 'release'}
-		Plug 'neoclide/coc-eslint'
+		Plug 'hrsh7th/nvim-compe'
+		Plug 'hrsh7th/vim-vsnip'
 
 		" TypeScript Highlighting
-		Plug 'leafgarland/typescript-vim'
-		Plug 'peitalin/vim-jsx-typescript'
+		" Plug 'leafgarland/typescript-vim'
+		" Plug 'peitalin/vim-jsx-typescript'
 
 		" Better highglight
 		Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
@@ -56,7 +64,8 @@ call plug#begin("~/.vim/plugged")
 		" Plug 'junegunn/fzf.vim'
 		Plug 'airblade/vim-rooter'
 	
-		Plug 'vim-airline/vim-airline'
+		" Plug 'vim-airline/vim-airline'
+		Plug 'glepnir/galaxyline.nvim'
 
 		" File Explorer
 		Plug 'kyazdani42/nvim-tree.lua'
