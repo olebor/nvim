@@ -83,18 +83,15 @@ let g:which_key_map.b = {
       \ '?' : ['Buffers'                , 'fzf-buffer'],
       \ }
 
-
 " m is for mark
+" I'd rather use regular marks but they never clear
 let g:which_key_map.m = {
-      \ 'name' : '+mark' ,
-      \ 'c' : [':CocCommand bookmark.clearForCurrentFile', 'clear file'],
-      \ 'C' : [':CocCommand bookmark.clearForAllFiles', 'clear project'],
-      \ 'j' : [':CocCommand bookmark.next', 'next bookmark'],
-      \ 'k' : [':CocCommand bookmark.prev', 'prev bookmark'],
-      \ 't' : [':CocCommand bookmark.toggle', 'toggle bookmark'],
-      \ }
-      " CoC throws an error
-      " \ 'a' : [':CocCommand bookmark.annotate', 'annotate bookmark'],
+\ 'name': '+mark',
+    \ 't' : [':BookmarkToggle'   , 'toggle'],
+    \ 'j' : [':BookmarkNext'   , 'next mark'],
+    \ 'k' : [':BookmarkPrev'   , 'prev mark']
+    \ }
+
 
 " F is for fold
 let g:which_key_map.F = {

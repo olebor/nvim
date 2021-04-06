@@ -20,12 +20,8 @@ call plug#begin("~/.vim/plugged")
 		Plug 'kyazdani42/nvim-web-devicons'
 		Plug 'ryanoasis/vim-devicons'
 
-		" Easymotion
-		Plug 'easymotion/vim-easymotion'
-
 		" Auto pairs for '(' '[' '{'
 		Plug 'jiangmiao/auto-pairs'
-
 
 		" LSP
 		Plug 'neovim/nvim-lspconfig'
@@ -34,19 +30,16 @@ call plug#begin("~/.vim/plugged")
 		Plug 'kosayoda/nvim-lightbulb'
 		Plug 'kabouzeid/nvim-lspinstall'
 
-		" Language Tools 
+		" Autocomplete
 		Plug 'hrsh7th/nvim-compe'
 		Plug 'hrsh7th/vim-vsnip'
 
-		" TypeScript Highlighting
-		" Plug 'leafgarland/typescript-vim'
-		" Plug 'peitalin/vim-jsx-typescript'
-
-		" Better highglight
+		" Treesitter
 		Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+		Plug 'p00f/nvim-ts-rainbow'
 
 		" Better Syntax Support
-		" Plug 'sheerun/vim-polyglot'
+		Plug 'sheerun/vim-polyglot'
 
 		" Bar with icons and stuff
 		" Plug 'romgrk/barbar.nvim'
@@ -59,9 +52,6 @@ call plug#begin("~/.vim/plugged")
 		Plug 'nvim-telescope/telescope-media-files.nvim'
 
 		" File Search
-		" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-		" Plug 'yuki-yano/fzf-preview.vim', { 'branch': 'release/remote', 'do': ':UpdateRemotePlugins' }
-		" Plug 'junegunn/fzf.vim'
 		Plug 'airblade/vim-rooter'
 	
 		" Plug 'vim-airline/vim-airline'
@@ -89,19 +79,22 @@ call plug#begin("~/.vim/plugged")
 		Plug 'liuchengxu/vim-which-key'
 
 		" Git
+		"Plug 'nvim-lua/plenary.nvim'
+		" Plug 'lewis6991/gitsigns.nvim'
+
 		Plug 'airblade/vim-gitgutter'
 		Plug 'tpope/vim-fugitive'
 		" Plug 'tpope/vim-rhubarb'
 		Plug 'junegunn/gv.vim'
-		Plug 'rhysd/git-messenger.vim'
+		" Plug 'rhysd/git-messenger.vim'
 		Plug 'APZelos/blamer.nvim'
-		Plug 'TimUntersberger/neogit'
+		" Plug 'TimUntersberger/neogit'
+
+		" General stuff
+		Plug 'MattesGroeger/vim-bookmarks'
 
 		" Terminal
 		Plug 'voldikss/vim-floaterm'
-
-		" Rainbow
-		Plug 'junegunn/rainbow_parentheses.vim'
 	endif
 call plug#end()
 

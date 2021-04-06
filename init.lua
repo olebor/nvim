@@ -28,6 +28,8 @@ else
 	vim.cmd('source $HOME/.config/nvim/plug-config/start-screen.vim')
 	require('nv-bufferline')
 	require('nv-galaxyline')
+	-- require('nv-gitsigns')
+
 	-- LSP
 	require('lsp')
 	require('lsp.bash-ls')
@@ -47,7 +49,7 @@ else
 	-- vim.cmd('source $HOME/.config/nvim/plug-config/coc/coc-extensions.vim')
 	vim.cmd('source $HOME/.config/nvim/plug-config/terraform.vim')
 	vim.cmd('source $HOME/.config/nvim/plug-config/nerdcommenter.vim')
-	vim.cmd('source $HOME/.config/nvim/plug-config/rainbow.vim')
+	-- vim.cmd('source $HOME/.config/nvim/plug-config/rainbow.vim')
 
 	-- " File Management
 	-- vim.cmd('source $HOME/.config/nvim/plug-config/fzf.vim')
