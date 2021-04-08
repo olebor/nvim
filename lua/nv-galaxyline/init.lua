@@ -13,9 +13,10 @@ local colors = {
 	light_green = '#B5CEA8',
 	string_orange = '#CE9178',
 	orange = '#FF8800',
-	purple = '#C586C0',
+	purple = '#7e57c2',
 	magenta = '#D16D9E',
 	grey = '#858585',
+	dark_blue = '#283593',
 	blue = '#569CD6',
 	vivid_blue = '#4FC1FF',
 	light_blue = '#9CDCFE',
@@ -124,7 +125,7 @@ gls.left[8] = {
 		provider = 'FileIcon',
 		condition = condition.buffer_not_empty,
 		separator = ' ',
-		separator_highlight = {colors.bg, colors.blue},
+		separator_highlight = {colors.bg, colors.dark_blue},
 		highlight = {require('galaxyline.provider_fileinfo').get_file_icon_color, colors.bg}
 	}
 }
@@ -134,8 +135,8 @@ gls.left[9] = {
 		provider = fileInfoProvider.get_current_file_path,
 		condition = condition.buffer_not_empty,
 		separator = ' ',
-		separator_highlight = {colors.blue, colors.purple},
-		highlight = {'NONE', colors.blue}
+		separator_highlight = {colors.dark_blue, colors.purple},
+		highlight = {'NONE', colors.dark_blue}
 	}
 }
 
