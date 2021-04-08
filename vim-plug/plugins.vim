@@ -15,6 +15,7 @@ call plug#begin("~/.vim/plugged")
 		" Plug 'morhetz/gruvbox'
 		Plug 'tomasr/molokai'
 		Plug 'erichain/vim-monokai-pro'
+		Plug 'norcalli/nvim-colorizer.lua'
 
 		" Cool Icons
 		Plug 'kyazdani42/nvim-web-devicons'
