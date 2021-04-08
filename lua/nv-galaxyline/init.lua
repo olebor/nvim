@@ -1,4 +1,7 @@
 local gl = require('galaxyline')
+
+local fileInfoProvider = require('nv-galaxyline/provider-fileinfo')
+
 -- get my theme in galaxyline repo
 -- local colors = require('galaxyline.theme').default
 local colors = {
@@ -20,6 +23,7 @@ local colors = {
 	error_red = '#F44747',
 	info_yellow = '#FFCC66'
 }
+
 local condition = require('galaxyline.condition')
 local gls = gl.section
 gl.short_line_list = {'NvimTree', 'vista', 'dbui', 'packer'}
@@ -51,9 +55,9 @@ gls.left[1] = {
 				t = colors.blue
 			}
 			vim.api.nvim_command('hi GalaxyViMode guifg=' .. mode_color[vim.fn.mode()])
-			return '▊ '
+			return '▊ ' .. vim.fn.mode():upper() .. ' '
 		end,
-		highlight = {colors.red, colors.bg}
+		highlight = {colors.red, colors.bg, 'bold'}
 	}
 }
 print(vim.fn.getbufvar(0, 'ts'))
@@ -103,6 +107,45 @@ gls.left[6] = {
 		condition = condition.hide_in_width,
 		icon = '  ',
 		highlight = {colors.red, colors.bg}
+	}
+}
+
+gls.left[7] = {
+	SpacerElement = {
+		provider = function()
+			return '  '
+		end,
+		highlight = {colors.bg, colors.bg}
+	}
+}
+
+gls.left[8] = {
+	FileIcon = {
+		provider = 'FileIcon',
+		condition = condition.buffer_not_empty,
+		separator = ' ',
+		separator_highlight = {colors.bg, colors.blue},
+		highlight = {require('galaxyline.provider_fileinfo').get_file_icon_color, colors.bg}
+	}
+}
+
+gls.left[9] = {
+	FileName = {
+		provider = fileInfoProvider.get_current_file_path,
+		condition = condition.buffer_not_empty,
+		separator = ' ',
+		separator_highlight = {colors.blue, colors.purple},
+		highlight = {'NONE', colors.blue, 'bold'}
+	}
+}
+
+gls.left[10] = {
+	FileSize = {
+		provider = 'FileSize',
+		condition = condition.buffer_not_empty,
+		separator = ' ',
+		highlight = {'NONE', colors.purple},
+		separator_highlight = {colors.purple, colors.bg}
 	}
 }
 
