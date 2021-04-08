@@ -135,7 +135,7 @@ gls.left[9] = {
 		condition = condition.buffer_not_empty,
 		separator = ' ',
 		separator_highlight = {colors.blue, colors.purple},
-		highlight = {'NONE', colors.blue, 'bold'}
+		highlight = {'NONE', colors.blue}
 	}
 }
 
