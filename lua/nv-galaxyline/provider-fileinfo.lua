@@ -9,7 +9,7 @@ end
 
 -- get current file name
 function M.get_current_file_path(modified_icon, readonly_icon)
-	local file = vim.fn.expand('%%:t')
+	local file = vim.fn.expand('%:t')
 	if vim.fn.empty(file) == 1 then return '' end
 	if string.len(file_readonly(readonly_icon)) ~= 0 then return file .. file_readonly(readonly_icon) end
 	local icon = modified_icon or ''
