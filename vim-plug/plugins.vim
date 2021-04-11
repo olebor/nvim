@@ -93,6 +93,7 @@ call plug#begin("~/.vim/plugged")
 
 		" General stuff
 		Plug 'MattesGroeger/vim-bookmarks'
+		Plug 'unblevable/quick-scope'
 
 		" Terminal
 		Plug 'voldikss/vim-floaterm'
