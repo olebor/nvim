@@ -18,7 +18,7 @@ vim.o.termguicolors = true -- set term giu colors most terminals support this
 vim.o.t_Co = "256" -- Support 256 colors
 vim.o.conceallevel = 0 -- So that I can see `` in markdown files
 -- vim.cmd('set ts=4') -- Insert 2 spaces for a tab
-vim.cmd('set sw=4') -- Change the number of space characters inserted for indentation
+-- vim.cmd('set sw=4') -- Change the number of space characters inserted for indentation
 -- vim.bo.expandtab = true -- Converts tabs to spaces
 vim.bo.smartindent = true -- Makes indenting smart
 vim.wo.number = true -- set numbered lines
@@ -33,9 +33,11 @@ vim.o.updatetime = 300 -- Faster completion
 vim.o.clipboard = "unnamedplus" -- Copy paste between vim and everything else
 
 
-vim.cmd('set list') -- Enable whitespace characters
+-- vim.cmd('set list') -- Enable whitespace characters
 -- "set listchars=tab:>-,trail:~,extends:>,precedes:<,space:·
--- set listchars=tab:\|\ ,trail:~,extends:>,precedes:<,space:·
+vim.o.tabstop = 4
+vim.o.list = true
+vim.o.listchars = "tab:| ,trail:~,extends:>,precedes:<,space:·"
 
 -- Stuff from old config file
 -- vim.cmd('set ruler') -- Show the cursor position all the time
