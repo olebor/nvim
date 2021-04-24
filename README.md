@@ -1,12 +1,8 @@
 # Neovim Config
 
-Heavily inspired by https://github.com/ChristianChiarulli/nvim
+Heavily inspired by [LunarVim](https://github.com/ChristianChiarulli/LunarVim), but stripped a bit to fit my needs.
 
-## Clone this repo into your config
-
-```
-git clone https://github.com/olebor/nvim.git
-```
+This config is still work in progress. Requires Neovim 0.5.
 
 ## Install Neovim
 
@@ -16,25 +12,6 @@ git clone https://github.com/olebor/nvim.git
   # Using Brew
   brew install --HEAD neovim # Nightly version
   brew upgrade neovim --fetch-HEAD # Sometimes you need to update
-
-  # Install from Nightly GitHub
-  curl -L https://github.com/neovim/neovim/releases/download/nightly/nvim-macos.tar.gz --output nvim-macos.tar.gz
-  rm -rf ~/.dev/nvim-osx64
-  tar xvvf nvim-macos.tar.gz -C ~/.dev/
-  ```
-
-- Ubuntu
-
-  ```
-  sudo add-apt-repository ppa:neovim-ppa/unstable
-  sudo apt-get update
-  sudo apt-get install neovim
-  ```
-
-- Arch
-
-  ```
-  yay -S neovim-git # Latest
   ```
 
 - Linux Appimage
@@ -46,48 +23,13 @@ git clone https://github.com/olebor/nvim.git
 
 ## Other useful stuff
 
-### NodeJS
+- NodeJS
+  - `npm install -g neovim prettier eslint_d`
+- Treesitter
 
-- Ubuntu
-
-  ```
-  # https://github.com/nodesource/distributions/blob/master/README.md
-  curl -fsSL https://deb.nodesource.com/setup_14.x | sudo -E bash -
-  sudo apt-get install -y nodejs
-  ```
-
-### Treesitter
-
-- Mac
-
-  ```
-  brew install treesitter
-  ```
-
-## FZF and Search
-
-https://www.chrisatmachine.com/Neovim/08-fzf/
-
-- Mac
-
-```
-brew install fzf
-$(brew --prefix)/opt/fzf/install
-brew install ripgrep
-brew install --HEAD universal-ctags/universal-ctags/universal-ctags
-brew install the_silver_searcher
-brew install fd
-
-```
-
-- Ubuntu
-
-```
-sudo apt install fzf ripgrep universal-ctags silversearcher-ag fd-find
-
-```
 
 ### Change key repeat delay
+I think default key repeat and initial delay is way too long.
 
 - Mac
 
