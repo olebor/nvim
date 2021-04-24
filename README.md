@@ -5,7 +5,7 @@ Heavily inspired by https://github.com/ChristianChiarulli/nvim
 ## Clone this repo into your config
 
 ```
-git clone git@gitlab.com:olebor/nvim.git ~/.config/nvim
+git clone https://github.com/olebor/nvim.git
 ```
 
 ## Install Neovim
