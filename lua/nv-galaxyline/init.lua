@@ -38,6 +38,7 @@ gls.left[1] = {
 				i = colors.green,
 				v = colors.purple,
 				[''] = colors.purple,
+				[''] = colors.blue,
 				V = colors.purple,
 				c = colors.magenta,
 				no = colors.blue,
