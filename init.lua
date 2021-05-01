@@ -36,6 +36,7 @@ require('lsp.vim-ls')
 require('lsp.graphql-ls')
 require('lsp.docker-ls')
 require('lsp.html-ls')
+require('lsp.terraform-ls')
 require('lsp.efm-general-ls')
 
 -- " Language Tools
