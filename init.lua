@@ -9,6 +9,8 @@ require('nv-globals')
 require('keymappings')
 require('nv-compe')
 
+vim.cmd('source $HOME/.config/nvim/vimscript/foldconfig.vim')
+
 -- Theme Stuff
 -- " source $HOME/.config/nvim/themes/dracula.vim
 -- " source $HOME/.config/nvim/themes/gruvbox.vim
