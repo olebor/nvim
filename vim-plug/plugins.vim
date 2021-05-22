@@ -54,6 +54,7 @@ call plug#begin("~/.vim/plugged")
 
 		" File Search
 		Plug 'airblade/vim-rooter'
+		Plug 'dyng/ctrlsf.vim'
 	
 		" Plug 'vim-airline/vim-airline'
 		Plug 'glepnir/galaxyline.nvim'

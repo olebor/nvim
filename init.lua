@@ -43,16 +43,13 @@ require('lsp.terraform-ls')
 require('lsp.efm-general-ls')
 
 -- " Language Tools
--- vim.cmd('source $HOME/.config/nvim/plug-config/coc/coc.vim')
--- vim.cmd('source $HOME/.config/nvim/plug-config/coc/coc-extensions.vim')
 vim.cmd('source $HOME/.config/nvim/plug-config/terraform.vim')
 vim.cmd('source $HOME/.config/nvim/plug-config/nerdcommenter.vim')
--- vim.cmd('source $HOME/.config/nvim/plug-config/rainbow.vim')
 
 -- " File Management
--- vim.cmd('source $HOME/.config/nvim/plug-config/fzf.vim')
 vim.cmd('source $HOME/.config/nvim/plug-config/gitgutter.vim')
 vim.cmd('source $HOME/.config/nvim/plug-config/vim-rooter.vim')
+vim.cmd('source $HOME/.config/nvim/plug-config/ctrlsf.vim')
 require('nv-nvimtree')
 require('nv-telescope')
 require('nv-treesitter')

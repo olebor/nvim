@@ -92,6 +92,16 @@ let g:which_key_map.m = {
     \ 'k' : [':BookmarkPrev'   , 'prev mark']
     \ }
 
+" f is for finds
+let g:which_key_map.f = {
+    \ 'name': '+find',
+    \ 't' : [':CtrlSFToggle'             , 'Toggle Search Panel'],
+    \ 'f' : ['<Plug>CtrlSFPrompt'        , 'Find in files'],
+    \ 'F' : ['<Plug>CtrlSFCwordPath'     , 'Find string under cursor'],
+    \ 'w' : ['<Plug>CtrlSFCCwordPath'    , 'Find word under cursor'],
+    \ 'v' : ['<Plug>CtrlSFVwordExec'     , 'Search selected string immediately'],
+    \ 'V' : ['<Plug>CtrlSFVwordPath'     , 'Search selected string'],
+    \ }
 
 " F is for fold
 let g:which_key_map.F = {
