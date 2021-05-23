@@ -10,11 +10,12 @@ call plug#begin("~/.vim/plugged")
 		" Section for VSCode Plugins
 	else
 		" Theme and visuals
-		" Plug 'dracula/vim'
-		Plug 'phanviet/vim-monokai-pro'
-		" Plug 'morhetz/gruvbox'
 		Plug 'tomasr/molokai'
-		Plug 'erichain/vim-monokai-pro'
+		Plug 'crusoexia/vim-monokai'
+		Plug 'patstockwell/vim-monokai-tasty'
+		Plug 'phanviet/vim-monokai-pro'
+		Plug 'dracula/vim'
+		Plug 'morhetz/gruvbox'
 		Plug 'norcalli/nvim-colorizer.lua'
 
 		" Cool Icons

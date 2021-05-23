@@ -83,6 +83,19 @@ let g:which_key_map.b = {
       \ '?' : ['Buffers'                , 'fzf-buffer'],
       \ }
 
+" C for color themes
+let g:which_key_map.C = {
+\ 'name': '+Color Schemes',
+    \ '1' : [':colorscheme molokai'           , 'Molokai'],
+    \ '2' : [':colorscheme vim-monokai-tasty' , 'Monokai Tasty'],
+    \ '3' : [':colorscheme monokai'           , 'Monokai'],
+    \ '4' : [':colorscheme monokai_pro'       , 'Monokai Pro'],
+    \ '5' : [':colorscheme dracula'           , 'Dracula'],
+    \ '6' : [':colorscheme gruvbox'           , 'Gruvbox'],
+    \ 'd' : [':hi Normal guibg=#1B1D1E'      , 'Dark BG'],
+    \ 'b' : [':hi Normal guibg=#000000'      , 'Black BG'],
+    \ }
+
 " m is for mark
 " I'd rather use regular marks but they never clear
 let g:which_key_map.m = {
