@@ -3,6 +3,7 @@
 let g:ctrlsf_winsize = '35%'
 let g:ctrlsf_search_mode = 'async'
 
+" let g:ctrlsf_backend = 'rg'
 " let g:ctrlsf_default_view_mode = 'compact'
 " let g:ctrlsf_regex_pattern = 1
 
