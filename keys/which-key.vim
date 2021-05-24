@@ -92,8 +92,8 @@ let g:which_key_map.C = {
     \ '4' : [':colorscheme monokai_pro'       , 'Monokai Pro'],
     \ '5' : [':colorscheme dracula'           , 'Dracula'],
     \ '6' : [':colorscheme gruvbox'           , 'Gruvbox'],
-    \ 'd' : [':hi Normal guibg=#1B1D1E'      , 'Dark BG'],
-    \ 'b' : [':hi Normal guibg=#000000'      , 'Black BG'],
+    \ 'd' : [':call ThemeSetDarkBackground()' , 'Dark BG'],
+    \ 'b' : [':call ThemeSetBlackBackground()', 'Black BG'],
     \ }
 
 " m is for mark

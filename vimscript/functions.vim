@@ -25,6 +25,27 @@ command! PreviewHunk lua require 'nv-utils'.preview_hunk()
 command! BlameLine lua require 'nv-utils'.blame_line()
 command! W noa w
 
+
+" Background color
+function ThemeSetBlackBackground ()
+  hi Normal          guibg=black
+  hi CursorLine      guibg=#282828
+  hi CursorColumn    guibg=#282828
+  hi NonText         guibg=none guifg=#404040
+  hi LineNr          guibg=black
+  hi SignColumn      guibg=black
+:endfunction
+
+" Molokai dark background
+function ThemeSetDarkBackground ()
+  hi Normal          guibg=#1B1D1E
+  hi CursorLine      guibg=#293739
+  hi CursorColumn    guibg=#293739
+  hi NonText         guibg=none guifg=#404040
+  hi LineNr          guibg=#232526
+  hi SignColumn      guibg=#232526
+:endfunction
+
 " Debugging
 " command! DebugToggleBreakpoint lua require'dap'.toggle_breakpoint()
 " command! DebugStart lua require'dap'.continue()
