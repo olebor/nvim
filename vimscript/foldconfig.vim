@@ -11,7 +11,7 @@ augroup filetype_js_ts
   autocmd!
   autocmd FileType javascript,typescript :set foldmethod=expr
   autocmd FileType javascript,typescript :set foldexpr=nvim_treesitter#foldexpr()
-  autocmd FileType javascript,typescript :set foldnestmax=1
+  autocmd FileType javascript,typescript :set foldnestmax=2
 augroup END
 
 
