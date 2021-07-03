@@ -13,6 +13,7 @@ require'compe'.setup {
 	max_kind_width = 100,
 	max_menu_width = 100,
 	documentation = true,
+	spell = false,
 
 	source = {
 		path = {kind = "  "},
