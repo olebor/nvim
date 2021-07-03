@@ -35,6 +35,7 @@ call plug#begin("~/.vim/plugged")
 		" Autocomplete
 		Plug 'hrsh7th/nvim-compe'
 		Plug 'hrsh7th/vim-vsnip'
+		Plug 'rafamadriz/friendly-snippets'
 
 		" Treesitter
 		Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
@@ -62,6 +63,9 @@ call plug#begin("~/.vim/plugged")
 
 		" File Explorer
 		Plug 'kyazdani42/nvim-tree.lua'
+
+		" Navigation
+		Plug 'phaazon/hop.nvim'
 		
 		" Smooth scroll
 		Plug 'psliwka/vim-smoothie'
