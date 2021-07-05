@@ -31,6 +31,7 @@ call plug#begin("~/.vim/plugged")
 		Plug 'onsails/lspkind-nvim'
 		Plug 'kosayoda/nvim-lightbulb'
 		Plug 'kabouzeid/nvim-lspinstall'
+		Plug 'simrat39/symbols-outline.nvim'
 
 		" Autocomplete
 		Plug 'hrsh7th/nvim-compe'
