@@ -23,7 +23,7 @@ require'compe'.setup {
 		nvim_lsp = {kind = "  "},
 		-- nvim_lua = {kind = "  "},
 		nvim_lua = false,
-		spell = {kind = "  "},
+		-- spell = {kind = "  "},
 		tags = false,
 		-- snippets_nvim = {kind = "  "},
 		-- ultisnips = {kind = "  "},
