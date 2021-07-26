@@ -33,14 +33,15 @@ autocmd  FileType which_key set laststatus=0 noshowmode noruler
 
 " Single mappings
 let g:which_key_map['7'] = [ '<plug>NERDCommenterInvert'                       , 'comment' ]
-let g:which_key_map['.'] = [ ':e $MYVIMRC'                                     , 'open init' ]
+" let g:which_key_map['.'] = [ ':e $MYVIMRC'                                     , 'open init' ]
+let g:which_key_map['.'] = [ ':HopWord'                                     , 'open init' ]
 let g:which_key_map['='] = [ '<C-W>='                                          , 'balance windows' ]
 let g:which_key_map['e'] = [ ':NvimTreeToggle'                                 , 'explorer' ]
 let g:which_key_map['?'] = [ ':NvimTreeFindFile'                               , 'find current file' ]
 let g:which_key_map['h'] = [ '<C-W>s'                                          , 'split below']
 let g:which_key_map['n'] = [ ':let @/ = ""'                                    , 'no highlight' ]
-let g:which_key_map['p'] = [ ':Telescope git_files'                            , 'git_files']
-let g:which_key_map['P'] = [ ':Telescope find_files'                           , 'search files' ]
+let g:which_key_map['p'] = [ ':Telescope git_files'                            , 'Search Git Files']
+let g:which_key_map['P'] = [ ':Telescope find_files'                           , 'Search Files' ]
 let g:which_key_map['w'] = [ ':Bwipeout'                                       , 'Wipe buffer' ]
 let g:which_key_map['v'] = [ '<C-W>v'                                          , 'split right']
 
@@ -170,7 +171,6 @@ let g:which_key_map.s = {
       \ 'z' : [':Telescope current_buffer_fuzzy_find'   , 'Find in current buffer'],
       \ }
 
-
 " g is for git
 let g:which_key_map.g = {
       \ 'name' : '+git' ,
@@ -212,7 +212,7 @@ let g:which_key_map.l = {
       \ 'v' : [':LspVirtualTextToggle'               , 'lsp toggle virtual text'],
       \ 'l' : [':Lspsaga lsp_finder'                 , 'lsp finder'],
       \ 'L' : [':Lspsaga show_line_diagnostics'      , 'line_diagnostics'],
-      \ 'o' : [':Vista!!'                            , 'outline'],
+      \ 'o' : [':SymbolsOutline'                     , 'outline'],
       \ 'p' : [':Lspsaga preview_definition'         , 'preview definition'],
       \ 'q' : [':Telescope quickfix'                 , 'quickfix'],
       \ 'r' : [':Lspsaga rename'                     , 'rename'],

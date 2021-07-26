@@ -24,8 +24,9 @@ call plug#begin("~/.vim/plugged")
 
 		" Auto pairs for '(' '[' '{'
 		Plug 'jiangmiao/auto-pairs'
+		" TODO: try https://github.com/windwp/nvim-autopairs
 
-		" LSP
+		" LSP and Language
 		Plug 'neovim/nvim-lspconfig'
 		Plug 'glepnir/lspsaga.nvim'
 		Plug 'onsails/lspkind-nvim'
@@ -65,9 +66,6 @@ call plug#begin("~/.vim/plugged")
 		" File Explorer
 		Plug 'kyazdani42/nvim-tree.lua'
 
-		" Navigation
-		Plug 'phaazon/hop.nvim'
-		
 		" Smooth scroll
 		Plug 'psliwka/vim-smoothie'
 		
@@ -98,9 +96,10 @@ call plug#begin("~/.vim/plugged")
 		Plug 'APZelos/blamer.nvim'
 		" Plug 'TimUntersberger/neogit'
 
-		" General stuff
+		" Navigation
 		Plug 'MattesGroeger/vim-bookmarks'
 		Plug 'unblevable/quick-scope'
+		Plug 'phaazon/hop.nvim'
 
 		" Terminal
 		Plug 'voldikss/vim-floaterm'
