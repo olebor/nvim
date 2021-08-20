@@ -37,6 +37,9 @@ vim.api.nvim_set_keymap('n', '<S-TAB>', ':bprevious<CR>', {noremap = true, silen
 vim.api.nvim_set_keymap('x', 'K', ':move \'<-2<CR>gv-gv', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('x', 'J', ':move \'>+1<CR>gv-gv', {noremap = true, silent = true})
 
+-- Hop
+-- vim.api.nvim_set_keymap('n', 'g', ':HopWord <Enter>', {silent = true})
+
 -- TODO Below
 -- " Better nav for omnicomplete
 -- inoremap <expr> <c-j> ("\<C-n>")
