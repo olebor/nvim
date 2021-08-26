@@ -22,7 +22,7 @@ vim.o.backup = false -- This is recommended by coc
 vim.o.writebackup = false -- This is recommended by coc
 vim.wo.signcolumn = "yes" -- Always show the signcolumn, otherwise it would shift the text each time
 vim.o.updatetime = 300 -- Faster completion
-vim.o.clipboard = "unnamedplus" -- Copy paste between vim and everything else
+vim.o.clipboard = "unnamedplus" -- Copy paste between vim and everything else (Require xclip on linux)
 
 vim.o.tabstop = 4
 vim.o.list = true
