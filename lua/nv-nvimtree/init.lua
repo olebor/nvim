@@ -1,6 +1,4 @@
 -- vim.cmd [[packadd nvim-tree.lua]]
-vim.g.nvim_tree_side = "left"
-vim.g.nvim_tree_width = 40
 vim.g.nvim_tree_ignore = {".git", "node_modules", ".cache"}
 vim.g.nvim_tree_auto_open = 0
 vim.g.nvim_tree_auto_close = 1
@@ -26,8 +24,10 @@ local get_lua_cb = function(cb_name)
 	return string.format(":lua require'nvim-tree'.on_keypress('%s')<CR>", cb_name)
 end
 
+
 local tree_cb = require'nvim-tree.config'.nvim_tree_callback
-vim.g.nvim_tree_bindings = {
+
+local l_keybindings = {
 	{ key = {"<CR>", "o", "<2-LeftMouse>", "l"}, cb = tree_cb("edit") },
 	{ key = {"<2-RightMouse>", "<C-]>"},    cb = tree_cb("cd") },
 	{ key = "<C-v>",                        cb = tree_cb("vsplit") },
@@ -61,6 +61,18 @@ vim.g.nvim_tree_bindings = {
 	{ key = "g?",                           cb = tree_cb("toggle_help") },
 }
 
+local config = {
+	auto_close = true,
+	hijack_cursor = true,
+	view = {
+		width = 40,
+		mappings = {
+			custom_only = true,
+			list = l_keybindings
+		}
+	}
+}
+
 
 -- tree folder name , icon color
 -- cmd("hi NvimTreeFolderIcon guifg = #61afef")
@@ -69,8 +81,12 @@ vim.g.nvim_tree_bindings = {
 -- cmd("hi CustomExplorerBg guibg=#242830")
 
 vim.api.nvim_exec([[
-augroup NvimTree 
+augroup NvimTree
   au!
   au FileType NvimTree setlocal winhighlight=Normal:CustomExplorerBg
  augroup END
  ]], false)
+
+
+
+require'nvim-tree'.setup(config)
