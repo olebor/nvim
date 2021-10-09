@@ -49,7 +49,7 @@ vim.cmd('source $HOME/.config/nvim/plug-config/terraform.vim')
 vim.cmd('source $HOME/.config/nvim/plug-config/nerdcommenter.vim')
 
 -- " File Management
-vim.cmd('source $HOME/.config/nvim/plug-config/gitgutter.vim')
+require('core/gitsigns')
 vim.cmd('source $HOME/.config/nvim/plug-config/vim-rooter.vim')
 vim.cmd('source $HOME/.config/nvim/plug-config/ctrlsf.vim')
 require('nv-nvimtree')

@@ -49,9 +49,11 @@ call plug#begin("~/.vim/plugged")
 		" Bar with icons and stuff
 		Plug 'akinsho/nvim-bufferline.lua'
 
+		" Needed by gitsigns + telescope
+		Plug 'nvim-lua/plenary.nvim'
+
 		" Telescope
 		Plug 'nvim-lua/popup.nvim'
-		Plug 'nvim-lua/plenary.nvim'
 		Plug 'nvim-telescope/telescope.nvim'
 		Plug 'nvim-telescope/telescope-media-files.nvim'
 
@@ -84,16 +86,12 @@ call plug#begin("~/.vim/plugged")
 		Plug 'liuchengxu/vim-which-key'
 
 		" Git
-		"Plug 'nvim-lua/plenary.nvim'
-		" Plug 'lewis6991/gitsigns.nvim'
+		Plug 'lewis6991/gitsigns.nvim'
 
-		Plug 'airblade/vim-gitgutter'
 		Plug 'tpope/vim-fugitive'
 		" Plug 'tpope/vim-rhubarb'
 		Plug 'junegunn/gv.vim'
-		" Plug 'rhysd/git-messenger.vim'
 		Plug 'APZelos/blamer.nvim'
-		" Plug 'TimUntersberger/neogit'
 
 		" Navigation
 		Plug 'MattesGroeger/vim-bookmarks'
