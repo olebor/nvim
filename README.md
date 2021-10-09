@@ -37,3 +37,24 @@ I think default key repeat and initial delay is way too long.
 defaults write -g InitialKeyRepeat -int 10 # normal minimum is 15 (225 ms)
 defaults write -g KeyRepeat -int 1 # normal minimum is 2 (30 ms)
 ```
+
+# Language and Formatters
+
+## Lua
+
+** Language Server **
+(https://github.com/sumneko/lua-language-server/wiki/Build-and-Run-(Standalone))
+(https://github.com/Koihik/LuaFormatter)
+
+```
+yay -S lua-language-server
+
+```
+
+** Formatter **
+
+```
+sudo pacman -S cmake
+sudo pacman -S luarocks
+sudo luarocks install --server=https://luarocks.org/dev luaformatter
+```

@@ -1,4 +1,5 @@
 " https://github.com/dyng/ctrlsf.vim
+" Requires ripgrep -> pacman -S ripgrep
 
 let g:ctrlsf_winsize = '35%'
 let g:ctrlsf_search_mode = 'async'
