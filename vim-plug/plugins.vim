@@ -47,7 +47,6 @@ call plug#begin("~/.vim/plugged")
 		Plug 'sheerun/vim-polyglot'
 
 		" Bar with icons and stuff
-		" Plug 'romgrk/barbar.nvim'
 		Plug 'akinsho/nvim-bufferline.lua'
 
 		" Telescope
