@@ -139,7 +139,6 @@ function M.setup()
 	local nvimtreeSetup = {
 		auto_close = true,
 		hijack_cursor = true,
-		lsp_diagnostics = true,
 		update_focused_file = {
 			enable = true,
 			update_cwd = true
@@ -149,6 +148,15 @@ function M.setup()
 			mappings = {
 				custom_only = true,
 				list = l_keybindings
+			}
+		},
+		diagnostics = {
+			enable = false,
+			icons = {
+				hint = "",
+				info = "",
+				warning = "",
+				error = ""
 			}
 		}
 	}
