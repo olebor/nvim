@@ -1,9 +1,11 @@
 return {
+	-- LuaFormatter off
 	-- Packer can manage itself as an optional plugin
 	{"wbthomason/packer.nvim"},
 
 	{"nvim-lua/plenary.nvim"},
 
+	-- LuaFormatter on
 	-- NvimTree
 	{
 		"kyazdani42/nvim-tree.lua",
@@ -15,4 +17,5 @@ return {
 		end,
 		disable = false
 	}
+
 }

@@ -17,7 +17,9 @@ function plugin_loader:init(opts)
 	end
 
 	local packer_ok, packer = pcall(require, "packer")
-	if not packer_ok then return end
+	if not packer_ok then
+		return
+	end
 
 	packer.init {
 		package_root = package_root,
@@ -39,18 +41,26 @@ function plugin_loader:init(opts)
 end
 
 function plugin_loader:cache_clear()
-	if vim.fn.delete(compile_path) == 0 then Log:debug "deleted packer_compiled.lua" end
+	if vim.fn.delete(compile_path) == 0 then
+		Log:debug "deleted packer_compiled.lua"
+	end
 end
 
 function plugin_loader:cache_reset()
 	self.cache_clear()
 	require("packer").compile()
-	if utils.is_file(compile_path) then Log:debug "generated packer_compiled.lua" end
+	if utils.is_file(compile_path) then
+		Log:debug "generated packer_compiled.lua"
+	end
 end
 
 function plugin_loader:load(configurations)
 	return self.packer.startup(function(use)
-		for _, plugins in ipairs(configurations) do for _, plugin in ipairs(plugins) do use(plugin) end end
+		for _, plugins in ipairs(configurations) do
+			for _, plugin in ipairs(plugins) do
+				use(plugin)
+			end
+		end
 
 	end)
 end
