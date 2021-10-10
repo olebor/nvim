@@ -18,16 +18,12 @@ call plug#begin("~/.vim/plugged")
 		Plug 'morhetz/gruvbox'
 		Plug 'norcalli/nvim-colorizer.lua'
 
-		" Cool Icons
-		Plug 'kyazdani42/nvim-web-devicons'
-		Plug 'ryanoasis/vim-devicons'
-
 		" Auto pairs for '(' '[' '{'
 		Plug 'jiangmiao/auto-pairs'
 		" TODO: try https://github.com/windwp/nvim-autopairs
 
 		" LSP and Language
-		Plug 'neovim/nvim-lspconfig'
+		" Plug 'neovim/nvim-lspconfig'
 		Plug 'glepnir/lspsaga.nvim'
 		Plug 'onsails/lspkind-nvim'
 		Plug 'kosayoda/nvim-lightbulb'
@@ -50,10 +46,9 @@ call plug#begin("~/.vim/plugged")
 		Plug 'akinsho/nvim-bufferline.lua'
 
 		" Needed by gitsigns + telescope
-		Plug 'nvim-lua/plenary.nvim'
+		" Plug 'nvim-lua/plenary.nvim'
 
 		" Telescope
-		Plug 'nvim-lua/popup.nvim'
 		Plug 'nvim-telescope/telescope.nvim'
 		Plug 'nvim-telescope/telescope-media-files.nvim'
 
@@ -65,7 +60,7 @@ call plug#begin("~/.vim/plugged")
 		Plug 'glepnir/galaxyline.nvim'
 
 		" File Explorer
-		Plug 'kyazdani42/nvim-tree.lua'
+		" Plug 'kyazdani42/nvim-tree.lua'
 
 		" Smooth scroll
 		Plug 'psliwka/vim-smoothie'
@@ -78,9 +73,6 @@ call plug#begin("~/.vim/plugged")
 
 		" Comment Block
 		Plug 'preservim/nerdcommenter'
-
-		" Start Screen
-		Plug 'mhinz/vim-startify'
 
 		" See what keys do like in emacs
 		Plug 'liuchengxu/vim-which-key'

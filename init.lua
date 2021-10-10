@@ -1,8 +1,11 @@
 -- vim.cmd('set rtp+=~/.config/nvcode')
+
+
+require("bootstrap"):init()
+
 local plugins = require "plugins"
 require("plugin-loader"):init()
 require("plugin-loader"):load { plugins }
--- require("plugin-loader"):cache_reset()
 
 local Log = require "core.log"
 Log:debug "Starting NerdVim"
@@ -29,10 +32,8 @@ require('nv-colorizer')
 -- " General Stuff
 vim.cmd('source $HOME/.config/nvim/keys/which-key.vim')
 vim.cmd('source ~/.config/nvim/vimscript/functions.vim')
-vim.cmd('source $HOME/.config/nvim/plug-config/start-screen.vim')
 require('nv-bufferline')
 require('nv-galaxyline')
--- require('nv-gitsigns')
 
 -- LSP
 require('lsp')
