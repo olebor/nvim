@@ -2,16 +2,19 @@
 
 Heavily inspired by [LunarVim](https://github.com/ChristianChiarulli/LunarVim), but stripped a bit to fit my needs.
 
-This config is still work in progress. Requires Neovim 0.5.
+# Init
+  ```
+:PackerCompile
+  ```
 
 ## Install Neovim
 
 - Mac
 
   ```
-  # Using Brew
-  brew install --HEAD neovim # Nightly version
-  brew upgrade neovim --fetch-HEAD # Sometimes you need to update
+  # using brew
+  brew install --head neovim # nightly version
+  brew upgrade neovim --fetch-head # sometimes you need to update
   ```
 
 - Linux Appimage

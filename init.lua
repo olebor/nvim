@@ -1,4 +1,12 @@
 -- vim.cmd('set rtp+=~/.config/nvcode')
+local plugins = require "plugins"
+require("plugin-loader"):init()
+require("plugin-loader"):load { plugins }
+-- require("plugin-loader"):cache_reset()
+
+local Log = require "core.log"
+Log:debug "Starting NerdVim"
+
 vim.cmd('let $NVIM_TUI_ENABLE_TRUE_COLOR=1')
 vim.cmd('source $HOME/.config/nvim/plug-config/polyglot.vim')
 
@@ -52,7 +60,7 @@ vim.cmd('source $HOME/.config/nvim/plug-config/nerdcommenter.vim')
 require('core/gitsigns')
 vim.cmd('source $HOME/.config/nvim/plug-config/vim-rooter.vim')
 vim.cmd('source $HOME/.config/nvim/plug-config/ctrlsf.vim')
-require('nv-nvimtree')
+-- require('core.nvimtree')
 require('nv-telescope')
 require('nv-treesitter')
 
