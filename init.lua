@@ -69,7 +69,7 @@ require('nv-treesitter')
 vim.cmd('source $HOME/.config/nvim/plug-config/terminal.vim')
 vim.cmd('source $HOME/.config/nvim/plug-config/blamer.vim')
 require('nv-quickscope')
-require('nv-hop')
+require('nv-hop').config()
 require('nv-vsnip')
 
 -- " TODO: Sjekk hva som er bra med denne
