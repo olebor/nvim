@@ -13,6 +13,9 @@ return {
 	-- Icons
 	{ "kyazdani42/nvim-web-devicons" },
 
+	-- Vim Surround
+	{ "tpope/vim-surround" },
+
 	-- LuaFormatter on
 	-- NvimTree
 	{
