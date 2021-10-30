@@ -40,17 +40,7 @@ call plug#begin("~/.vim/plugged")
 		Plug 'airblade/vim-rooter'
 		Plug 'dyng/ctrlsf.vim'
 	
-		" Plug 'vim-airline/vim-airline'
 		Plug 'glepnir/galaxyline.nvim'
-
-		" File Explorer
-		" Plug 'kyazdani42/nvim-tree.lua'
-
-		" Smooth scroll
-		Plug 'psliwka/vim-smoothie'
-		
-		" Intuitive buffer closing
-		Plug 'moll/vim-bbye'
 
 		" Terraform
 		Plug 'hashivim/vim-terraform'

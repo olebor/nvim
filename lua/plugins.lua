@@ -24,6 +24,13 @@ return {
 
 	-- Vim Surround
 	{ "tpope/vim-surround" },
+	
+
+	-- Smooth scroll
+	{ "psliwka/vim-smoothie" },
+
+	-- Intuitive buffer close
+	{ "moll/vim-bbye" },
 
 	-- LuaFormatter on
 		{
