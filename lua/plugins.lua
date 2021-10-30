@@ -4,6 +4,15 @@ return {
 	{"wbthomason/packer.nvim"},
 	{ "neovim/nvim-lspconfig" },
 
+	-- Theme and visuals
+	{ 'tomasr/molokai' },
+	{ 'crusoexia/vim-monokai' },
+	{ 'patstockwell/vim-monokai-tasty' },
+	{ 'phanviet/vim-monokai-pro' },
+	{ 'dracula/vim' },
+	{ 'morhetz/gruvbox' },
+	{ 'norcalli/nvim-colorizer.lua' },
+
 	-- For telescope etc
 	{ "nvim-lua/popup.nvim" },
 
@@ -17,21 +26,36 @@ return {
 	{ "tpope/vim-surround" },
 
 	-- LuaFormatter on
-	-- NvimTree
-	{
-		"kyazdani42/nvim-tree.lua",
-		-- event = "BufWinOpen",
-		-- cmd = "NvimTreeToggle",
-		-- commit = "fd7f60e242205ea9efc9649101c81a07d5f458bb",
-		config = function()
-			require("core.nvimtree").setup()
-		end
-	}, {
-		-- Dashboard
-		'glepnir/dashboard-nvim',
-		event = "BufWinEnter",
-		config = function()
-			require("core.dashboard").setup()
-		end
-	}
+		{
+			-- Autopairs
+			"windwp/nvim-autopairs",
+			config = function()
+				require("core.autopairs").setup()
+			end
+		}, -- {
+		-- Treesitter
+		-- "nvim-treesitter/nvim-treesitter",
+		-- branch = "0.5-compat",
+		-- run = ":TSUpdate",
+		-- config = function()
+		-- require("core.treesitter").setup()
+		-- end
+		-- },
+		{
+			-- NvimTree
+			"kyazdani42/nvim-tree.lua",
+			-- event = "BufWinOpen",
+			-- cmd = "NvimTreeToggle",
+			-- commit = "fd7f60e242205ea9efc9649101c81a07d5f458bb",
+			config = function()
+				require("core.nvimtree").setup()
+			end
+		}, -- Dashboard
+		{
+			'glepnir/dashboard-nvim',
+			event = "BufWinEnter",
+			config = function()
+				require("core.dashboard").setup()
+			end
+		}
 }

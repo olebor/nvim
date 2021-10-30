@@ -10,16 +10,16 @@ call plug#begin("~/.vim/plugged")
 		" Section for VSCode Plugins
 	else
 		" Theme and visuals
-		Plug 'tomasr/molokai'
-		Plug 'crusoexia/vim-monokai'
-		Plug 'patstockwell/vim-monokai-tasty'
-		Plug 'phanviet/vim-monokai-pro'
-		Plug 'dracula/vim'
-		Plug 'morhetz/gruvbox'
-		Plug 'norcalli/nvim-colorizer.lua'
+		" Plug 'tomasr/molokai'
+		" Plug 'crusoexia/vim-monokai'
+		" Plug 'patstockwell/vim-monokai-tasty'
+		" Plug 'phanviet/vim-monokai-pro'
+		" Plug 'dracula/vim'
+		" Plug 'morhetz/gruvbox'
+		" Plug 'norcalli/nvim-colorizer.lua'
 
 		" Auto pairs for '(' '[' '{'
-		Plug 'jiangmiao/auto-pairs'
+		" Plug 'jiangmiao/auto-pairs'
 		" TODO: try https://github.com/windwp/nvim-autopairs
 
 		" LSP and Language
