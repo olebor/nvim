@@ -11,7 +11,7 @@ local Log = require "core.log"
 Log:debug "Starting NerdVim"
 
 vim.cmd('let $NVIM_TUI_ENABLE_TRUE_COLOR=1')
-vim.cmd('source $HOME/.config/nvim/plug-config/polyglot.vim')
+-- vim.cmd('source $HOME/.config/nvim/plug-config/polyglot.vim')
 
 -- General
 vim.cmd('source $HOME/.config/nvim/vim-plug/plugins.vim')

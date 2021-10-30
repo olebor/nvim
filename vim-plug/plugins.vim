@@ -9,19 +9,6 @@ call plug#begin("~/.vim/plugged")
 	if exists('g:vscode')
 		" Section for VSCode Plugins
 	else
-		" Theme and visuals
-		" Plug 'tomasr/molokai'
-		" Plug 'crusoexia/vim-monokai'
-		" Plug 'patstockwell/vim-monokai-tasty'
-		" Plug 'phanviet/vim-monokai-pro'
-		" Plug 'dracula/vim'
-		" Plug 'morhetz/gruvbox'
-		" Plug 'norcalli/nvim-colorizer.lua'
-
-		" Auto pairs for '(' '[' '{'
-		" Plug 'jiangmiao/auto-pairs'
-		" TODO: try https://github.com/windwp/nvim-autopairs
-
 		" LSP and Language
 		" Plug 'neovim/nvim-lspconfig'
 		Plug 'glepnir/lspsaga.nvim'
@@ -38,9 +25,6 @@ call plug#begin("~/.vim/plugged")
 		" Treesitter
 		Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 		Plug 'p00f/nvim-ts-rainbow'
-
-		" Better Syntax Support
-		Plug 'sheerun/vim-polyglot'
 
 		" Bar with icons and stuff
 		Plug 'akinsho/nvim-bufferline.lua'
