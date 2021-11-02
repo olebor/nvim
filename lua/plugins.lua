@@ -33,6 +33,28 @@ return {
 	{ "moll/vim-bbye" },
 
 	-- LuaFormatter on
+	--
+  -- Install nvim-cmp, and buffer source as a dependency
+  {
+    "hrsh7th/nvim-cmp",
+    config = function()
+      -- require("core.cmp").setup()
+    end,
+    requires = {
+      -- "L3MON4D3/LuaSnip",
+      -- "saadparwaiz1/cmp_luasnip",
+      "hrsh7th/cmp-buffer",
+      "hrsh7th/cmp-nvim-lsp",
+      "hrsh7th/cmp-path",
+      "hrsh7th/cmp-nvim-lua",
+    },
+    run = function()
+      -- cmp's config requires cmp to be installed to run the first time
+      -- if not lvim.builtin.cmp then
+        -- require("core.cmp").config()
+      -- end
+    end,
+  },
 		{
 			-- Autopairs
 			"windwp/nvim-autopairs",

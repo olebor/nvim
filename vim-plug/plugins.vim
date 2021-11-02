@@ -18,9 +18,8 @@ call plug#begin("~/.vim/plugged")
 		Plug 'simrat39/symbols-outline.nvim'
 
 		" Autocomplete
-		Plug 'hrsh7th/nvim-compe'
-		Plug 'hrsh7th/vim-vsnip'
-		Plug 'rafamadriz/friendly-snippets'
+		" Plug 'hrsh7th/nvim-compe'
+		" Plug 'hrsh7th/vim-vsnip'
 
 		" Treesitter
 		Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update

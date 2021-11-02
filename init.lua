@@ -1,6 +1,6 @@
 -- vim.cmd('set rtp+=~/.config/nvcode')
 
-
+require('config.defaults')
 require("bootstrap"):init()
 
 local plugins = require "plugins"
@@ -17,7 +17,7 @@ vim.cmd('source $HOME/.config/nvim/vim-plug/plugins.vim')
 require('settings')
 require('nv-globals')
 require('keymappings')
-require('nv-compe')
+-- require('nv-compe')
 
 vim.cmd('source $HOME/.config/nvim/vimscript/foldconfig.vim')
 
@@ -69,7 +69,7 @@ vim.cmd('source $HOME/.config/nvim/plug-config/terminal.vim')
 vim.cmd('source $HOME/.config/nvim/plug-config/blamer.vim')
 require('nv-quickscope')
 require('nv-hop').config()
-require('nv-vsnip')
+-- require('nv-vsnip')
 
 -- " TODO: Sjekk hva som er bra med denne
 vim.cmd('source $HOME/.config/nvim/plug-config/floaterm.vim')
