@@ -54,9 +54,7 @@ call plug#begin("~/.vim/plugged")
 		Plug 'lewis6991/gitsigns.nvim'
 
 		Plug 'tpope/vim-fugitive'
-		" Plug 'tpope/vim-rhubarb'
 		Plug 'junegunn/gv.vim'
-		Plug 'APZelos/blamer.nvim'
 
 		" Navigation
 		Plug 'MattesGroeger/vim-bookmarks'

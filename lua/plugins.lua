@@ -19,6 +19,14 @@ return {
 	-- For logger + gitsigns + telescope
 	{"nvim-lua/plenary.nvim"},
 
+	-- Git Blamer (like GitLens)
+	{
+		"APZelos/blamer.nvim",
+		config = function()
+			require('blamer')
+		end
+	},
+
 	-- Icons
 	{ "kyazdani42/nvim-web-devicons" },
 
