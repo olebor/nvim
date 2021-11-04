@@ -17,13 +17,8 @@ call plug#begin("~/.vim/plugged")
 		Plug 'kabouzeid/nvim-lspinstall'
 		Plug 'simrat39/symbols-outline.nvim'
 
-		" Autocomplete
-		" Plug 'hrsh7th/nvim-compe'
-		" Plug 'hrsh7th/vim-vsnip'
-
 		" Treesitter
 		Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
-		Plug 'p00f/nvim-ts-rainbow'
 
 		" Bar with icons and stuff
 		Plug 'akinsho/nvim-bufferline.lua'

@@ -12,6 +12,7 @@ return {
 	{ 'dracula/vim' },
 	{ 'morhetz/gruvbox' },
 	{ 'norcalli/nvim-colorizer.lua' },
+	{ 'p00f/nvim-ts-rainbow' },
 
 	-- For telescope etc
 	{ "nvim-lua/popup.nvim" },
@@ -63,7 +64,7 @@ return {
 	},
 
 	-- LuaFormatter on
-	--
+		--
 		{
 			-- Autopairs
 			"windwp/nvim-autopairs",
