@@ -12,7 +12,21 @@ return {
 	{ 'dracula/vim' },
 	{ 'morhetz/gruvbox' },
 	{ 'norcalli/nvim-colorizer.lua' },
+
+	-- Rainbow brackets
 	{ 'p00f/nvim-ts-rainbow' },
+
+	-- Icons
+	{ "kyazdani42/nvim-web-devicons" },
+
+	-- Vim Surround
+	{ "tpope/vim-surround" },
+
+	-- Smooth scroll
+	{ "psliwka/vim-smoothie" },
+
+	-- Intuitive buffer close
+	{ "moll/vim-bbye" },
 
 	-- For telescope etc
 	{ "nvim-lua/popup.nvim" },
@@ -28,17 +42,13 @@ return {
 		end
 	},
 
-	-- Icons
-	{ "kyazdani42/nvim-web-devicons" },
+	{
+		'MattesGroeger/vim-bookmarks',
+		config = function ()
+			require('bookmark')
+		end
+	},
 
-	-- Vim Surround
-	{ "tpope/vim-surround" },
-
-	-- Smooth scroll
-	{ "psliwka/vim-smoothie" },
-
-	-- Intuitive buffer close
-	{ "moll/vim-bbye" },
 
 	-- Install nvim-cmp, and buffer source as a dependency
 	{
