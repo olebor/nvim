@@ -54,7 +54,7 @@ call plug#begin("~/.vim/plugged")
 		" Navigation
 		Plug 'MattesGroeger/vim-bookmarks'
 		Plug 'unblevable/quick-scope'
-		Plug 'phaazon/hop.nvim'
+		" Plug 'phaazon/hop.nvim'
 
 		" Terminal
 		Plug 'voldikss/vim-floaterm'

@@ -32,7 +32,16 @@ return {
 	{ "nvim-lua/popup.nvim" },
 
 	-- For logger + gitsigns + telescope
-	{"nvim-lua/plenary.nvim"},
+	{ "nvim-lua/plenary.nvim" },
+
+	-- Navigation
+	{
+		'phaazon/hop.nvim',
+		config = function()
+			require('core.hop').config()
+			require('hop').setup()
+		end
+	},
 
 	-- Git Blamer (like GitLens)
 	{
@@ -48,7 +57,6 @@ return {
 			require('bookmark')
 		end
 	},
-
 
 	-- Install nvim-cmp, and buffer source as a dependency
 	{

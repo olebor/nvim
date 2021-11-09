@@ -67,7 +67,6 @@ require('nv-treesitter')
 --  " Misc
 vim.cmd('source $HOME/.config/nvim/plug-config/terminal.vim')
 require('nv-quickscope')
-require('nv-hop').config()
 
 -- " TODO: Sjekk hva som er bra med denne
 vim.cmd('source $HOME/.config/nvim/plug-config/floaterm.vim')
