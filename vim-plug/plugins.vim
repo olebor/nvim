@@ -20,9 +20,6 @@ call plug#begin("~/.vim/plugged")
 		" Treesitter
 		Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 
-		" Bar with icons and stuff
-		Plug 'akinsho/nvim-bufferline.lua'
-
 		" Needed by gitsigns + telescope
 		" Plug 'nvim-lua/plenary.nvim'
 

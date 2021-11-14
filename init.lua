@@ -31,7 +31,7 @@ require('nv-colorizer')
 -- " General Stuff
 vim.cmd('source $HOME/.config/nvim/keys/which-key.vim')
 vim.cmd('source ~/.config/nvim/vimscript/functions.vim')
-require('nv-bufferline')
+-- require('nv-bufferline')
 require('nv-galaxyline')
 
 -- LSP

@@ -13,6 +13,15 @@ return {
 	{ 'morhetz/gruvbox' },
 	{ 'norcalli/nvim-colorizer.lua' },
 
+	-- Bufferline (file/buffer line at the top)
+	{
+
+		'akinsho/nvim-bufferline.lua',
+		config = function()
+			require('core.bufferline').config()
+		end
+	},
+
 	-- Rainbow brackets
 	{ 'p00f/nvim-ts-rainbow' },
 
