@@ -51,6 +51,14 @@ return {
 		end
 	},
 
+	-- Nerd Commenter
+	{
+		'preservim/nerdcommenter',
+		config = function()
+			require('core.nerdcommenter').config()
+		end
+	},
+
 	-- Git Blamer (like GitLens)
 	{
 		"APZelos/blamer.nvim",

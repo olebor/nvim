@@ -38,9 +38,6 @@ call plug#begin("~/.vim/plugged")
 		" Terraform
 		Plug 'hashivim/vim-terraform'
 
-		" Comment Block
-		Plug 'preservim/nerdcommenter'
-
 		" See what keys do like in emacs
 		Plug 'liuchengxu/vim-which-key'
 

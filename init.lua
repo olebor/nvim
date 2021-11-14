@@ -54,7 +54,6 @@ require('nv-symbols-outline')
 
 -- " Language Tools
 vim.cmd('source $HOME/.config/nvim/plug-config/terraform.vim')
-vim.cmd('source $HOME/.config/nvim/plug-config/nerdcommenter.vim')
 
 -- " File Management
 require('core/gitsigns')
