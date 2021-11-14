@@ -59,7 +59,7 @@ vim.cmd('source $HOME/.config/nvim/plug-config/nerdcommenter.vim')
 -- " File Management
 require('core/gitsigns')
 vim.cmd('source $HOME/.config/nvim/plug-config/vim-rooter.vim')
-vim.cmd('source $HOME/.config/nvim/plug-config/ctrlsf.vim')
+
 -- require('core.nvimtree')
 require('nv-telescope')
 require('nv-treesitter')

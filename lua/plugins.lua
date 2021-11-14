@@ -43,6 +43,14 @@ return {
 		end
 	},
 
+	-- File Search
+	{
+		'dyng/ctrlsf.vim',
+		config = function()
+			require('core.ctrlsf').config()
+		end
+	},
+
 	-- Git Blamer (like GitLens)
 	{
 		"APZelos/blamer.nvim",
