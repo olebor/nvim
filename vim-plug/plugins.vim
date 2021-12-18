@@ -17,9 +17,6 @@ call plug#begin("~/.vim/plugged")
 		Plug 'kabouzeid/nvim-lspinstall'
 		Plug 'simrat39/symbols-outline.nvim'
 
-		" Treesitter
-		Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
-
 		" Needed by gitsigns + telescope
 		" Plug 'nvim-lua/plenary.nvim'
 

@@ -61,7 +61,6 @@ vim.cmd('source $HOME/.config/nvim/plug-config/vim-rooter.vim')
 
 -- require('core.nvimtree')
 require('nv-telescope')
-require('nv-treesitter')
 
 --  " Misc
 vim.cmd('source $HOME/.config/nvim/plug-config/terminal.vim')
