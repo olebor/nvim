@@ -18,7 +18,6 @@ return {
 	{ 'phanviet/vim-monokai-pro' },
 	{ 'dracula/vim' },
 	{ 'morhetz/gruvbox' },
-	{ 'norcalli/nvim-colorizer.lua' },
 
 	-- Bufferline (file/buffer line at the top)
 	{

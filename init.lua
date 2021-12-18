@@ -26,7 +26,6 @@ vim.cmd('source $HOME/.config/nvim/vimscript/foldconfig.vim')
 -- " source $HOME/.config/nvim/themes/gruvbox.vim
 -- vim.cmd('source $HOME/.config/nvim/themes/monokai_pro.vim')
 vim.cmd('source $HOME/.config/nvim/themes/molokai.vim')
-require('nv-colorizer')
 
 -- " General Stuff
 vim.cmd('source $HOME/.config/nvim/keys/which-key.vim')
