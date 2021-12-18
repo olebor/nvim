@@ -3,8 +3,6 @@ local M = {}
 function M.setup()
 
 	vim.g.nvim_tree_ignore = {".git", "node_modules", ".cache"}
-	vim.g.nvim_tree_auto_open = 0
-	vim.g.nvim_tree_auto_close = 1
 	vim.g.nvim_tree_quit_on_open = 0
 	vim.g.nvim_tree_follow = 1
 	vim.g.nvim_tree_indent_markers = 1
@@ -160,13 +158,6 @@ function M.setup()
 			}
 		}
 	}
-
-	vim.api.nvim_exec([[
-augroup NvimTree
-  au!
-  au FileType NvimTree setlocal winhighlight=Normal:CustomExplorerBg
- augroup END
- ]], false)
 
 	require'nvim-tree'.setup(nvimtreeSetup)
 end
