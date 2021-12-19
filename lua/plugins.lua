@@ -100,7 +100,7 @@ return {
 	{
 		"MattesGroeger/vim-bookmarks",
 		config = function()
-			require("bookmark")
+			require("nv.core.bookmarks").config()
 		end,
 	},
 
