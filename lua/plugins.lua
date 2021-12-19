@@ -6,33 +6,32 @@
 -- disable : boolean > disable plugin
 
 return {
-	-- LuaFormatter off
 	-- Packer can manage itself as an optional plugin
-	{"wbthomason/packer.nvim"},
+	{ "wbthomason/packer.nvim" },
 
 	-- LSP
 	{ "neovim/nvim-lspconfig" },
 	{ "williamboman/nvim-lsp-installer" },
 	{ "tamago324/nlsp-settings.nvim" },
 	{ "jose-elias-alvarez/null-ls.nvim" },
+	{ "tami5/lspsaga.nvim" }, -- Not sure if we want it?
 
 	-- Theme and visuals
-	{ 'tomasr/molokai' },
-	{ 'crusoexia/vim-monokai' },
-	{ 'patstockwell/vim-monokai-tasty' },
-	{ 'phanviet/vim-monokai-pro' },
-	{ 'dracula/vim' },
-	{ 'morhetz/gruvbox' },
+	{ "tomasr/molokai" },
+	{ "crusoexia/vim-monokai" },
+	{ "patstockwell/vim-monokai-tasty" },
+	{ "phanviet/vim-monokai-pro" },
+	{ "dracula/vim" },
+	{ "morhetz/gruvbox" },
 
 	-- Bufferline (file/buffer line at the top)
 	{
 
-		'akinsho/nvim-bufferline.lua',
+		"akinsho/nvim-bufferline.lua",
 		config = function()
-			require('core.bufferline').config()
-		end
+			require("core.bufferline").config()
+		end,
 	},
-
 
 	-- Icons
 	{ "kyazdani42/nvim-web-devicons" },
@@ -54,42 +53,42 @@ return {
 
 	-- Navigation
 	{
-		'phaazon/hop.nvim',
+		"phaazon/hop.nvim",
 		config = function()
-			require('core.hop').config()
-			require('hop').setup()
-		end
+			require("core.hop").config()
+			require("hop").setup()
+		end,
 	},
 
 	-- File Search
 	{
-		'dyng/ctrlsf.vim',
+		"dyng/ctrlsf.vim",
 		config = function()
-			require('core.ctrlsf').config()
-		end
+			require("core.ctrlsf").config()
+		end,
 	},
 
 	-- Nerd Commenter
 	{
-		'preservim/nerdcommenter',
+		"preservim/nerdcommenter",
 		config = function()
-			require('core.nerdcommenter').config()
-		end
+			require("core.nerdcommenter").config()
+		end,
 	},
 
 	-- Git Blamer (like GitLens)
 	{
 		"APZelos/blamer.nvim",
 		config = function()
-			require('blamer')
-		end
+			require("blamer")
+		end,
 	},
 
 	{
-		'MattesGroeger/vim-bookmarks',
-		config = function ()
-			require('bookmark')
-		end
+		"MattesGroeger/vim-bookmarks",
+		config = function()
+			require("bookmark")
+		end,
 	},
 
 	-- Install nvim-cmp, and buffer source as a dependency
@@ -108,10 +107,10 @@ return {
 			"hrsh7th/cmp-nvim-lua",
 		},
 		run = function()
-		  -- cmp's config requires cmp to be installed to run the first time
-		  if not lvim.builtin.cmp then
-			require("core.cmp").config()
-		  end
+			-- cmp's config requires cmp to be installed to run the first time
+			if not lvim.builtin.cmp then
+				require("core.cmp").config()
+			end
 		end,
 	},
 	{
@@ -119,7 +118,7 @@ return {
 		"windwp/nvim-autopairs",
 		config = function()
 			require("core.autopairs").setup()
-		end
+		end,
 	},
 	{
 		-- Treesitter
@@ -131,7 +130,7 @@ return {
 	},
 
 	-- Rainbow brackets (Requires treesitter)
-	{ 'p00f/nvim-ts-rainbow' },
+	{ "p00f/nvim-ts-rainbow" },
 
 	{
 		-- NvimTree
@@ -141,13 +140,13 @@ return {
 		-- commit = "fd7f60e242205ea9efc9649101c81a07d5f458bb",
 		config = function()
 			require("core.nvimtree").setup()
-		end
+		end,
 	}, -- Dashboard
 	{
-		'glepnir/dashboard-nvim',
+		"glepnir/dashboard-nvim",
 		event = "BufWinEnter",
 		config = function()
 			require("core.dashboard").setup()
-		end
-	}
+		end,
+	},
 }

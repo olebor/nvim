@@ -10,11 +10,9 @@ call plug#begin("~/.vim/plugged")
 		" Section for VSCode Plugins
 	else
 		" LSP and Language
-		" Plug 'neovim/nvim-lspconfig'
-		Plug 'glepnir/lspsaga.nvim'
 		Plug 'onsails/lspkind-nvim'
 		Plug 'kosayoda/nvim-lightbulb'
-		Plug 'kabouzeid/nvim-lspinstall'
+		" Plug 'kabouzeid/nvim-lspinstall'
 		Plug 'simrat39/symbols-outline.nvim'
 
 		" Needed by gitsigns + telescope

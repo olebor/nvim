@@ -33,20 +33,6 @@ vim.cmd('source ~/.config/nvim/vimscript/functions.vim')
 -- require('nv-bufferline')
 require('nv-galaxyline')
 
--- require('lsp.bash-ls')
--- require('lsp.css-ls')
--- require('lsp.go-ls')
--- require('lsp.lua-ls')
--- require('lsp.js-ts-ls')
--- require('lsp.json-ls')
--- require('lsp.yaml-ls')
--- require('lsp.vim-ls')
--- require('lsp.graphql-ls')
--- require('lsp.docker-ls')
--- require('lsp.html-ls')
--- require('lsp.terraform-ls')
--- require('lsp.efm-general-ls')
-
 require('nv-symbols-outline')
 
 -- " Language Tools
