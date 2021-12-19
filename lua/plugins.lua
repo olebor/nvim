@@ -160,7 +160,6 @@ return {
 	},
 
 	-- TODO: Move and make config-pattern for these
-	{ "onsails/lspkind-nvim" },
 
 	{ "kosayoda/nvim-lightbulb" },
 	{ "simrat39/symbols-outline.nvim" },
