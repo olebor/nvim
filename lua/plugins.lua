@@ -93,7 +93,7 @@ return {
 	{
 		"APZelos/blamer.nvim",
 		config = function()
-			require("blamer")
+			require("nv.core.blamer").config()
 		end,
 	},
 
