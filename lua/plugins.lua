@@ -29,7 +29,7 @@ return {
 
 		"akinsho/nvim-bufferline.lua",
 		config = function()
-			require("core.bufferline").config()
+			require("nv.core.bufferline").config()
 		end,
 	},
 
@@ -51,11 +51,24 @@ return {
 	-- For logger + gitsigns + telescope
 	{ "nvim-lua/plenary.nvim" },
 
+	-- Git stuff
+	{
+		"lewis6991/gitsigns.nvim",
+		requires = {
+			"nvim-lua/plenary.nvim",
+		},
+		config = function()
+			require("nv.core.gitsigns")
+		end,
+	},
+	{ "tpope/vim-fugitive" },
+	{ "junegunn/gv.vim" },
+
 	-- Navigation
 	{
 		"phaazon/hop.nvim",
 		config = function()
-			require("core.hop").config()
+			require("nv.core.hop").config()
 			require("hop").setup()
 		end,
 	},
@@ -64,7 +77,7 @@ return {
 	{
 		"dyng/ctrlsf.vim",
 		config = function()
-			require("core.ctrlsf").config()
+			require("nv.core.ctrlsf").config()
 		end,
 	},
 
@@ -72,7 +85,7 @@ return {
 	{
 		"preservim/nerdcommenter",
 		config = function()
-			require("core.nerdcommenter").config()
+			require("nv.core.nerdcommenter").config()
 		end,
 	},
 
@@ -95,8 +108,8 @@ return {
 	{
 		"hrsh7th/nvim-cmp",
 		config = function()
-			require("core.vsnip").setup()
-			require("core.cmp").setup()
+			require("nv.core.vsnip").setup()
+			require("nv.core.cmp").setup()
 		end,
 		requires = {
 			"hrsh7th/cmp-vsnip",
@@ -109,7 +122,7 @@ return {
 		run = function()
 			-- cmp's config requires cmp to be installed to run the first time
 			if not lvim.builtin.cmp then
-				require("core.cmp").config()
+				require("nv.core.cmp").config()
 			end
 		end,
 	},
@@ -117,7 +130,7 @@ return {
 		-- Autopairs
 		"windwp/nvim-autopairs",
 		config = function()
-			require("core.autopairs").setup()
+			require("nv.core.autopairs").setup()
 		end,
 	},
 	{
@@ -125,7 +138,7 @@ return {
 		"nvim-treesitter/nvim-treesitter",
 		run = ":TSUpdate",
 		config = function()
-			require("core.treesitter").setup()
+			require("nv.core.treesitter").setup()
 		end,
 	},
 
@@ -135,18 +148,15 @@ return {
 	{
 		-- NvimTree
 		"kyazdani42/nvim-tree.lua",
-		-- event = "BufWinOpen",
-		-- cmd = "NvimTreeToggle",
-		-- commit = "fd7f60e242205ea9efc9649101c81a07d5f458bb",
 		config = function()
-			require("core.nvimtree").setup()
+			require("nv.core.nvimtree").setup()
 		end,
 	}, -- Dashboard
 	{
 		"glepnir/dashboard-nvim",
 		event = "BufWinEnter",
 		config = function()
-			require("core.dashboard").setup()
+			require("nv.core.dashboard").setup()
 		end,
 	},
 }

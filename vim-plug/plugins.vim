@@ -15,9 +15,6 @@ call plug#begin("~/.vim/plugged")
 		" Plug 'kabouzeid/nvim-lspinstall'
 		Plug 'simrat39/symbols-outline.nvim'
 
-		" Needed by gitsigns + telescope
-		" Plug 'nvim-lua/plenary.nvim'
-
 		" Telescope
 		Plug 'nvim-telescope/telescope.nvim'
 		Plug 'nvim-telescope/telescope-media-files.nvim'
@@ -33,11 +30,6 @@ call plug#begin("~/.vim/plugged")
 		" See what keys do like in emacs
 		Plug 'liuchengxu/vim-which-key'
 
-		" Git
-		Plug 'lewis6991/gitsigns.nvim'
-
-		Plug 'tpope/vim-fugitive'
-		Plug 'junegunn/gv.vim'
 
 		" Navigation
 		Plug 'MattesGroeger/vim-bookmarks'
