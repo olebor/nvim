@@ -13,7 +13,6 @@ Log:debug "Starting NerdVim"
 vim.cmd('let $NVIM_TUI_ENABLE_TRUE_COLOR=1')
 
 -- General
-vim.cmd('source $HOME/.config/nvim/vim-plug/plugins.vim')
 require('settings')
 require('keymappings')
 -- require('nv-compe')

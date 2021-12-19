@@ -159,4 +159,32 @@ return {
 			require("nv.core.dashboard").setup()
 		end,
 	},
+
+	-- TODO: Move and make config-pattern for these
+	{ "onsails/lspkind-nvim" },
+
+	{ "kosayoda/nvim-lightbulb" },
+	{ "simrat39/symbols-outline.nvim" },
+
+	-- " Telescope
+	{ "nvim-telescope/telescope.nvim" },
+	{ "nvim-telescope/telescope-media-files.nvim" },
+
+	-- " File Search
+	{ "airblade/vim-rooter" },
+
+	{ "glepnir/galaxyline.nvim" },
+
+	-- " Terraform
+	{ "hashivim/vim-terraform" },
+
+	-- " See what keys do like in emacs
+	{ "liuchengxu/vim-which-key" },
+
+	-- " Navigation
+	{ "MattesGroeger/vim-bookmarks" },
+	{ "unblevable/quick-scope" },
+
+	-- " Terminal
+	{ "voldikss/vim-floaterm" },
 }
