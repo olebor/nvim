@@ -69,7 +69,6 @@ return {
 		"phaazon/hop.nvim",
 		config = function()
 			require("nv.core.hop").config()
-			require("hop").setup()
 		end,
 	},
 
