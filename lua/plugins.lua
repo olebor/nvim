@@ -9,7 +9,12 @@ return {
 	-- LuaFormatter off
 	-- Packer can manage itself as an optional plugin
 	{"wbthomason/packer.nvim"},
+
+	-- LSP
 	{ "neovim/nvim-lspconfig" },
+	{ "williamboman/nvim-lsp-installer" },
+	{ "tamago324/nlsp-settings.nvim" },
+	{ "jose-elias-alvarez/null-ls.nvim" },
 
 	-- Theme and visuals
 	{ 'tomasr/molokai' },
