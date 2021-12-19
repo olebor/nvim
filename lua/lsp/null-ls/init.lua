@@ -23,7 +23,7 @@ function M:setup()
 
 			formatting.stylua,
 
-			-- Enable ESLint for diacostics
+			-- Enable ESLint for diagnostics
 			diagnostics.eslint,
 		},
 	})
