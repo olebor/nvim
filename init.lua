@@ -37,10 +37,8 @@ require('nv-symbols-outline')
 vim.cmd('source $HOME/.config/nvim/plug-config/terraform.vim')
 
 -- " File Management
--- require('core/gitsigns')
 vim.cmd('source $HOME/.config/nvim/plug-config/vim-rooter.vim')
 
--- require('core.nvimtree')
 require('nv-telescope')
 
 --  " Misc
@@ -51,4 +49,4 @@ require('nv-quickscope')
 vim.cmd('source $HOME/.config/nvim/plug-config/floaterm.vim')
 
 -- LSP
-require('lsp')
+require('nv.lsp')

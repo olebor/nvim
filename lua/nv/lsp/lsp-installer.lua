@@ -30,17 +30,17 @@ end
 lsp_installer.on_server_ready(function(server)
 	Log:debug("Server ready: " .. server.name)
 	local opts = {
-		on_attach = require("lsp.handlers").on_attach,
-		capabilities = require("lsp.handlers").capabilities,
+		on_attach = require("nv.lsp.handlers").on_attach,
+		capabilities = require("nv.lsp.handlers").capabilities,
 	}
 
 	if server.name == "jsonls" then
-		local jsonls_opts = require("lsp.providers.jsonls")
+		local jsonls_opts = require("nv.lsp.providers.jsonls")
 		opts = vim.tbl_deep_extend("force", jsonls_opts, opts)
 	end
 
 	if server.name == "sumneko_lua" then
-		local sumneko_opts = require("lsp.providers.sumneko_lua")
+		local sumneko_opts = require("nv.lsp.providers.sumneko_lua")
 		opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
 	end
 
