@@ -22,6 +22,7 @@ function M:setup()
 			formatting.eslint_d,
 
 			formatting.stylua,
+			formatting.terraform,
 
 			-- Enable ESLint for diagnostics
 			diagnostics.eslint,

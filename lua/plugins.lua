@@ -180,7 +180,6 @@ return {
 	{ "liuchengxu/vim-which-key" },
 
 	-- " Navigation
-	{ "MattesGroeger/vim-bookmarks" },
 	{ "unblevable/quick-scope" },
 
 	-- " Terminal
