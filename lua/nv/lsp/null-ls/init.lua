@@ -15,17 +15,18 @@ function M:setup()
 	local diagnostics = null_ls.builtins.diagnostics
 
 	null_ls.setup({
-		debug = false,
+		debug = true,
 		sources = {
+			-- Enable ESLint for diagnostics
+			diagnostics.eslint,
+
+			-- diagnostics.eslint_d,
 			-- Formatting js/ts with prettier + eslint
 			formatting.prettier,
 			formatting.eslint_d,
 
 			formatting.stylua,
 			formatting.terraform,
-
-			-- Enable ESLint for diagnostics
-			diagnostics.eslint,
 		},
 	})
 end
