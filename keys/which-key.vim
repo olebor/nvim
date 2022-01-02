@@ -82,6 +82,7 @@ let g:which_key_map.b = {
       \ 'n' : ['bnext'                  , 'next-buffer'],
       \ 'p' : ['bprevious'              , 'previous-buffer'],
       \ '?' : ['Buffers'                , 'fzf-buffer'],
+      \ 'c' : [':set cc=80'                , 'Highlight col 80'],
       \ }
 
 " C for color themes
