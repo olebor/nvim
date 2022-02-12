@@ -30,4 +30,4 @@ vim.o.shiftwidth = 4
 vim.o.list = true
 vim.o.listchars = "tab:| ,trail:~,extends:>,precedes:<,space:·"
 
-vim.o.relativenumber = true
+vim.o.relativenumber = false
