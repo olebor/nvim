@@ -171,7 +171,17 @@ return {
 	-- " File Search
 	{ "airblade/vim-rooter" },
 
-	{ "glepnir/galaxyline.nvim" },
+	-- Status Line
+	{
+
+		"nvim-lualine/lualine.nvim",
+		requires = {
+			"SmiteshP/nvim-gps",
+		},
+		config = function()
+			require("nv.core.lualine").config()
+		end,
+	},
 
 	-- " Terraform
 	{ "hashivim/vim-terraform" },
