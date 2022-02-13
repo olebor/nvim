@@ -187,7 +187,13 @@ return {
 	{ "hashivim/vim-terraform" },
 
 	-- " See what keys do like in emacs
-	{ "liuchengxu/vim-which-key" },
+	{
+		"folke/which-key.nvim",
+
+		config = function()
+			require("nv.core.whichkey").config()
+		end,
+	},
 
 	-- " Navigation
 	{ "unblevable/quick-scope" },
