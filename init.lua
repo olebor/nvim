@@ -42,11 +42,8 @@ vim.cmd('source $HOME/.config/nvim/plug-config/vim-rooter.vim')
 require('nv-telescope')
 
 --  " Misc
-vim.cmd('source $HOME/.config/nvim/plug-config/terminal.vim')
 require('nv-quickscope')
 
--- " TODO: Sjekk hva som er bra med denne
-vim.cmd('source $HOME/.config/nvim/plug-config/floaterm.vim')
 
 -- LSP
 require('nv.lsp')

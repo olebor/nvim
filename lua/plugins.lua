@@ -183,5 +183,10 @@ return {
 	{ "unblevable/quick-scope" },
 
 	-- " Terminal
-	{ "voldikss/vim-floaterm" },
+	{
+		"akinsho/toggleterm.nvim",
+		config = function()
+			require("nv.core.toggleterm").config()
+		end,
+	},
 }
