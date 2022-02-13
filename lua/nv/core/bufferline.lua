@@ -1,11 +1,10 @@
 local M = {}
 
 M.config = function()
-
 	vim.o.termguicolors = true
 
-	-- colors for active , inactive buffer tabs 
-	require"bufferline".setup {
+	-- colors for active , inactive buffer tabs
+	require("bufferline").setup({
 		options = {
 			buffer_close_icon = "",
 			modified_icon = "●",
@@ -18,44 +17,44 @@ M.config = function()
 			enforce_regular_tabs = true,
 			view = "multiwindow",
 			show_buffer_close_icons = true,
-			separator_style = "thin"
+			separator_style = "thin",
 		},
 		highlights = {
 			background = {
 				guifg = comment_fg,
-				guibg = "#282c34"
+				guibg = "#282c34",
 			},
 			fill = {
 				guifg = comment_fg,
-				guibg = "#282c34"
+				guibg = "#282c34",
 			},
 			buffer_selected = {
 				guifg = nomal_fg,
 				guibg = "#3A3E44",
-				gui = "bold"
+				gui = "bold",
 			},
 			separator_visible = {
 				guifg = "#282c34",
-				guibg = "#282c34"
+				guibg = "#282c34",
 			},
 			separator_selected = {
 				guifg = "#282c34",
-				guibg = "#282c34"
+				guibg = "#282c34",
 			},
 			separator = {
 				guifg = "#282c34",
-				guibg = "#282c34"
+				guibg = "#282c34",
 			},
 			indicator_selected = {
 				guifg = "#282c34",
-				guibg = "#282c34"
+				guibg = "#282c34",
 			},
 			modified_selected = {
 				guifg = string_fg,
-				guibg = "#3A3E44"
-			}
-		}
-	}
+				guibg = "#3A3E44",
+			},
+		},
+	})
 
 	vim.g.mapleader = " "
 end

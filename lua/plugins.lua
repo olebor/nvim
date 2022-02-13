@@ -9,6 +9,9 @@ return {
 	-- Packer can manage itself as an optional plugin
 	{ "wbthomason/packer.nvim" },
 
+	-- For logger + gitsigns + telescope
+	{ "nvim-lua/plenary.nvim" },
+
 	-- LSP
 	{ "neovim/nvim-lspconfig" },
 	{ "williamboman/nvim-lsp-installer" },
@@ -47,9 +50,6 @@ return {
 
 	-- For telescope etc
 	{ "nvim-lua/popup.nvim" },
-
-	-- For logger + gitsigns + telescope
-	{ "nvim-lua/plenary.nvim" },
 
 	-- Git stuff
 	{
