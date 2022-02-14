@@ -1,64 +1,78 @@
--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 --
--- Keymappings for non-VSCode
+-- Keymappings
 --
--------------------------------------------------------------------------------
--- Leader Remap
-vim.api.nvim_set_keymap('n', '<Space>', '<NOP>', {noremap = true, silent = true})
-vim.g.mapleader = ' '
+--------------------------------------------------------------------------------
 
--- better window movement
-vim.api.nvim_set_keymap('n', '<C-h>', '<C-w>h', {silent = true})
-vim.api.nvim_set_keymap('n', '<C-j>', '<C-w>j', {silent = true})
-vim.api.nvim_set_keymap('n', '<C-k>', '<C-w>k', {silent = true})
-vim.api.nvim_set_keymap('n', '<C-l>', '<C-w>l', {silent = true})
+-- Modes
+--   normal_mode = "n",
+--   insert_mode = "i",
+--   visual_mode = "v",
+--   visual_block_mode = "x",
+--   term_mode = "t",
+--   command_mode = "c",
+
+-- Shorten function name
+local keymap = vim.api.nvim_set_keymap
+local opts = { noremap = true, silent = true }
+
+-- Remap space as leader key
+keymap("", "<Space>", "<Nop>", opts)
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
+--------------------------------------------------------------------------------
+--
+-- Normal (n)
+--
+--------------------------------------------------------------------------------
+
+-- Better window navigation
+keymap("n", "<C-h>", "<C-w>h", opts)
+keymap("n", "<C-j>", "<C-w>j", opts)
+keymap("n", "<C-k>", "<C-w>k", opts)
+keymap("n", "<C-l>", "<C-w>l", opts)
+
+-- Resize with arrows
+keymap("n", "<A-Up>", ":resize -2<CR>", opts)
+keymap("n", "<A-Down>", ":resize +2<CR>", opts)
+keymap("n", "<A-Left>", ":vertical resize -2<CR>", opts)
+keymap("n", "<A-Right>", ":vertical resize +2<CR>", opts)
 
 -- Disable arrow keys in normal mode
-vim.api.nvim_set_keymap('n', '<up>', '<NOP>', {silent = true})
-vim.api.nvim_set_keymap('n', '<down>', '<NOP>', {silent = true})
-vim.api.nvim_set_keymap('n', '<left>', '<NOP>', {silent = true})
-vim.api.nvim_set_keymap('n', '<right>', '<NOP>', {silent = true})
+keymap("n", "<up>", "<NOP>", opts)
+keymap("n", "<down>", "<NOP>", opts)
+keymap("n", "<left>", "<NOP>", opts)
+keymap("n", "<right>", "<NOP>", opts)
 
--- Remap ESC
-vim.api.nvim_set_keymap('i', 'jj', '<ESC>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('i', 'jk', '<ESC>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('i', 'kj', '<ESC>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('i', '<C-c>', '<ESC>', {noremap = true, silent = true})
-
--- Better indenting
-vim.api.nvim_set_keymap('v', '<', '<gv', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('v', '>', '>gv', {noremap = true, silent = true})
+-- Move text up and down
+keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
+keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 
 -- Swich tabs
-vim.api.nvim_set_keymap('n', '<TAB>', ':bnext<CR>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<S-TAB>', ':bprevious<CR>', {noremap = true, silent = true})
+keymap("n", "<TAB>", ":bnext<CR>", opts)
+keymap("n", "<S-TAB>", ":bprevious<CR>", opts)
+
+--------------------------------------------------------------------------------
+--
+-- Insert (i)
+--
+--------------------------------------------------------------------------------
+
+-- Remap ESC
+keymap("i", "jj", "<ESC>", opts)
+keymap("i", "jk", "<ESC>", opts)
+
+--------------------------------------------------------------------------------
+--
+-- Visual (v,x)
+--
+--------------------------------------------------------------------------------
+
+-- Better indenting
+keymap("v", "<", "<gv", opts)
+keymap("v", ">", ">gv", opts)
 
 -- Move Selected Lines in Visual Mode
-vim.api.nvim_set_keymap('x', 'K', ':move \'<-2<CR>gv-gv', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('x', 'J', ':move \'>+1<CR>gv-gv', {noremap = true, silent = true})
-
--- Hop
--- vim.api.nvim_set_keymap('n', 'g', ':HopWord <Enter>', {silent = true})
-
--- TODO Below
--- " Better nav for omnicomplete
--- inoremap <expr> <c-j> ("\<C-n>")
--- inoremap <expr> <c-k> ("\<C-p>")oo
---
-
--- inoremap <silent> <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
--- xnoremap K :move '<-2<CR>gv-gv
--- xnoremap J :move '>+1<CR>gv-gv
--- nnoremap <silent> <c-up>    :resize -2<cr>
--- nnoremap <silent> <c-down>  :resize +2<cr>
--- nnoremap <silent> <c-left>  :vertical resize -2<cr>
--- nnoremap <silent> <c-right> :vertical resize +2<cr>
---
--- let g:elite_mode=0                      " Disable arrows"
--- " Disable arrow movement, resize splits instead.
--- if get(g:, 'elite_mode')
--- nnoremap <C-Up>    :resize -2<CR>
--- nnoremap <C-Down>  :resize +2<CR>
--- nnoremap <C-Left>  :vertical resize -2<CR>
--- nnoremap <C-Right> :vertical resize +2<CR>
--- endif
+keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
+keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
