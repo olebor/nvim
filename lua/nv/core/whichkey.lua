@@ -145,26 +145,17 @@ M.config = function()
 		g = {
 			name = "Git",
 			g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
-
-			-- TODO: review
 			j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
 			k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
-			l = { "<cmd>GitBlameToggle<cr>", "Blame" },
 			p = { "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", "Preview Hunk" },
 			r = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
 			R = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" },
 			s = { "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
-			u = {
-				"<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>",
-				"Undo Stage Hunk",
-			},
+			u = { "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>", "Undo Stage Hunk" },
 			o = { "<cmd>Telescope git_status<cr>", "Open changed file" },
 			b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
 			c = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
-			d = {
-				"<cmd>Gitsigns diffthis HEAD<cr>",
-				"Diff",
-			},
+			d = { "<cmd>Gitsigns diffthis HEAD<cr>", "Diff" },
 		},
 
 		l = {
@@ -176,11 +167,7 @@ M.config = function()
 			I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
 			o = { "<cmd>SymbolsOutline<cr>", "Outline" },
 			s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
-			S = {
-				"<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
-				"Workspace Symbols",
-			},
-
+			S = { "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", "Workspace Symbols" },
 
 			-- TODO: Review
 			-- a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
@@ -213,23 +200,6 @@ M.config = function()
 			b = { "<cmd>lua require('surround').toggle_brackets()<cr>", "Brackets" },
 		},
 
-		S = {
-			-- name = "Session",
-			-- s = { "<cmd>SaveSession<cr>", "Save" },
-			-- l = { "<cmd>LoadLastSession!<cr>", "Load Last" },
-			-- d = { "<cmd>LoadCurrentDirSession!<cr>", "Load Last Dir" },
-			-- f = { "<cmd>Telescope sessions save_current=false<cr>", "Find Session" },
-			name = "SnipRun",
-			c = { "<cmd>SnipClose<cr>", "Close" },
-			f = { "<cmd>%SnipRun<cr>", "Run File" },
-			i = { "<cmd>SnipInfo<cr>", "Info" },
-			m = { "<cmd>SnipReplMemoryClean<cr>", "Mem Clean" },
-			r = { "<cmd>SnipReset<cr>", "Reset" },
-			t = { "<cmd>SnipRunToggle<cr>", "Toggle" },
-			x = { "<cmd>SnipTerminate<cr>", "Terminate" },
-		},
-
-		-- OK
 		t = {
 			name = "Terminal",
 			n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
