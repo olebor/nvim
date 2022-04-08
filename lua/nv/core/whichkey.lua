@@ -130,6 +130,10 @@ M.config = function()
 				"Find Buffers",
 			},
 			c = { "<cmd>:set cc=80<cr>", "Highlight col 80" },
+
+			w = { "<cmd>:set wrap linebreak nolist<cr>", "Soft Wrap" },
+			n = { "<cmd>:set nowrap<cr>", "No Wrap" },
+			t = { "<cmd>:set textwidth=72<cr>", "Hard wrap 72" },
 		},
 
 		f = {
@@ -208,6 +212,7 @@ M.config = function()
 			t = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
 			h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
 			v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
+			w = { "<cmd>ToggleTerm size=80 direction=window<cr>", "Window" },
 		},
 
 		-- T = {
