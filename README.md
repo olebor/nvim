@@ -29,6 +29,7 @@ Heavily inspired by [LunarVim](https://github.com/ChristianChiarulli/LunarVim), 
 - NodeJS
   - `npm install -g neovim prettier eslint_d`
 - Treesitter
+- rg (ripgrep)
 
 
 ### Change key repeat delay
