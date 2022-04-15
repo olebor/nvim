@@ -10,7 +10,7 @@ M.setup = function()
 
 	local treesitter_config = {
 		on_config_done = nil,
-		ensure_installed = {}, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+		ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
 		ignore_install = {},
 		matchup = {
 			enable = false -- mandatory, false will disable the whole extension
@@ -19,7 +19,7 @@ M.setup = function()
 		highlight = {
 			enable = true, -- false will disable the whole extension
 			additional_vim_regex_highlighting = true,
-			disable = {"latex"}
+			disable = {}
 		},
 		context_commentstring = {
 			enable = true,
