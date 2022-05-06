@@ -15,6 +15,7 @@ vim.cmd("let $NVIM_TUI_ENABLE_TRUE_COLOR=1")
 -- General
 require("nv.settings")
 require("nv.keymappings")
+require("nv.autocommands")
 -- require('nv-compe')
 
 vim.cmd("source $HOME/.config/nvim/vimscript/foldconfig.vim")
