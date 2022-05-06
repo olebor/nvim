@@ -67,7 +67,7 @@ M.config = function()
 				vim_item.kind = lvim.builtin.cmp.formatting.kind_icons[vim_item.kind]
 				vim_item.menu = lvim.builtin.cmp.formatting.source_names[entry.source.name]
 				vim_item.dup = lvim.builtin.cmp.formatting.duplicates[entry.source.name] or
-					               lvim.builtin.cmp.formatting.duplicates_default
+					lvim.builtin.cmp.formatting.duplicates_default
 				return vim_item
 			end
 		},
@@ -75,9 +75,6 @@ M.config = function()
 			expand = function(args)
 				vim.fn["vsnip#anonymous"](args.body)
 			end
-		},
-		documentation = {
-			border = {"╭", "─", "╮", "│", "╯", "─", "╰", "│"}
 		},
 		sources = {
 			{ name = "nvim_lsp" },
@@ -99,14 +96,14 @@ M.config = function()
 				else
 					fallback()
 				end
-			end, {"i", "s"}),
+			end, { "i", "s" }),
 			["<S-Tab>"] = cmp.mapping(function(fallback)
 				if cmp.visible() then
 					cmp.select_prev_item()
 				else
 					fallback()
 				end
-			end, {"i", "s"}),
+			end, { "i", "s" }),
 
 			["<C-Space>"] = cmp.mapping.complete(),
 			["<C-e>"] = cmp.mapping.abort(),
