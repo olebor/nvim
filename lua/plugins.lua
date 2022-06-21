@@ -43,7 +43,7 @@ return {
 	{ "tpope/vim-surround" },
 
 	-- Smooth scroll
-	{ "psliwka/vim-smoothie" },
+	-- { "psliwka/vim-smoothie" },
 
 	-- Intuitive buffer close
 	{ "moll/vim-bbye" },
