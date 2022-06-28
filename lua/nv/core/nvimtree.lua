@@ -130,38 +130,7 @@ function M.setup()
 		},
 	}
 
-	-- vim.g.nvim_tree_ignore = { ".git", "node_modules", ".cache" }
-	-- vim.g.nvim_tree_quit_on_open = 0
-	-- vim.g.nvim_tree_follow = 1
-	vim.g.nvim_tree_indent_markers = 1
-	-- vim.g.nvim_tree_hide_dotfiles = 0
-	vim.g.nvim_tree_git_hl = 1
-	vim.g.nvim_tree_root_folder_modifier = ":~"
-	-- vim.g.nvim_tree_tab_open = 1
 	vim.g.nvim_tree_allow_resize = 1
-
-	vim.g.nvim_tree_show_icons = {
-		git = 1,
-		folders = 1,
-		files = 1,
-	}
-
-	vim.g.nvim_tree_icons = {
-		default = " ",
-		symlink = " ",
-		git = {
-			unstaged = "",
-			staged = "✓",
-			unmerged = "",
-			renamed = "➜",
-			ntracked = "★",
-		},
-		folder = {
-			default = "",
-			open = "",
-			symlink = "",
-		},
-	}
 
 	local nvimtreeSetup = {
 		actions = {
@@ -170,7 +139,6 @@ function M.setup()
 				resize_window = true,
 			},
 		},
-		-- auto_close = true,
 		filters = {
 			dotfiles = false,
 			custom = {},
@@ -179,7 +147,7 @@ function M.setup()
 		hijack_cursor = true,
 		update_focused_file = {
 			enable = true,
-			update_cwd = true,
+			update_root = false,
 		},
 		open_on_tab = true,
 		view = {
@@ -188,6 +156,36 @@ function M.setup()
 				custom_only = true,
 				list = l_keybindings,
 			},
+		},
+		renderer = {
+			indent_markers = {
+				enable = true
+			},
+			highlight_git = true,
+			root_folder_modifier = ":~",
+			icons = {
+				show = {
+					git = true,
+					folder = true,
+					file = true,
+				},
+				glyphs = {
+					default = " ",
+					symlink = " ",
+					git = {
+						unstaged = "",
+						staged = "✓",
+						unmerged = "",
+						renamed = "➜",
+						untracked = "★",
+					},
+					folder = {
+						default = "",
+						open = "",
+						symlink = "",
+					},
+				}
+			}
 		},
 		diagnostics = {
 			enable = false,
