@@ -18,7 +18,7 @@ function M:setup()
 		debug = true,
 		sources = {
 			-- Enable ESLint for diagnostics
-			diagnostics.eslint,
+			diagnostics.eslint_d,
 
 			-- diagnostics.eslint_d,
 			-- Formatting js/ts with prettier + eslint
