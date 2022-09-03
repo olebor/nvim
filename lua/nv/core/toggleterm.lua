@@ -50,6 +50,12 @@ M.config = function()
 		lazygit:toggle()
 	end
 
+	local ranger = Terminal:new({ cmd = "ranger", hidden = true })
+
+	function _RANGER_TOGGLE()
+		ranger:toggle()
+	end
+
 	local node = Terminal:new({ cmd = "node", hidden = true })
 
 	function _NODE_TOGGLE()
