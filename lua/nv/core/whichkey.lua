@@ -144,6 +144,7 @@ M.config = function()
 			w = { "<Plug>CtrlSFCCwordPath", "Find word under cursor" },
 			v = { "<Plug>CtrlSFVwordExec", "Search selected string immediately" },
 			V = { "<Plug>CtrlSFVwordPath", "Search selected string" },
+			l = { "<cmd>Telescope live_grep<CR>", "Live grep" }
 		},
 
 		g = {
