@@ -138,6 +138,9 @@ function M.setup()
 				quit_on_open = false,
 				resize_window = true,
 			},
+			remove_file = {
+				close_window = false
+			}
 		},
 		filters = {
 			dotfiles = false,
