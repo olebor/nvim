@@ -17,7 +17,6 @@ M.config = function()
 			-- NOTE: this plugin is designed with this icon in mind,
 			-- and so changing this is NOT recommended, this is intended
 			-- as an escape hatch for people who cannot bear it for whatever reason
-			indicator_icon = "▎",
 			buffer_close_icon = "",
 			-- buffer_close_icon = '',
 			modified_icon = "●",
@@ -41,6 +40,10 @@ M.config = function()
 			separator_style = "thin", -- | "thick" | "thin" | { 'any', 'any' },
 			enforce_regular_tabs = true,
 			always_show_bufferline = true,
+			icon = {
+				style = "icon",
+				icon = "▎",
+			}
 		},
 		highlights = {
 			fill = {
