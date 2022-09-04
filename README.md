@@ -3,9 +3,10 @@
 Heavily inspired by [LunarVim](https://github.com/ChristianChiarulli/LunarVim), but stripped a bit to fit my needs.
 
 # Init
-  ```
+
+```
 :PackerCompile
-  ```
+```
 
 ## Install Neovim
 
@@ -30,9 +31,12 @@ Heavily inspired by [LunarVim](https://github.com/ChristianChiarulli/LunarVim), 
   - `npm install -g neovim prettier eslint_d`
 - Treesitter
 - rg (ripgrep)
-
+- fd (https://github.com/sharkdp/fd)
+- ranger
+- lazygit
 
 ### Change key repeat delay
+
 I think default key repeat and initial delay is way too long.
 
 - Mac
@@ -61,4 +65,10 @@ yay -S lua-language-server
 sudo pacman -S cmake
 sudo pacman -S luarocks
 sudo luarocks install --server=https://luarocks.org/dev luaformatter
+```
+
+# Debugging
+
+```
+:checkhealth
 ```
