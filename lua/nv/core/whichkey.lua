@@ -138,13 +138,13 @@ M.config = function()
 
 		f = {
 			name = "Find",
-			t = { ":CtrlSFToggle", "Toggle Search Panel" },
+			e = { ":CtrlSFToggle", "Toggle Search Panel" },
 			f = { "<Plug>CtrlSFPrompt", "Find in files" },
 			F = { "<Plug>CtrlSFCwordPath", "Find string under cursor" },
 			w = { "<Plug>CtrlSFCCwordPath", "Find word under cursor" },
 			v = { "<Plug>CtrlSFVwordExec", "Search selected string immediately" },
 			V = { "<Plug>CtrlSFVwordPath", "Search selected string" },
-			l = { "<cmd>Telescope live_grep<CR>", "Live grep" }
+			t = { ":Telescope live_grep<cr>", "Live grep" }
 		},
 
 		g = {
