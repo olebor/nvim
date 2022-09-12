@@ -16,6 +16,7 @@ function M:setup()
 
 	null_ls.setup({
 		debug = true,
+		diagnostics_format = "[#{c}] #{m} (#{s})",
 		sources = {
 			-- Enable ESLint for diagnostics
 			diagnostics.eslint_d,
