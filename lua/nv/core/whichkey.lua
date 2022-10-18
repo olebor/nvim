@@ -166,13 +166,14 @@ M.config = function()
 		l = {
 			name = "LSP",
 			L = { "<cmd>Lspsaga show_line_diagnostics<cr>", "line_diagnostics" },
-			f = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "Format" },
+			f = { "<cmd>lua vim.lsp.buf.format() { async = true }<cr>", "Format" },
 			r = { "<cmd>Lspsaga rename<cr>", "Rename" },
 			i = { "<cmd>LspInfo<cr>", "Info" },
 			I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
 			o = { "<cmd>SymbolsOutline<cr>", "Outline" },
 			s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
 			S = { "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", "Workspace Symbols" },
+			P = { "<cmd>Lspsaga preview_definition<cr>", 'preview definition' }
 
 			-- TODO: Review
 			-- a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
