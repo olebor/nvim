@@ -26,7 +26,7 @@ function M:setup()
 			formatting.prettier,
 			formatting.eslint_d,
 
-			-- formatting.stylua,
+			formatting.stylua,
 			formatting.terraform,
 		},
 	})

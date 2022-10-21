@@ -18,6 +18,7 @@ return {
 	{ "tamago324/nlsp-settings.nvim" },
 	{ "jose-elias-alvarez/null-ls.nvim" },
 	{ "tami5/lspsaga.nvim" }, -- Not sure if we want it?
+	-- { "RRethy/vim-illuminate" },
 
 	-- Theme and visuals
 	{ "tomasr/molokai" },
@@ -125,6 +126,7 @@ return {
 			end
 		end,
 	},
+
 	{
 		-- Autopairs
 		"windwp/nvim-autopairs",
