@@ -2,9 +2,6 @@
 
 Heavily inspired by [LunarVim](https://github.com/ChristianChiarulli/LunarVim), but stripped a bit to fit my needs.
 
-# TODO
-
-- [ ] Make sure treesitter don't run on help text
 
 # Init
 
@@ -78,3 +75,7 @@ sudo luarocks install --server=https://luarocks.org/dev luaformatter
 :checkhealth
 ```
 
+# Remember after upgrade
+
+- Upgrade all plugins `:PackerSync`
+- Upgrade Treesitter `:TSUpdate`
