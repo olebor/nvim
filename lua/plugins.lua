@@ -150,7 +150,9 @@ return {
 		config = function()
 			require("nv.core.nvimtree").setup()
 		end,
-	}, -- Dashboard
+	},
+
+	-- Dashboard
 	{
 		"glepnir/dashboard-nvim",
 		event = "BufWinEnter",
@@ -162,6 +164,7 @@ return {
 	-- TODO: Move and make config-pattern for these
 
 	{ "kosayoda/nvim-lightbulb" },
+
 	{ "simrat39/symbols-outline.nvim" },
 
 	-- " Telescope
@@ -182,9 +185,6 @@ return {
 			require("nv.core.lualine").config()
 		end,
 	},
-
-	-- " Terraform
-	{ "hashivim/vim-terraform" },
 
 	-- " See what keys do like in emacs
 	{
