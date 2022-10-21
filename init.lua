@@ -32,9 +32,6 @@ vim.cmd("source ~/.config/nvim/vimscript/functions.vim")
 
 require("nv-symbols-outline")
 
--- " Language Tools
-vim.cmd("source $HOME/.config/nvim/plug-config/terraform.vim")
-
 -- " File Management
 vim.cmd("source $HOME/.config/nvim/plug-config/vim-rooter.vim")
 
