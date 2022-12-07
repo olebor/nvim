@@ -25,7 +25,12 @@ return {
 	{ "crusoexia/vim-monokai" },
 	{ "patstockwell/vim-monokai-tasty" },
 	{ "phanviet/vim-monokai-pro" },
-	{ "dracula/vim" },
+	{
+		"Mofiqul/dracula.nvim",
+		config = function()
+			require("nv.colorschemes.dracula").config()
+		end,
+	},
 	{ "morhetz/gruvbox" },
 
 	-- Bufferline (file/buffer line at the top)
