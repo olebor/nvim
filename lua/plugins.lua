@@ -174,6 +174,8 @@ return {
 
 	{ "simrat39/symbols-outline.nvim" },
 
+	{ "tom-anders/telescope-vim-bookmarks.nvim" },
+
 	-- " Telescope
 	{ "nvim-telescope/telescope.nvim" },
 	{ "nvim-telescope/telescope-media-files.nvim" },

@@ -92,12 +92,11 @@ M.config = function()
 		nowait = true, -- use `nowait` when creating keymaps
 	}
 
-	-- TODO: Hva er dette?
+	-- Bookmarks - trigger with m
 	local m_mappings = {
 		a = { "<cmd>BookmarkAnnotate<cr>", "Annotate" },
 		c = { "<cmd>BookmarkClear<cr>", "Clear" },
 		m = { "<cmd>BookmarkToggle<cr>", "Toggle" },
-		h = { '<cmd>lua require("harpoon.mark").add_file()<cr>', "Harpoon" },
 		j = { "<cmd>BookmarkNext<cr>", "Next" },
 		k = { "<cmd>BookmarkPrev<cr>", "Prev" },
 		s = {
@@ -105,7 +104,6 @@ M.config = function()
 			"Show",
 		},
 		x = { "<cmd>BookmarkClearAll<cr>", "Clear All" },
-		u = { '<cmd>lua require("harpoon.ui").toggle_quick_menu()<cr>', "Harpoon UI" },
 	}
 
 	local mappings = {
