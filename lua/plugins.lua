@@ -14,7 +14,7 @@ return {
 
 	-- LSP
 	{ "neovim/nvim-lspconfig" },
-	{ "williamboman/nvim-lsp-installer" },
+	-- { "williamboman/nvim-lsp-installer" },
 	{ "tamago324/nlsp-settings.nvim" },
 	{ "jose-elias-alvarez/null-ls.nvim" },
 	{ "tami5/lspsaga.nvim" }, -- Not sure if we want it?

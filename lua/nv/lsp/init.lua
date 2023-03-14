@@ -3,6 +3,6 @@ if not status_ok then
 	return
 end
 
-require("nv.lsp.lsp-installer")
+-- require("nv.lsp.lsp-installer")
 require("nv.lsp.handlers").setup()
 require("nv.lsp.null-ls").setup()
