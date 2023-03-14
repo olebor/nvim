@@ -7,7 +7,7 @@ M.config = function()
 		-- customize dracula color palette
 		colors = {
 			-- bg = "#282A36",
-			bg = "#000000",
+			bg = "#101010",
 			fg = "#F8F8F2",
 			-- selection = "#44475A",
 			selection = "#222326",
