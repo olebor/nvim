@@ -1,23 +1,69 @@
 local M = {}
+local Log = require "core.log"
+
 
 M.setup = function()
-	vim.g.dashboard_disable_at_vimenter = false
-	vim.g.dashboard_default_executive = "telescope"
+
+	local status_db_ok, db = pcall(require, "dashboard")
+	if not status_db_ok then
+		Log.error('Unable to configure dashboard')
+		return
+	end
+
+	local home = os.getenv('HOME')
+
+	db.custom_header = {
+		'', '',
+		' ███╗   ██╗ ███████╗ ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗',
+		' ████╗  ██║ ██╔════╝██╔═══██╗ ██║   ██║ ██║ ████╗ ████║',
+		' ██╔██╗ ██║ █████╗  ██║   ██║ ██║   ██║ ██║ ██╔████╔██║',
+		' ██║╚██╗██║ ██╔══╝  ██║   ██║ ╚██╗ ██╔╝ ██║ ██║╚██╔╝██║',
+		' ██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║',
+		' ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝'
+	}
+
+	db.custom_center = {
+		{
+			icon = '  ',
+			desc = 'Find  File                              ',
+			action = 'Telescope find_files find_command=rg,--hidden,--files',
+			shortcut = 'SPC p'
+		},
+		{
+			icon = '  ',
+			desc = 'File Browser                            ',
+			action = 'lua _RANGER_TOGGLE()',
+			shortcut = 'SPC '
+		},
+		{
+			icon = '  ',
+			desc = 'Find  word                              ',
+			action = 'Telescope live_grep',
+			shortcut = 'SPC f w'
+		},
+		{
+			icon = '  ',
+			desc = 'Open Personal dotfiles                  ',
+			action = 'Telescope dotfiles path=' .. home .. '/.dotfiles',
+			shortcut = 'SPC f d'
+		},
+	}
+
 	vim.g.dashboard_custom_section = {
 		a = {
-			description = {"  Find File          "},
+			description = { "  Find File          " },
 			command = "Telescope find_files"
 		},
 		b = {
-			description = {"  Recent Projects    "},
+			description = { "  Recent Projects    " },
 			command = "Telescope projects"
 		},
 		c = {
-			description = {"  Recently Used Files"},
+			description = { "  Recently Used Files" },
 			command = "Telescope oldfiles"
 		},
 		d = {
-			description = {"  Find Word          "},
+			description = { "  Find Word          " },
 			command = "Telescope live_grep"
 		}
 		-- e = {
@@ -26,30 +72,7 @@ M.setup = function()
 		-- }
 	}
 
-	vim.g.dashboard_custom_header = {
-			'','',
-			' ███╗   ██╗ ███████╗ ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗',
-			' ████╗  ██║ ██╔════╝██╔═══██╗ ██║   ██║ ██║ ████╗ ████║',
-			' ██╔██╗ ██║ █████╗  ██║   ██║ ██║   ██║ ██║ ██╔████╔██║',
-			' ██║╚██╗██║ ██╔══╝  ██║   ██║ ╚██╗ ██╔╝ ██║ ██║╚██╔╝██║',
-			' ██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║',
-			' ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝'
-	}
 
-	-- lvim.builtin.which_key.mappings[";"] = {"<cmd>Dashboard<CR>", "Dashboard"}
-	-- vim.g.dashboard_session_directory = lvim.builtin.dashboard.session_directory
-	-- require("core.autocmds").define_augroups {
-	-- _dashboard = {
-	-- seems to be nobuflisted that makes my stuff disappear will do more testing
-	-- {
-	-- "FileType", "dashboard",
-	-- "setlocal nocursorline noswapfile synmaxcol& signcolumn=no norelativenumber nocursorcolumn nospell  nolist  nonumber bufhidden=wipe colorcolumn= foldcolumn=0 matchpairs= "
-	-- }, {
-	-- "FileType", "dashboard",
-	-- "set showtabline=0 | autocmd BufLeave <buffer> set showtabline=" .. vim.opt.showtabline._value
-	-- }, {"FileType", "dashboard", "nnoremap <silent> <buffer> q :q<CR>"}
-	-- }
-	-- }
 
 end
 
