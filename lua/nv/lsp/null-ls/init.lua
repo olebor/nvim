@@ -27,7 +27,7 @@ function M:setup()
 			formatting.eslint_d,
 
 			formatting.stylua,
-			formatting.terraform,
+			-- formatting.terraform,
 		},
 	})
 end
