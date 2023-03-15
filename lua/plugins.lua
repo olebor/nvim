@@ -13,8 +13,9 @@ return {
 	{ "nvim-lua/plenary.nvim" },
 
 	-- LSP
+	{ "williamboman/mason.nvim" },
+	{ "williamboman/mason-lspconfig.nvim" },
 	{ "neovim/nvim-lspconfig" },
-	-- { "williamboman/nvim-lsp-installer" },
 	{ "tamago324/nlsp-settings.nvim" },
 	{ "jose-elias-alvarez/null-ls.nvim" },
 	{ "tami5/lspsaga.nvim" }, -- Not sure if we want it?
@@ -31,11 +32,9 @@ return {
 			require("nv.colorschemes.dracula").config()
 		end,
 	},
-	{ "morhetz/gruvbox" },
 
 	-- Bufferline (file/buffer line at the top)
 	{
-
 		"akinsho/nvim-bufferline.lua",
 		config = function()
 			require("nv.core.bufferline").config()
@@ -185,7 +184,6 @@ return {
 
 	-- Status Line
 	{
-
 		"nvim-lualine/lualine.nvim",
 		requires = {
 			"SmiteshP/nvim-gps",
@@ -198,7 +196,6 @@ return {
 	-- " See what keys do like in emacs
 	{
 		"folke/which-key.nvim",
-
 		config = function()
 			require("nv.core.whichkey").config()
 		end,
