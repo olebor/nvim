@@ -3,6 +3,7 @@ local M = {}
 M.config = function()
 	local dracula = require("dracula")
 
+
 	dracula.setup({
 		-- customize dracula color palette
 		colors = {
@@ -33,7 +34,7 @@ M.config = function()
 			nontext = "#3B4048",
 		},
 		-- show the '~' characters after the end of buffers
-		show_end_of_buffer = true, -- default false
+		show_end_of_buffer = false, -- default false
 		-- use transparent background
 		transparent_bg = false, -- default false
 		-- set custom lualine background color
@@ -48,7 +49,6 @@ M.config = function()
 			-- Nothing = {} -- clear highlight of Nothing
 		},
 	})
-
 
 	-- Not sure if this belongs here
 	vim.cmd(':colorscheme dracula')
