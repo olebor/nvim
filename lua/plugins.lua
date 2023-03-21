@@ -41,6 +41,14 @@ return {
 		end,
 	},
 
+	-- Colors
+	{
+		"norcalli/nvim-colorizer.lua",
+		run = function()
+			require('nv.core.colorizer').setup()
+		end,
+	},
+
 	-- Icons
 	{ "kyazdani42/nvim-web-devicons" },
 
