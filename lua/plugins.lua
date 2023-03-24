@@ -19,6 +19,14 @@ return {
 	{ "tamago324/nlsp-settings.nvim" },
 	{ "jose-elias-alvarez/null-ls.nvim" },
 	{ "tami5/lspsaga.nvim" }, -- Not sure if we want it?
+
+	-- Copilot
+	{
+		"github/copilot.vim",
+		setup = function()
+			require("nv.core.copilot").setup()
+		end,
+	},
 	-- { "RRethy/vim-illuminate" },
 
 	-- Theme and visuals
