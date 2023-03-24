@@ -8,7 +8,14 @@ local handlers = require("nv.lsp.handlers")
 handlers.setup()
 
 lspconfig.lua_ls.setup {
-	on_attach = handlers.on_attach
+	on_attach = handlers.on_attach,
+	settings = {
+		Lua = {
+			diagnostics = {
+				globals = { 'vim' }
+			}
+		}
+	}
 }
 
 lspconfig.tsserver.setup {
