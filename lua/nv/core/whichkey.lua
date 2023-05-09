@@ -164,7 +164,7 @@ M.config = function()
 		l = {
 			name = "LSP",
 			L = { "<cmd>Lspsaga show_line_diagnostics<cr>", "line_diagnostics" },
-			f = { "<cmd>lua vim.lsp.buf.format() { async = true }<cr>", "Format" },
+			f = { "<cmd>lua vim.lsp.buf.format({timeout_ms = 5000, async = true})<cr>", "Format" },
 			r = { "<cmd>Lspsaga rename<cr>", "Rename" },
 			i = { "<cmd>LspInfo<cr>", "Info" },
 			I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
