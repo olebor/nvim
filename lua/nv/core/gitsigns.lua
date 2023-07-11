@@ -33,11 +33,11 @@ local opts = {
 	},
 	numhl = false,
 	linehl = false,
-	keymaps = {
+	-- keymaps = {
 		-- Default keymap options
-		noremap = true,
-		buffer = true
-	},
+		-- noremap = true,
+		-- buffer = true
+	-- },
 	watch_gitdir = {
 		interval = 1000
 	},
