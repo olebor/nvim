@@ -98,8 +98,8 @@ function M.setup()
 					file = true,
 				},
 				glyphs = {
-					default = " ",
-					symlink = " ",
+					-- default = " ",
+					-- symlink = " ",
 					git = {
 						unstaged = "",
 						staged = "✓",
@@ -107,22 +107,22 @@ function M.setup()
 						renamed = "➜",
 						untracked = "★",
 					},
-					folder = {
-						default = "",
-						open = "",
-						symlink = "",
-					},
+					-- folder = {
+						-- default = "󰉋",
+						-- open = "",
+						-- symlink = "",
+					-- },
 				},
 			},
 		},
 		diagnostics = {
 			enable = false,
-			icons = {
-				hint = "",
-				info = "",
-				warning = "",
-				error = "",
-			},
+			-- icons = {
+				-- hint = "",
+				-- info = "",
+				-- warning = "",
+				-- error = "",
+			-- },
 		},
 	}
 
