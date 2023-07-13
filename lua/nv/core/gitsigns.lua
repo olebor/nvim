@@ -4,48 +4,47 @@ local opts = {
 			hl = "GitSignsAdd",
 			text = "▎",
 			numhl = "GitSignsAddNr",
-			linehl = "GitSignsAddLn"
+			linehl = "GitSignsAddLn",
 		},
 		change = {
 			hl = "GitSignsChange",
 			text = "▎",
 			numhl = "GitSignsChangeNr",
-			linehl = "GitSignsChangeLn"
+			linehl = "GitSignsChangeLn",
 		},
 		delete = {
 			hl = "GitSignsDelete",
-			text = "契",
+			text = "",
 			numhl = "GitSignsDeleteNr",
-			linehl = "GitSignsDeleteLn"
+			linehl = "GitSignsDeleteLn",
 		},
 		topdelete = {
 			hl = "GitSignsDelete",
-			text = "契",
+			text = "",
 			numhl = "GitSignsDeleteNr",
-			linehl = "GitSignsDeleteLn"
+			linehl = "GitSignsDeleteLn",
 		},
 		changedelete = {
 			hl = "GitSignsChange",
 			text = "▎",
 			numhl = "GitSignsChangeNr",
-			linehl = "GitSignsChangeLn"
-		}
+			linehl = "GitSignsChangeLn",
+		},
 	},
 	numhl = false,
 	linehl = false,
 	-- keymaps = {
-		-- Default keymap options
-		-- noremap = true,
-		-- buffer = true
+	-- Default keymap options
+	-- noremap = true,
+	-- buffer = true
 	-- },
 	watch_gitdir = {
-		interval = 1000
+		interval = 1000,
 	},
 	sign_priority = 6,
 	update_debounce = 200,
-	status_formatter = nil -- Use default
+	status_formatter = nil, -- Use default
 }
 
-local gitsigns = require "gitsigns"
+local gitsigns = require("gitsigns")
 gitsigns.setup(opts)
-
