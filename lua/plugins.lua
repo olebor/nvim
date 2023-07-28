@@ -53,7 +53,7 @@ return {
 	{
 		"norcalli/nvim-colorizer.lua",
 		run = function()
-			require('nv.core.colorizer').setup()
+			require("nv.core.colorizer").setup()
 		end,
 	},
 
@@ -177,7 +177,8 @@ return {
 	-- Dashboard
 	{
 		"glepnir/dashboard-nvim",
-		event = "BufWinEnter",
+		-- event = "BufWinEnter",
+		event = "VimEnter",
 		config = function()
 			require("nv.core.dashboard").setup()
 		end,
