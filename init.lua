@@ -3,9 +3,9 @@
 require("config.defaults")
 require("bootstrap"):init()
 
-local plugins = require("plugins")
 require("plugin-loader"):init()
-require("plugin-loader"):load({ plugins })
+-- Plugin Loader
+require("lazy-nvim")
 
 local Log = require("core.log")
 Log:debug("Starting NerdVim")

@@ -1,14 +1,28 @@
--- https://github.com/wbthomason/packer.nvim
-
--- run => post install
--- setup => pre load
+-- https://github.com/folke/lazy.nvim
+--
+-- build => post install
+-- init => pre load
 -- config : function  => post load
 -- disable : boolean > disable plugin
 
-return {
-	-- Packer can manage itself as an optional plugin
-	{ "wbthomason/packer.nvim" },
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+	vim.fn.system({
+		"git",
+		"clone",
+		"--filter=blob:none",
+		"https://github.com/folke/lazy.nvim.git",
+		"--branch=stable", -- latest stable release
+		lazypath,
+	})
+end
 
+vim.opt.rtp:prepend(lazypath)
+
+-- Usikker på hvorfor denne er her
+vim.g.mapleader = " "
+
+local plugins = {
 	-- For logger + gitsigns + telescope
 	{ "nvim-lua/plenary.nvim" },
 
@@ -23,7 +37,7 @@ return {
 	-- Copilot
 	{
 		"github/copilot.vim",
-		setup = function()
+		init = function()
 			require("nv.core.copilot").setup()
 		end,
 	},
@@ -52,7 +66,7 @@ return {
 	-- Colors
 	{
 		"norcalli/nvim-colorizer.lua",
-		run = function()
+		build = function()
 			require("nv.core.colorizer").setup()
 		end,
 	},
@@ -75,7 +89,7 @@ return {
 	-- Git stuff
 	{
 		"lewis6991/gitsigns.nvim",
-		requires = {
+		dependencies = {
 			"nvim-lua/plenary.nvim",
 		},
 		config = function()
@@ -131,7 +145,7 @@ return {
 			require("nv.core.vsnip").setup()
 			require("nv.core.cmp").setup()
 		end,
-		requires = {
+		dependencies = {
 			"hrsh7th/cmp-vsnip",
 			"hrsh7th/vim-vsnip",
 			"hrsh7th/cmp-buffer",
@@ -139,12 +153,12 @@ return {
 			"hrsh7th/cmp-path",
 			"hrsh7th/cmp-nvim-lua",
 		},
-		run = function()
-			-- cmp's config requires cmp to be installed to run the first time
-			if not lvim.builtin.cmp then
-				require("nv.core.cmp").config()
-			end
-		end,
+		-- build = function()
+		-- cmp's config requires cmp to be installed to run the first time
+		-- if not lvim.builtin.cmp then
+		-- require("nv.core.cmp").config()
+		-- end
+		-- end,
 	},
 
 	{
@@ -157,7 +171,7 @@ return {
 	{
 		-- Treesitter
 		"nvim-treesitter/nvim-treesitter",
-		run = ":TSUpdate",
+		build = ":TSUpdate",
 		config = function()
 			require("nv.core.treesitter").setup()
 		end,
@@ -202,9 +216,9 @@ return {
 	-- Status Line
 	{
 		"nvim-lualine/lualine.nvim",
-		requires = {
-			"SmiteshP/nvim-gps",
-		},
+		-- requires = {
+		-- "SmiteshP/nvim-gps",
+		-- },
 		config = function()
 			require("nv.core.lualine").config()
 		end,
@@ -229,3 +243,5 @@ return {
 		end,
 	},
 }
+
+require("lazy").setup(plugins, {})
