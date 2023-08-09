@@ -1,9 +1,5 @@
 -- vim.cmd('set rtp+=~/.config/nvcode')
 
-require("config.defaults")
-require("bootstrap"):init()
-
-require("plugin-loader"):init()
 -- Plugin Loader
 require("lazy-nvim")
 

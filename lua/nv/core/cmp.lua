@@ -1,80 +1,86 @@
 local M = {}
-local Log = require "core.log"
+local Log = require("core.log")
 
 M.config = function()
 	local status_cmp_ok, cmp = pcall(require, "cmp")
 	if not status_cmp_ok then
-		Log.error('Unable to configure cmp')
+		Log.error("Unable to configure cmp")
 		return
 	end
 
-	lvim.builtin.cmp = {
-		confirm_opts = {
-			behavior = cmp.ConfirmBehavior.Replace,
-			select = false
-		},
+	-- Log.error(" 7:CMP For tha win")
+
+	local kind_icons = {
+		Class = " ",
+		Color = " ",
+		Constant = "ﲀ ",
+		Constructor = " ",
+		Enum = "練",
+		EnumMember = " ",
+		Event = " ",
+		Field = " ",
+		File = "",
+		Folder = " ",
+		Function = " ",
+		Interface = "ﰮ ",
+		Keyword = " ",
+		Method = " ",
+		Module = " ",
+		Operator = "",
+		Property = " ",
+		Reference = " ",
+		Snippet = " ",
+		Struct = " ",
+		Text = " ",
+		TypeParameter = " ",
+		Unit = "塞",
+		Value = " ",
+		Variable = " ",
+	}
+
+	local source_names = {
+		nvim_lsp = "(LSP)",
+		path = "(Path)",
+		calc = "(Calc)",
+		vsnip = "(Snippet)",
+		buffer = "(Buffer)",
+	}
+
+	local duplicates = {
+		buffer = 1,
+		path = 1,
+		nvim_lsp = 0,
+		luasnip = 1,
+	}
+
+	local duplicates_default = 0
+
+	local confirm_opts = {
+		behavior = cmp.ConfirmBehavior.Replace,
+		select = false,
+	}
+
+	local cmpconfig = {
 		completion = {
 			---@usage The minimum length of a word to complete on.
-			keyword_length = 1
+			keyword_length = 1,
 		},
 		experimental = {
 			ghost_text = true,
-			native_menu = false
+			native_menu = false,
 		},
 		formatting = {
-			kind_icons = {
-				Class = " ",
-				Color = " ",
-				Constant = "ﲀ ",
-				Constructor = " ",
-				Enum = "練",
-				EnumMember = " ",
-				Event = " ",
-				Field = " ",
-				File = "",
-				Folder = " ",
-				Function = " ",
-				Interface = "ﰮ ",
-				Keyword = " ",
-				Method = " ",
-				Module = " ",
-				Operator = "",
-				Property = " ",
-				Reference = " ",
-				Snippet = " ",
-				Struct = " ",
-				Text = " ",
-				TypeParameter = " ",
-				Unit = "塞",
-				Value = " ",
-				Variable = " "
-			},
-			source_names = {
-				nvim_lsp = "(LSP)",
-				path = "(Path)",
-				calc = "(Calc)",
-				vsnip = "(Snippet)",
-				buffer = "(Buffer)"
-			},
-			duplicates = {
-				buffer = 1,
-				path = 1,
-				nvim_lsp = 0,
-				luasnip = 1
-			},
-			duplicates_default = 0,
 			format = function(entry, vim_item)
-				vim_item.kind = lvim.builtin.cmp.formatting.kind_icons[vim_item.kind]
-				vim_item.menu = lvim.builtin.cmp.formatting.source_names[entry.source.name]
-				vim_item.dup = lvim.builtin.cmp.formatting.duplicates[entry.source.name] or
-					lvim.builtin.cmp.formatting.duplicates_default
+				vim_item.kind = kind_icons[vim_item.kind]
+				vim_item.menu = source_names[entry.source.name]
+				vim_item.dup = duplicates[entry.source.name] or duplicates_default
 				return vim_item
-			end
+			end,
 		},
 		snippet = {
 			expand = function(args)
 				vim.fn["vsnip#anonymous"](args.body)
-			end
+			end,
 		},
 		sources = {
 			{ name = "nvim_lsp" },
@@ -104,22 +110,23 @@ M.config = function()
 					fallback()
 				end
 			end, { "i", "s" }),
-
 			["<C-Space>"] = cmp.mapping.complete(),
 			["<C-e>"] = cmp.mapping.abort(),
 			["<CR>"] = cmp.mapping(function(fallback)
-				if cmp.visible() and cmp.confirm(lvim.builtin.cmp.confirm_opts) then
+				if cmp.visible() and cmp.confirm(confirm_opts) then
 					return
 				end
 				fallback()
-			end)
-		}
+			end),
+		},
 	}
+
+	require("cmp").setup(cmpconfig)
 end
 
 M.setup = function()
 	M.config()
-	require("cmp").setup(lvim.builtin.cmp)
+	-- require("cmp").setup(lvim.builtin.cmp)
 end
 
 return M
