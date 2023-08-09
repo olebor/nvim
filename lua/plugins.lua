@@ -176,7 +176,7 @@ return {
 
 	-- Dashboard
 	{
-		"glepnir/dashboard-nvim",
+		"nvimdev/dashboard-nvim",
 		-- event = "BufWinEnter",
 		event = "VimEnter",
 		config = function()
