@@ -126,7 +126,6 @@ end
 
 M.setup = function()
 	M.config()
-	-- require("cmp").setup(lvim.builtin.cmp)
 end
 
 return M

@@ -2,7 +2,7 @@
 lint: lint-lua lint-sh
 
 lint-lua:
-	luacheck *.lua lua/* tests/*
+	luacheck *.lua lua/* tests/* --globals vim
 
 lint-sh:
 	shfmt -f . | grep -v jdtls | xargs shellcheck

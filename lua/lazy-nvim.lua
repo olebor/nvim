@@ -150,12 +150,6 @@ local plugins = {
 			"hrsh7th/cmp-path",
 			"hrsh7th/cmp-nvim-lua",
 		},
-		-- build = function()
-		-- cmp's config requires cmp to be installed to run the first time
-		-- if not lvim.builtin.cmp then
-		-- require("nv.core.cmp").config()
-		-- end
-		-- end,
 	},
 
 	{
