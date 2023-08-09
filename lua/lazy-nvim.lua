@@ -223,14 +223,6 @@ local plugins = {
 		end,
 	},
 
-	-- " Navigation
-	-- {
-		-- "unblevable/quick-scope",
-		-- config = function()
-			-- require("nv-quickscope")
-		-- end,
-	-- },
-
 	-- " Terminal
 	{
 		"akinsho/toggleterm.nvim",

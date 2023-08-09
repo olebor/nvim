@@ -33,8 +33,5 @@ vim.cmd("source $HOME/.config/nvim/plug-config/vim-rooter.vim")
 
 require("nv-telescope")
 
---  " Misc
-require("nv-quickscope")
-
 -- LSP
 require("nv.lsp")
