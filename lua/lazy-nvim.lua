@@ -19,9 +19,6 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
--- Usikker på hvorfor denne er her
-vim.g.mapleader = " "
-
 local plugins = {
 	-- For logger + gitsigns + telescope
 	{ "nvim-lua/plenary.nvim" },
@@ -233,7 +230,12 @@ local plugins = {
 	},
 
 	-- " Navigation
-	{ "unblevable/quick-scope" },
+	-- {
+		-- "unblevable/quick-scope",
+		-- config = function()
+			-- require("nv-quickscope")
+		-- end,
+	-- },
 
 	-- " Terminal
 	{
