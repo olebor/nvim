@@ -107,7 +107,6 @@ M.config = function()
 	}
 
 	local mappings = {
-
 		-- Single letter mappings
 		--	["b"] = { "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>", "Buffers", },
 		["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
@@ -118,7 +117,6 @@ M.config = function()
 		["h"] = { "<C-W>s", "Split Below" },
 		["v"] = { "<C-W>v", "Split Right" },
 		["="] = { "<C-W>=", "Balance Buffers" },
-
 		-- Multi level mappings
 		--
 		b = {
@@ -128,12 +126,10 @@ M.config = function()
 				"Find Buffers",
 			},
 			c = { "<cmd>:set cc=80<cr>", "Highlight col 80" },
-
 			w = { "<cmd>:set wrap linebreak nolist<cr>", "Soft Wrap" },
 			n = { "<cmd>:set nowrap<cr>", "No Wrap" },
 			t = { "<cmd>:set textwidth=72<cr>", "Hard wrap 72" },
 		},
-
 		f = {
 			name = "Find",
 			e = { ":CtrlSFToggle", "Toggle Search Panel" },
@@ -142,9 +138,8 @@ M.config = function()
 			w = { "<Plug>CtrlSFCCwordPath", "Find word under cursor" },
 			v = { "<Plug>CtrlSFVwordExec", "Search selected string immediately" },
 			V = { "<Plug>CtrlSFVwordPath", "Search selected string" },
-			t = { ":Telescope live_grep<cr>", "Live grep" }
+			t = { ":Telescope live_grep<cr>", "Live grep" },
 		},
-
 		g = {
 			name = "Git",
 			g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
@@ -156,11 +151,11 @@ M.config = function()
 			s = { "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
 			u = { "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>", "Undo Stage Hunk" },
 			o = { "<cmd>Telescope git_status<cr>", "Open changed file" },
-			b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
+			-- b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
+			b = { "<cmd>Gitsigns blame_line<cr>", "Blame line" },
 			c = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
 			d = { "<cmd>Gitsigns diffthis HEAD<cr>", "Diff" },
 		},
-
 		l = {
 			name = "LSP",
 			L = { "<cmd>Lspsaga show_line_diagnostics<cr>", "line_diagnostics" },
@@ -171,8 +166,7 @@ M.config = function()
 			o = { "<cmd>SymbolsOutline<cr>", "Outline" },
 			s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
 			S = { "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", "Workspace Symbols" },
-			P = { "<cmd>Lspsaga preview_definition<cr>", 'preview definition' }
-
+			P = { "<cmd>Lspsaga preview_definition<cr>", "preview definition" },
 			-- TODO: Review
 			-- a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
 			-- d = { "<cmd>TroubleToggle<cr>", "Diagnostics" },
@@ -193,7 +187,6 @@ M.config = function()
 			-- q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", "Quickfix" },
 			-- R = { "<cmd>TroubleToggle lsp_references<cr>", "References" },
 		},
-
 		s = {
 			name = "Surround",
 			["."] = { "<cmd>lua require('surround').repeat_last()<cr>", "Repeat" },
@@ -203,7 +196,6 @@ M.config = function()
 			q = { "<cmd>lua require('surround').toggle_quotes()<cr>", "Quotes" },
 			b = { "<cmd>lua require('surround').toggle_brackets()<cr>", "Brackets" },
 		},
-
 		t = {
 			name = "Terminal",
 			n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
@@ -214,7 +206,6 @@ M.config = function()
 			v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
 			w = { "<cmd>ToggleTerm size=80 direction=window<cr>", "Window" },
 		},
-
 		-- T = {
 		-- name = "Treesitter",
 		-- h = { "<cmd>TSHighlightCapturesUnderCursor<cr>", "Highlight" },

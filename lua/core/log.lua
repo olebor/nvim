@@ -15,7 +15,7 @@ function Log:add_entry(msg, level)
 	if status_ok then
 		local default_opts = {
 			plugin = "nerdvim",
-			level = LOG_LEVEL
+			level = LOG_LEVEL,
 		}
 		local handle = plenary.log.new(default_opts)
 		handle[level:lower()](msg)
@@ -27,7 +27,7 @@ end
 ---Retrieves the path of the logfile
 ---@return string path of the logfile
 function Log:get_path()
-	return string.format("%s/%s.log", vim.fn.stdpath "cache", "nvim.default")
+	return string.format("%s/%s.log", vim.fn.stdpath("cache"), "nvim.default")
 end
 
 ---Add a log entry at TRACE level
