@@ -4,7 +4,7 @@ local Log = require("core.log")
 M.setup = function()
 	local status_db_ok, dashboard = pcall(require, "dashboard")
 	if not status_db_ok then
-		-- Log.error("Unable to configure dashboard")
+		Log:error("Unable to configure dashboard")
 		return
 	end
 
