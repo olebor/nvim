@@ -4,38 +4,38 @@ local Log = require("core.log")
 M.config = function()
 	local status_cmp_ok, cmp = pcall(require, "cmp")
 	if not status_cmp_ok then
-		Log.error("Unable to configure cmp")
+		Log:error("Unable to configure cmp")
 		return
 	end
 
-	-- Log.error(" 7:CMP For tha win")
+	local cmp_window = require("cmp.config.window")
 
 	local kind_icons = {
-		Class = " ",
-		Color = " ",
-		Constant = "ﲀ ",
-		Constructor = " ",
-		Enum = "練",
-		EnumMember = " ",
-		Event = " ",
-		Field = " ",
-		File = "",
-		Folder = " ",
-		Function = " ",
-		Interface = "ﰮ ",
-		Keyword = " ",
-		Method = " ",
-		Module = " ",
-		Operator = "",
-		Property = " ",
-		Reference = " ",
-		Snippet = " ",
-		Struct = " ",
-		Text = " ",
-		TypeParameter = " ",
-		Unit = "塞",
-		Value = " ",
-		Variable = " ",
+		Text = "",
+		Method = "󰆧",
+		Function = "󰊕",
+		Constructor = "",
+		Field = "󰇽",
+		Variable = "󰂡",
+		Class = "󰠱",
+		Interface = "",
+		Module = "",
+		Property = "󰜢",
+		Unit = "",
+		Value = "󰎠",
+		Enum = "",
+		Keyword = "󰌋",
+		Snippet = "",
+		Color = "󰏘",
+		File = "󰈙",
+		Reference = "",
+		Folder = "󰉋",
+		EnumMember = "",
+		Constant = "󰏿",
+		Struct = "",
+		Event = "",
+		Operator = "󰆕",
+		TypeParameter = "󰅲",
 	}
 
 	local source_names = {
@@ -76,6 +76,10 @@ M.config = function()
 				vim_item.dup = duplicates[entry.source.name] or duplicates_default
 				return vim_item
 			end,
+		},
+		window = {
+			completion = cmp_window.bordered(),
+			documentation = cmp_window.bordered(),
 		},
 		snippet = {
 			expand = function(args)
