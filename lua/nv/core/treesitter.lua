@@ -1,25 +1,39 @@
 local M = {}
-local Log = require "core.log"
+local Log = require("core.log")
 
 M.setup = function()
 	local status_ok, configs = pcall(require, "nvim-treesitter.configs")
 	if not status_ok then
-		Log:get_default().error "Failed to load nvim-treesitter.configs"
+		Log:get_default().error("Failed to load nvim-treesitter.configs")
 		return
 	end
 
 	local treesitter_config = {
 		on_config_done = nil,
-		ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+		ensure_installed = {
+			"c",
+			"dockerfile",
+			"go",
+			"html",
+			"lua",
+			"markdown",
+			"typescript",
+			"javascript",
+			"json",
+			"tsx",
+			"terraform",
+			"yaml",
+			"vim",
+		}, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
 		ignore_install = {},
 		matchup = {
-			enable = false -- mandatory, false will disable the whole extension
+			enable = false, -- mandatory, false will disable the whole extension
 			-- disable = { "c", "ruby" },  -- optional, list of language that will be disabled
 		},
 		highlight = {
 			enable = true, -- false will disable the whole extension
 			additional_vim_regex_highlighting = true,
-			disable = {}
+			disable = {},
 		},
 		context_commentstring = {
 			enable = true,
@@ -31,47 +45,45 @@ M.setup = function()
 				html = "<!-- %s -->",
 				svelte = "<!-- %s -->",
 				vue = "<!-- %s -->",
-				json = ""
-			}
+				json = "",
+			},
 		},
 		-- indent = {enable = true, disable = {"python", "html", "javascript"}},
 		-- TODO seems to be broken
 		indent = {
 			enable = true,
-			disable = {"yaml"}
+			disable = { "yaml" },
 		},
 		rainbow = {
 			enable = true,
 			extended_mode = true, -- Highlight also non-parentheses delimiters, boolean or table: lang -> boolean
-			max_file_lines = 1000 -- Do not enable for files with more than 1000 lines, int
+			max_file_lines = 1000, -- Do not enable for files with more than 1000 lines, int
 		},
 		autotag = {
-			enable = false
+			enable = false,
 		},
 		textobjects = {
 			swap = {
-				enable = false
+				enable = false,
 				-- swap_next = textobj_swap_keymaps,
 			},
 			-- move = textobj_move_keymaps,
 			select = {
-				enable = false
+				enable = false,
 				-- keymaps = textobj_sel_keymaps,
-			}
+			},
 		},
 		textsubjects = {
 			enable = false,
 			keymaps = {
 				["."] = "textsubjects-smart",
-				[";"] = "textsubjects-big"
-			}
-		}
+				[";"] = "textsubjects-big",
+			},
+		},
 	}
 
 	configs.setup(treesitter_config)
-
 end
 
-M.config = function()
-end
+M.config = function() end
 return M
