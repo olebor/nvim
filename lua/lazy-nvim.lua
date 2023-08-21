@@ -69,7 +69,7 @@ local plugins = {
 	},
 
 	-- Icons
-	{ "kyazdani42/nvim-web-devicons" },
+	-- { "kyazdani42/nvim-web-devicons" },
 
 	-- Vim Surround
 	{ "tpope/vim-surround" },
@@ -169,11 +169,15 @@ local plugins = {
 	},
 
 	-- Rainbow brackets (Requires treesitter)
-	{ "p00f/nvim-ts-rainbow" },
-
+	-- { "p00f/nvim-ts-rainbow" },
 	{
 		-- NvimTree
 		"nvim-tree/nvim-tree.lua",
+		version = "*",
+		lazy = false,
+		dependencies = {
+			"nvim-tree/nvim-web-devicons",
+		},
 		config = function()
 			require("nv.core.nvimtree").setup()
 		end,
