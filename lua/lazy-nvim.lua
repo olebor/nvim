@@ -173,7 +173,7 @@ local plugins = {
 
 	{
 		-- NvimTree
-		"kyazdani42/nvim-tree.lua",
+		"nvim-tree/nvim-tree.lua",
 		config = function()
 			require("nv.core.nvimtree").setup()
 		end,
