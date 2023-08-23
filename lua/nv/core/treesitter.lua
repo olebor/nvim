@@ -4,7 +4,7 @@ local Log = require("core.log")
 M.setup = function()
 	local status_ok, configs = pcall(require, "nvim-treesitter.configs")
 	if not status_ok then
-		Log:get_default().error("Failed to load nvim-treesitter.configs")
+		Log:error("Failed to load nvim-treesitter.configs")
 		return
 	end
 
