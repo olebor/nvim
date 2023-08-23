@@ -71,12 +71,6 @@ local plugins = {
 	-- Icons
 	-- { "kyazdani42/nvim-web-devicons" },
 
-	-- Vim Surround
-	{ "tpope/vim-surround" },
-
-	-- Smooth scroll
-	-- { "psliwka/vim-smoothie" },
-
 	-- Intuitive buffer close
 	{ "moll/vim-bbye" },
 
@@ -110,6 +104,7 @@ local plugins = {
 		config = function()
 			require("nv.core.ctrlsf").config()
 		end,
+		-- enabled = false,
 	},
 
 	-- Nerd Commenter
@@ -222,7 +217,8 @@ local plugins = {
 	-- " See what keys do like in emacs
 	{
 		"folke/which-key.nvim",
-		config = function()
+		event = "VeryLazy",
+		init = function()
 			require("nv.core.whichkey").config()
 		end,
 	},

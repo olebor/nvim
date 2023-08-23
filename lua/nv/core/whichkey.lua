@@ -22,9 +22,9 @@ M.config = function()
 				operators = false, -- adds help for operators like d, y, ... and registers them for motion / text object completion
 				motions = false, -- adds help for motions
 				text_objects = false, -- help for text objects triggered after entering an operator
-				windows = true, -- default bindings on <c-w>
-				nav = true, -- misc bindings to work with windows
-				z = true, -- bindings for folds, spelling and others prefixed with z
+				windows = false, -- default bindings on <c-w>
+				nav = false, -- misc bindings to work with windows
+				z = false, -- bindings for folds, spelling and others prefixed with z
 				g = true, -- bindings for prefixed with g
 			},
 		},
@@ -151,7 +151,6 @@ M.config = function()
 			s = { "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
 			u = { "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>", "Undo Stage Hunk" },
 			o = { "<cmd>Telescope git_status<cr>", "Open changed file" },
-			-- b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
 			b = { "<cmd>Gitsigns blame_line<cr>", "Blame line" },
 			c = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
 			d = { "<cmd>Gitsigns diffthis HEAD<cr>", "Diff" },
@@ -170,19 +169,6 @@ M.config = function()
 			-- TODO: Review
 			-- a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
 			-- d = { "<cmd>TroubleToggle<cr>", "Diagnostics" },
-			-- w = {
-			-- "<cmd>Telescope lsp_workspace_diagnostics<cr>",
-			-- "Workspace Diagnostics",
-			-- },
-			-- F = { "<cmd>LspToggleAutoFormat<cr>", "Toggle Autoformat" },
-			-- j = {
-			-- "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>",
-			-- "Next Diagnostic",
-			-- },
-			-- k = {
-			-- "<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>",
-			-- "Prev Diagnostic",
-			-- },
 			-- l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
 			-- q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", "Quickfix" },
 			-- R = { "<cmd>TroubleToggle lsp_references<cr>", "References" },
@@ -198,19 +184,11 @@ M.config = function()
 		},
 		t = {
 			name = "Terminal",
-			n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
-			u = { "<cmd>lua _NCDU_TOGGLE()<cr>", "NCDU" },
 			g = { "<cmd>lua _LAZYGIT_TOGGLE()<cr>", "NCDU" },
 			t = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
 			h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
 			v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
-			w = { "<cmd>ToggleTerm size=80 direction=window<cr>", "Window" },
 		},
-		-- T = {
-		-- name = "Treesitter",
-		-- h = { "<cmd>TSHighlightCapturesUnderCursor<cr>", "Highlight" },
-		-- p = { "<cmd>TSPlaygroundToggle<cr>", "Playground" },
-		-- },
 	}
 
 	local vopts = {
@@ -236,36 +214,3 @@ M.config = function()
 end
 
 return M
-
--- TODO: For Review
--- ["a"] = { "<cmd>Alpha<cr>", "Alpha" },
--- ["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
--- ["R"] = { '<cmd>lua require("renamer").rename()<cr>', "Rename" },
--- ["z"] = { "<cmd>ZenMode<cr>", "Zen" },
--- ["gy"] = "Link",
-
--- r = {
--- name = "Replace",
--- r = { "<cmd>lua require('spectre').open()<cr>", "Replace" },
--- w = { "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", "Replace Word" },
--- f = { "<cmd>lua require('spectre').open_file_search()<cr>", "Replace Buffer" },
--- },
---
--- f = {
--- name = "Fin",
--- b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
--- c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
--- f = {
--- "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
--- "Find files",
--- },
--- t = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
--- h = { "<cmd>Telescope help_tags<cr>", "Help" },
--- i = { "<cmd>lua require('telescope').extensions.media_files.media_files()<cr>", "Media" },
--- l = { "<cmd>Telescope resume<cr>", "Last Search" },
--- M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
--- r = { "<cmd>Telescope oldfiles<cr>", "Recent File" },
--- R = { "<cmd>Telescope registers<cr>", "Registers" },
--- k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
--- C = { "<cmd>Telescope commands<cr>", "Commands" },
--- },
