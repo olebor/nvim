@@ -143,7 +143,6 @@ local plugins = {
 		end,
 	},
 
-
 	{
 		-- Autopairs
 		"windwp/nvim-autopairs",
@@ -189,7 +188,13 @@ local plugins = {
 
 	{ "kosayoda/nvim-lightbulb" },
 
-	{ "simrat39/symbols-outline.nvim" },
+	{
+		-- https://github.com/simrat39/symbols-outline.nvim
+		"simrat39/symbols-outline.nvim",
+		config = function()
+			require("nv.core.symbols-outline").config()
+		end,
+	},
 
 	{ "tom-anders/telescope-vim-bookmarks.nvim" },
 
