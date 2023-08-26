@@ -1,5 +1,5 @@
 local Log = {}
-LOG_LEVEL = "trace"
+local LOG_LEVEL = "trace"
 
 --- Adds a log entry using Plenary.log
 ---@param msg any
@@ -22,12 +22,6 @@ function Log:add_entry(msg, level)
 		self.__handle = handle
 	end
 	-- don't do anything if plenary is not available
-end
-
----Retrieves the path of the logfile
----@return string path of the logfile
-function Log:get_path()
-	return string.format("%s/%s.log", vim.fn.stdpath("cache"), "nvim.default")
 end
 
 ---Add a log entry at TRACE level
