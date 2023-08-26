@@ -5,6 +5,7 @@ local Log = require("core.log")
 M.config = function()
 	local status_ok, module = pcall(require, "symbols-outline")
 	if not status_ok then
+		Log:error("Failed to load symbols-outline")
 		return
 	end
 
