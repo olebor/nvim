@@ -1,7 +1,7 @@
 -- vim.cmd('set rtp+=~/.config/nvcode')
 
 -- Plugin Loader
-require("lazy-nvim")
+require("plugins")
 
 local Log = require("core.log")
 Log:debug("Starting NerdVim")
