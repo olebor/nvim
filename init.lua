@@ -23,7 +23,6 @@ vim.cmd("source $HOME/.config/nvim/vimscript/foldconfig.vim")
 -- vim.cmd("source $HOME/.config/nvim/themes/dracula.vim")
 
 -- " General Stuff
--- vim.cmd('source $HOME/.config/nvim/keys/which-key.vim')
 vim.cmd("source ~/.config/nvim/vimscript/functions.vim")
 
 require("nv-symbols-outline")
