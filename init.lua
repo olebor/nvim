@@ -16,9 +16,6 @@ require("nv.autocommands")
 
 vim.cmd("source $HOME/.config/nvim/vimscript/foldconfig.vim")
 
--- " General Stuff
-vim.cmd("source ~/.config/nvim/vimscript/functions.vim")
-
 -- " File Management
 vim.cmd("source $HOME/.config/nvim/plug-config/vim-rooter.vim")
 
