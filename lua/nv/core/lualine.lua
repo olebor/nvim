@@ -65,7 +65,7 @@ M.config = function()
 			},
 			lualine_x = { diff, "encoding" },
 			lualine_y = { filetype },
-			lualine_z = { location },
+			lualine_z = { "progress", location },
 		},
 		inactive_sections = {
 			lualine_a = { "filename" },
