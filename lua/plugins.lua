@@ -208,9 +208,6 @@ local plugins = {
 	-- Status Line
 	{
 		"nvim-lualine/lualine.nvim",
-		-- requires = {
-		-- "SmiteshP/nvim-gps",
-		-- },
 		config = function()
 			require("nv.core.lualine").config()
 		end,
