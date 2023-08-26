@@ -16,12 +16,6 @@ require("nv.autocommands")
 
 vim.cmd("source $HOME/.config/nvim/vimscript/foldconfig.vim")
 
--- Theme Stuff
--- " source $HOME/.config/nvim/themes/gruvbox.vim
--- vim.cmd('source $HOME/.config/nvim/themes/monokai_pro.vim')
--- vim.cmd("source $HOME/.config/nvim/themes/molokai.vim")
--- vim.cmd("source $HOME/.config/nvim/themes/dracula.vim")
-
 -- " General Stuff
 vim.cmd("source ~/.config/nvim/vimscript/functions.vim")
 

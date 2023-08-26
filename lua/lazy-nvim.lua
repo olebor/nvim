@@ -29,7 +29,7 @@ local plugins = {
 	{ "neovim/nvim-lspconfig" },
 	{ "tamago324/nlsp-settings.nvim" },
 	{ "jose-elias-alvarez/null-ls.nvim" },
-	{ "tami5/lspsaga.nvim" }, -- Not sure if we want it?
+	{ "tami5/lspsaga.nvim" }, -- Used for rename
 
 	-- Copilot
 	{
@@ -41,10 +41,6 @@ local plugins = {
 	-- { "RRethy/vim-illuminate" },
 
 	-- Theme and visuals
-	{ "tomasr/molokai" },
-	{ "crusoexia/vim-monokai" },
-	{ "patstockwell/vim-monokai-tasty" },
-	{ "phanviet/vim-monokai-pro" },
 	{
 		"Mofiqul/dracula.nvim",
 		config = function()
