@@ -31,6 +31,23 @@ local plugins = {
 	{ "jose-elias-alvarez/null-ls.nvim" },
 	{ "tami5/lspsaga.nvim" }, -- Used for rename
 
+	-- Install nvim-cmp, and buffer source as a dependency
+	{
+		"hrsh7th/nvim-cmp",
+		config = function()
+			require("nv.core.vsnip").setup()
+			require("nv.core.cmp").setup()
+		end,
+		dependencies = {
+			"hrsh7th/cmp-vsnip",
+			"hrsh7th/vim-vsnip",
+			"hrsh7th/cmp-buffer",
+			"hrsh7th/cmp-nvim-lsp",
+			"hrsh7th/cmp-path",
+			"hrsh7th/cmp-nvim-lua",
+		},
+	},
+
 	-- Copilot
 	{
 		"github/copilot.vim",
@@ -126,22 +143,6 @@ local plugins = {
 		end,
 	},
 
-	-- Install nvim-cmp, and buffer source as a dependency
-	{
-		"hrsh7th/nvim-cmp",
-		config = function()
-			require("nv.core.vsnip").setup()
-			require("nv.core.cmp").setup()
-		end,
-		dependencies = {
-			"hrsh7th/cmp-vsnip",
-			"hrsh7th/vim-vsnip",
-			"hrsh7th/cmp-buffer",
-			"hrsh7th/cmp-nvim-lsp",
-			"hrsh7th/cmp-path",
-			"hrsh7th/cmp-nvim-lua",
-		},
-	},
 
 	{
 		-- Autopairs
@@ -196,7 +197,7 @@ local plugins = {
 	{ "nvim-telescope/telescope.nvim" },
 	{ "nvim-telescope/telescope-media-files.nvim" },
 
-	-- " File Search
+	-- Detect root of project
 	{ "airblade/vim-rooter" },
 
 	-- Status Line
@@ -210,7 +211,7 @@ local plugins = {
 		end,
 	},
 
-	-- " See what keys do like in emacs
+	-- See what keys do
 	{
 		"folke/which-key.nvim",
 		event = "VeryLazy",
@@ -219,7 +220,7 @@ local plugins = {
 		end,
 	},
 
-	-- " Terminal
+	-- Terminal
 	{
 		"akinsho/toggleterm.nvim",
 		config = function()
