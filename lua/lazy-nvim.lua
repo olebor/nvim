@@ -184,7 +184,7 @@ local plugins = {
 		-- event = "BufWinEnter",
 		event = "VimEnter",
 		config = function()
-			require("nv.core.dashboard").setup()
+			require("nv.core.dashboard").config()
 		end,
 	},
 
