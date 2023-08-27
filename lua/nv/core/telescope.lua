@@ -12,7 +12,6 @@ M.config = function()
 	local sorters = require("telescope.sorters")
 	local previewers = require("telescope.previewers")
 
-	telescope.load_extension("media_files")
 	telescope.setup({
 		defaults = {
 			vimgrep_arguments = { "rg", "--no-heading", "--with-filename", "--line-number", "--column", "--smart-case" },
@@ -68,14 +67,6 @@ M.config = function()
 					["<C-k>"] = actions.move_selection_previous,
 					-- ["<C-i>"] = my_cool_custom_action,
 				},
-			},
-		},
-		extensions = {
-			media_files = {
-				-- filetypes whitelist
-				-- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
-				filetypes = { "png", "webp", "jpg", "jpeg" },
-				find_cmd = "rg", -- find command (defaults to `fd`)
 			},
 		},
 	})

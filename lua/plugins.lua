@@ -205,7 +205,6 @@ local plugins = {
 			require("nv.core.telescope").config()
 		end,
 	},
-	{ "nvim-telescope/telescope-media-files.nvim" },
 
 	-- Detect root of project
 	{ "airblade/vim-rooter" },
