@@ -19,7 +19,5 @@ vim.cmd("source $HOME/.config/nvim/vimscript/foldconfig.vim")
 -- " File Management
 vim.cmd("source $HOME/.config/nvim/plug-config/vim-rooter.vim")
 
-require("nv-telescope")
-
 -- LSP
 require("nv.lsp")

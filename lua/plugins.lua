@@ -199,7 +199,12 @@ local plugins = {
 	{ "tom-anders/telescope-vim-bookmarks.nvim" },
 
 	-- " Telescope
-	{ "nvim-telescope/telescope.nvim" },
+	{
+		"nvim-telescope/telescope.nvim",
+		config = function()
+			require("nv.core.telescope").config()
+		end,
+	},
 	{ "nvim-telescope/telescope-media-files.nvim" },
 
 	-- Detect root of project
