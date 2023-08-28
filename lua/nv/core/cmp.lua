@@ -36,9 +36,11 @@ M.config = function()
 		Event = "",
 		Operator = "󰆕",
 		TypeParameter = "󰅲",
+		Copilot = "",
 	}
 
 	local source_names = {
+		copilot = "(Copilot)",
 		nvim_lsp = "(LSP)",
 		path = "(Path)",
 		calc = "(Calc)",
@@ -86,7 +88,9 @@ M.config = function()
 				vim.fn["vsnip#anonymous"](args.body)
 			end,
 		},
-		sources = {
+		sources = { -- Copilot Source
+			{ name = "copilot", group_index = 2 },
+			-- Other Sources
 			{ name = "nvim_lsp" },
 			{ name = "path" },
 			{ name = "vsnip" },

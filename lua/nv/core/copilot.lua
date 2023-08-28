@@ -1,23 +1,18 @@
 local M = {}
+local Log = require("core.log")
 
-M.setup = function()
-	vim.g.copilot_assume_mapped = true
+M.config = function()
+	local status_ok, copilot = pcall(require, "copilot")
+	if not status_ok then
+		Log:error("Failed to load copilot")
+		return
+	end
 
-	vim.g.copilot_no_tab_map = true
-	vim.api.nvim_set_keymap("i", "<C-J>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
-
-	vim.g.copilot_filetypes = {
-		["*"] = false,
-		["javascript"] = true,
-		["typescript"] = true,
-		["lua"] = true,
-		["rust"] = true,
-		["c"] = true,
-		["c#"] = true,
-		["c++"] = true,
-		["go"] = true,
-		["python"] = true,
-	}
+	copilot.setup({
+		-- your options here
+		suggestion = { enabled = false },
+		panel = { enabled = false },
+	})
 end
 
 return M

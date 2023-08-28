@@ -50,11 +50,20 @@ local plugins = {
 
 	-- Copilot
 	{
-		"github/copilot.vim",
-		init = function()
-			require("nv.core.copilot").setup()
+		"zbirenbaum/copilot.lua",
+		cmd = "Copilot",
+		event = "InsertEnter",
+		config = function()
+			require("nv.core.copilot").config()
 		end,
 	},
+	{
+		"zbirenbaum/copilot-cmp",
+		config = function()
+			require("copilot_cmp").setup()
+		end,
+	},
+
 	-- { "RRethy/vim-illuminate" },
 
 	-- Theme and visuals
