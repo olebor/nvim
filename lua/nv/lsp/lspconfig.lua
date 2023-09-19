@@ -31,4 +31,9 @@ lspconfig.terraformls.setup({
 
 lspconfig.yamlls.setup({
 	on_attach = handlers.on_attach,
+	settings = {
+		yaml = {
+			keyOrdering = false,
+		},
+	},
 })
