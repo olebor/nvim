@@ -20,6 +20,9 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
+	-- Import all files in /lua/plugins
+	{ import = "plugins" },
+
 	-- For logger + gitsigns + telescope
 	{ "nvim-lua/plenary.nvim" },
 
@@ -48,31 +51,15 @@ local plugins = {
 		},
 	},
 
-	-- Copilot
-	{
-		"zbirenbaum/copilot.lua",
-		cmd = "Copilot",
-		event = "InsertEnter",
-		config = function()
-			require("nv.core.copilot").config()
-		end,
-	},
-	{
-		"zbirenbaum/copilot-cmp",
-		config = function()
-			require("copilot_cmp").setup()
-		end,
-	},
-
 	-- { "RRethy/vim-illuminate" },
 
 	-- Theme and visuals
-	{
-		"Mofiqul/dracula.nvim",
-		config = function()
-			require("nv.colorschemes.dracula").config()
-		end,
-	},
+	-- {
+	-- "Mofiqul/dracula.nvim",
+	-- config = function()
+	-- require("nv.colorschemes.dracula").config()
+	-- end,
+	-- },
 
 	-- Bufferline (file/buffer line at the top)
 	{
@@ -167,7 +154,7 @@ local plugins = {
 			require("nvim-surround").setup({
 				-- Configuration here, or leave empty to use defaults
 			})
-		end
+		end,
 	},
 	{
 		-- Treesitter
