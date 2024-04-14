@@ -1,6 +1,6 @@
-local M = {}
+-- Hop to anywhere
 
-M.config = function()
+function configHop()
 	vim.api.nvim_set_keymap("n", "s", ":HopChar1<cr>", {
 		silent = true,
 	})
@@ -11,4 +11,7 @@ M.config = function()
 	require("hop").setup()
 end
 
-return M
+return {
+	"phaazon/hop.nvim",
+	config = configHop,
+}

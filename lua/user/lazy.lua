@@ -50,8 +50,6 @@ local plugins = {
 		},
 	},
 
-	-- { "RRethy/vim-illuminate" },
-
 	-- Colors
 	{
 		"norcalli/nvim-colorizer.lua",
@@ -69,13 +67,6 @@ local plugins = {
 	-- For telescope etc
 	{ "nvim-lua/popup.nvim" },
 
-	-- Navigation
-	{
-		"phaazon/hop.nvim",
-		config = function()
-			require("nv.core.hop").config()
-		end,
-	},
 
 	-- Nerd Commenter
 	{
