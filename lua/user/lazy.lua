@@ -50,14 +50,6 @@ local plugins = {
 		},
 	},
 
-	-- Colors
-	{
-		"norcalli/nvim-colorizer.lua",
-		build = function()
-			require("nv.core.colorizer").setup()
-		end,
-	},
-
 	-- Icons
 	-- { "kyazdani42/nvim-web-devicons" },
 
