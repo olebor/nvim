@@ -1,6 +1,8 @@
 local M = {}
 local Log = require("core.log")
 
+local nnoremap = require("user.keymap_utils").nnoremap
+
 local status_cmp_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 if not status_cmp_ok then
 	Log:error("Failed to load cmp_nvim_lsp")
@@ -64,13 +66,34 @@ local function lsp_keymaps(bufnr)
 	keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
 	keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
 	keymap(bufnr, "n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
-	-- TODO: Figure out how to use telescope
-	keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
+
+	--
 	keymap(bufnr, "n", "gl", '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics({ border = "rounded" })<CR>', opts)
 	keymap(bufnr, "n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
 	keymap(bufnr, "n", "[d", '<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>', opts)
 	keymap(bufnr, "n", "]d", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
 	keymap(bufnr, "n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
+
+	--
+	nnoremap("gr", require("telescope.builtin").lsp_references, { desc = "LSP: [G]oto [R]eferences", buffer = bufnr })
+
+	nnoremap(
+		"gi",
+		require("telescope.builtin").lsp_implementations,
+		{ desc = "LSP: [G]oto [I]mplementation", buffer = bufnr }
+	)
+
+	nnoremap(
+		"<leader>bs",
+		require("telescope.builtin").lsp_document_symbols,
+		{ desc = "LSP: [B]uffer [S]ymbols", buffer = bufnr }
+	)
+
+	nnoremap(
+		"<leader>ps",
+		require("telescope.builtin").lsp_workspace_symbols,
+		{ desc = "LSP: [P]roject [S]ymbols", buffer = bufnr }
+	)
 end
 
 M.on_attach = function(client, bufnr)
