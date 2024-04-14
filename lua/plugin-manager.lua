@@ -31,7 +31,6 @@ local plugins = {
 	{ "williamboman/mason-lspconfig.nvim" },
 	{ "neovim/nvim-lspconfig" },
 	{ "tamago324/nlsp-settings.nvim" },
-	{ "jose-elias-alvarez/null-ls.nvim" },
 	{ "tami5/lspsaga.nvim" }, -- Used for rename
 
 	-- Install nvim-cmp, and buffer source as a dependency
