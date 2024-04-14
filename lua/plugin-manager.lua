@@ -196,9 +196,6 @@ local plugins = {
 		end,
 	},
 
-	-- Detect root of project
-	{ "airblade/vim-rooter" },
-
 	-- Status Line
 	{
 		"nvim-lualine/lualine.nvim",
