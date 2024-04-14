@@ -142,18 +142,6 @@ local plugins = {
 
 	-- Rainbow brackets (Requires treesitter)
 	-- { "p00f/nvim-ts-rainbow" },
-	{
-		-- NvimTree
-		"nvim-tree/nvim-tree.lua",
-		version = "*",
-		lazy = false,
-		dependencies = {
-			"nvim-tree/nvim-web-devicons",
-		},
-		config = function()
-			require("nv.core.nvimtree").setup()
-		end,
-	},
 
 	-- Dashboard
 	{

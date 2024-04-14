@@ -1,6 +1,6 @@
-local M = {}
+-- NvimTree
 
-function M.setup()
+local function configureNvimtree()
 	local function on_attach(bufnr)
 		local api = require("nvim-tree.api")
 
@@ -106,9 +106,9 @@ function M.setup()
 						untracked = "★",
 					},
 					-- folder = {
-						-- default = "󰉋",
-						-- open = "",
-						-- symlink = "",
+					-- default = "󰉋",
+					-- open = "",
+					-- symlink = "",
 					-- },
 				},
 			},
@@ -116,10 +116,10 @@ function M.setup()
 		diagnostics = {
 			enable = false,
 			-- icons = {
-				-- hint = "",
-				-- info = "",
-				-- warning = "",
-				-- error = "",
+			-- hint = "",
+			-- info = "",
+			-- warning = "",
+			-- error = "",
 			-- },
 		},
 	}
@@ -127,4 +127,15 @@ function M.setup()
 	require("nvim-tree").setup(nvimtreeSetup)
 end
 
-return M
+-- Return Config for Lazy
+return {
+	"nvim-tree/nvim-tree.lua",
+	version = "*",
+	lazy = false,
+	dependencies = {
+		"nvim-tree/nvim-web-devicons",
+	},
+	config = function()
+		configureNvimtree()
+	end,
+}
