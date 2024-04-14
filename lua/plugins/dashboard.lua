@@ -1,13 +1,7 @@
-local M = {}
-local Log = require("core.log")
+-- Dashboard
 
-M.config = function()
-	local status_db_ok, dashboard = pcall(require, "dashboard")
-	if not status_db_ok then
-		Log:error("Unable to configure dashboard")
-		return
-	end
-
+local function configureDashboard()
+	local dashboard = require("dashboard")
 	local home = os.getenv("HOME")
 
 	-- Log.debug("Dashboard")
@@ -57,4 +51,10 @@ M.config = function()
 	})
 end
 
-return M
+-- Return object for Lazy
+return {
+	"nvimdev/dashboard-nvim",
+	-- event = "BufWinEnter",
+	event = "VimEnter",
+	config = configureDashboard,
+}

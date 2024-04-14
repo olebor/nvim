@@ -143,16 +143,6 @@ local plugins = {
 	-- Rainbow brackets (Requires treesitter)
 	-- { "p00f/nvim-ts-rainbow" },
 
-	-- Dashboard
-	{
-		"nvimdev/dashboard-nvim",
-		-- event = "BufWinEnter",
-		event = "VimEnter",
-		config = function()
-			require("nv.core.dashboard").config()
-		end,
-	},
-
 	-- TODO: Move and make config-pattern for these
 
 	{ "kosayoda/nvim-lightbulb" },
