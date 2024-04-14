@@ -75,13 +75,6 @@ local plugins = {
 	},
 
 	{
-		-- Autopairs
-		"windwp/nvim-autopairs",
-		config = function()
-			require("nv.core.autopairs").setup()
-		end,
-	},
-	{
 		"kylechui/nvim-surround",
 		version = "*", -- Use for stability; omit to use `main` branch for the latest features
 		event = "VeryLazy",
