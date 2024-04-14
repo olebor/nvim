@@ -91,15 +91,6 @@ local plugins = {
 		end,
 	},
 
-	-- File Search
-	{
-		"dyng/ctrlsf.vim",
-		config = function()
-			require("nv.core.ctrlsf").config()
-		end,
-		-- enabled = false,
-	},
-
 	-- Nerd Commenter
 	{
 		"preservim/nerdcommenter",
