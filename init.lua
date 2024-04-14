@@ -3,7 +3,7 @@
 require("nv.keymappings")
 
 -- Plugin Loader
-require("plugin-manager")
+require("user.lazy")
 
 local Log = require("core.log")
 Log:debug("Starting NerdVim")
