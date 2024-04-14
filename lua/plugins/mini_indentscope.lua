@@ -1,5 +1,7 @@
 -- https://github.com/echasnovski/mini.indentscope
 -- Mini indentscope
+--
+-- Description:
 -- Will draw vertical lines to indicate the scope of the code block you are in
 
 return {
