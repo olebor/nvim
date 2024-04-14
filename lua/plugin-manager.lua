@@ -53,22 +53,6 @@ local plugins = {
 
 	-- { "RRethy/vim-illuminate" },
 
-	-- Theme and visuals
-	-- {
-	-- "Mofiqul/dracula.nvim",
-	-- config = function()
-	-- require("nv.colorschemes.dracula").config()
-	-- end,
-	-- },
-
-	-- Bufferline (file/buffer line at the top)
-	{
-		"akinsho/nvim-bufferline.lua",
-		config = function()
-			require("nv.core.bufferline").config()
-		end,
-	},
-
 	-- Colors
 	{
 		"norcalli/nvim-colorizer.lua",
