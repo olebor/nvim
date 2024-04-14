@@ -53,10 +53,15 @@ local function configureGitsigns()
 	gitsigns.setup(opts)
 end
 
+-- Config for Lazy
 return {
-	"lewis6991/gitsigns.nvim",
-	dependencies = {
-		"nvim-lua/plenary.nvim",
+	{
+		"lewis6991/gitsigns.nvim",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+		},
+		config = configureGitsigns,
 	},
-	config = configureGitsigns,
+	{ "tpope/vim-fugitive" },
+	{ "junegunn/gv.vim" },
 }

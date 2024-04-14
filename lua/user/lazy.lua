@@ -69,10 +69,6 @@ local plugins = {
 	-- For telescope etc
 	{ "nvim-lua/popup.nvim" },
 
-	-- Git stuff
-	{ "tpope/vim-fugitive" },
-	{ "junegunn/gv.vim" },
-
 	-- Navigation
 	{
 		"phaazon/hop.nvim",
