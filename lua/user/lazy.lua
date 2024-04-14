@@ -59,20 +59,11 @@ local plugins = {
 	-- For telescope etc
 	{ "nvim-lua/popup.nvim" },
 
-
 	-- Nerd Commenter
 	{
 		"preservim/nerdcommenter",
 		config = function()
 			require("nv.core.nerdcommenter").config()
-		end,
-	},
-
-	-- Git Blamer (like GitLens)
-	{
-		"APZelos/blamer.nvim",
-		config = function()
-			require("nv.core.blamer").config()
 		end,
 	},
 

@@ -47,6 +47,7 @@ local function configureGitsigns()
 		sign_priority = 6,
 		update_debounce = 200,
 		status_formatter = nil, -- Use default
+		current_line_blame = true,
 	}
 
 	local gitsigns = require("gitsigns")
