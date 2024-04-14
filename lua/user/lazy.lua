@@ -70,15 +70,6 @@ local plugins = {
 	{ "nvim-lua/popup.nvim" },
 
 	-- Git stuff
-	{
-		"lewis6991/gitsigns.nvim",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-		},
-		config = function()
-			require("nv.core.gitsigns")
-		end,
-	},
 	{ "tpope/vim-fugitive" },
 	{ "junegunn/gv.vim" },
 
