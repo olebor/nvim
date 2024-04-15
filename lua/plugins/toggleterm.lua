@@ -1,12 +1,5 @@
-local M = {}
-local Log = require("core.log")
-
-M.config = function()
-	local status_ok, toggleterm = pcall(require, "toggleterm")
-	if not status_ok then
-		Log:error("Unable to configure toggleterm")
-		return
-	end
+local function configureToggleterm()
+	local toggleterm = require("toggleterm")
 
 	toggleterm.setup({
 		size = 20,
@@ -57,4 +50,7 @@ M.config = function()
 	end
 end
 
-return M
+return {
+	"akinsho/toggleterm.nvim",
+	config = configureToggleterm,
+}

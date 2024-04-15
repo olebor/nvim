@@ -87,21 +87,12 @@ local plugins = {
 
 	{ "tom-anders/telescope-vim-bookmarks.nvim" },
 
-
 	-- See what keys do
 	{
 		"folke/which-key.nvim",
 		event = "VeryLazy",
 		init = function()
 			require("nv.core.whichkey").config()
-		end,
-	},
-
-	-- Terminal
-	{
-		"akinsho/toggleterm.nvim",
-		config = function()
-			require("nv.core.toggleterm").config()
 		end,
 	},
 }
