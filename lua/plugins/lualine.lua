@@ -5,7 +5,7 @@ local function configureLualine()
 		return vim.fn.winwidth(0) > 80
 	end
 
-	local icons = require("nv.core.icons")
+	local icons = require("user.icons")
 
 	local diagnostics = {
 		"diagnostics",
