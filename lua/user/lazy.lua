@@ -26,6 +26,14 @@ local plugins = {
 	-- For logger + gitsigns + telescope
 	{ "nvim-lua/plenary.nvim" },
 
+	-- Intuitive buffer close
+	{ "moll/vim-bbye" },
+
+	-- For telescope etc
+	{ "nvim-lua/popup.nvim" },
+
+	{ "tom-anders/telescope-vim-bookmarks.nvim" },
+
 	-- LSP
 	{ "williamboman/mason.nvim" },
 	{ "williamboman/mason-lspconfig.nvim" },
@@ -50,23 +58,6 @@ local plugins = {
 		},
 	},
 
-	-- Icons
-	-- { "kyazdani42/nvim-web-devicons" },
-
-	-- Intuitive buffer close
-	{ "moll/vim-bbye" },
-
-	-- For telescope etc
-	{ "nvim-lua/popup.nvim" },
-
-	-- Nerd Commenter
-	{
-		"preservim/nerdcommenter",
-		config = function()
-			require("nv.core.nerdcommenter").config()
-		end,
-	},
-
 	{
 		"MattesGroeger/vim-bookmarks",
 		config = function()
@@ -82,10 +73,6 @@ local plugins = {
 			require("nv.core.treesitter").setup()
 		end,
 	},
-
-	-- TODO: Move and make config-pattern for these
-
-	{ "tom-anders/telescope-vim-bookmarks.nvim" },
 
 	-- See what keys do
 	{
