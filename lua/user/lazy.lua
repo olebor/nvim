@@ -108,14 +108,6 @@ local plugins = {
 		end,
 	},
 
-	-- Status Line
-	{
-		"nvim-lualine/lualine.nvim",
-		config = function()
-			require("nv.core.lualine").config()
-		end,
-	},
-
 	-- See what keys do
 	{
 		"folke/which-key.nvim",

@@ -1,12 +1,5 @@
-local M = {}
-local Log = require("core.log")
-
-M.config = function()
-	local status_ok, lualine = pcall(require, "lualine")
-	if not status_ok then
-		Log:error("Failed to load lualine")
-		return
-	end
+local function configureLualine()
+	local lualine = require("lualine")
 
 	local hide_in_width = function()
 		return vim.fn.winwidth(0) > 80
@@ -80,4 +73,7 @@ M.config = function()
 	})
 end
 
-return M
+return {
+	"nvim-lualine/lualine.nvim",
+	config = configureLualine,
+}
