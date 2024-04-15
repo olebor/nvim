@@ -1,13 +1,5 @@
-local M = {}
-local Log = require("core.log")
-
-M.config = function()
-	local status_cmp_ok, cmp = pcall(require, "cmp")
-	if not status_cmp_ok then
-		Log:error("Unable to configure cmp")
-		return
-	end
-
+local function configureCmp()
+	local cmp = require("cmp")
 	local cmp_window = require("cmp.config.window")
 
 	local kind_icons = {
@@ -89,7 +81,7 @@ M.config = function()
 			end,
 		},
 		sources = { -- Copilot Source
-			{ name = "copilot", group_index = 2 },
+			{ name = "copilot",   group_index = 2 },
 			-- Other Sources
 			{ name = "nvim_lsp" },
 			{ name = "path" },
@@ -129,11 +121,25 @@ M.config = function()
 		},
 	}
 
-	require("cmp").setup(cmpconfig)
+	cmp.setup(cmpconfig)
 end
 
-M.setup = function()
-	M.config()
+local function configureVsnip()
+	vim.g.vsnip_snippet_dir = "~/.config/nvim/snippets"
 end
 
-return M
+return {
+	"hrsh7th/nvim-cmp",
+	config = function()
+		configureCmp()
+		configureVsnip()
+	end,
+	dependencies = {
+		"hrsh7th/cmp-vsnip",
+		"hrsh7th/vim-vsnip",
+		"hrsh7th/cmp-buffer",
+		"hrsh7th/cmp-nvim-lsp",
+		"hrsh7th/cmp-path",
+		"hrsh7th/cmp-nvim-lua",
+	},
+}

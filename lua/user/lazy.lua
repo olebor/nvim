@@ -38,24 +38,6 @@ local plugins = {
 	{ "neovim/nvim-lspconfig" },
 	{ "tamago324/nlsp-settings.nvim" },
 	{ "tami5/lspsaga.nvim" }, -- Used for rename
-
-	-- Install nvim-cmp, and buffer source as a dependency
-	{
-		"hrsh7th/nvim-cmp",
-		config = function()
-			require("nv.core.vsnip").setup()
-			require("nv.core.cmp").setup()
-		end,
-		dependencies = {
-			"hrsh7th/cmp-vsnip",
-			"hrsh7th/vim-vsnip",
-			"hrsh7th/cmp-buffer",
-			"hrsh7th/cmp-nvim-lsp",
-			"hrsh7th/cmp-path",
-			"hrsh7th/cmp-nvim-lua",
-		},
-	},
-
 }
 
 require("lazy").setup(plugins, {})
