@@ -6,6 +6,7 @@ local api = vim.api
 --
 --------------------------------------------------------------------------------
 local yankGrp = api.nvim_create_augroup("YankHighlight", { clear = true })
+
 api.nvim_create_autocmd("TextYankPost", {
 	command = "silent! lua vim.highlight.on_yank()",
 	group = yankGrp,
@@ -17,7 +18,7 @@ api.nvim_create_autocmd("TextYankPost", {
 --
 --------------------------------------------------------------------------------
 local allFilesGrp = api.nvim_create_augroup("all_files", { clear = true })
---
+
 api.nvim_create_autocmd("BufRead", {
 	command = ":set foldlevel=20",
 	group = allFilesGrp,
