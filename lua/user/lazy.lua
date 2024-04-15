@@ -98,8 +98,6 @@ local plugins = {
 
 	-- TODO: Move and make config-pattern for these
 
-	{ "kosayoda/nvim-lightbulb" },
-
 	{ "tom-anders/telescope-vim-bookmarks.nvim" },
 
 	-- " Telescope
