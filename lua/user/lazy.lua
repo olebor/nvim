@@ -56,15 +56,6 @@ local plugins = {
 		},
 	},
 
-	{
-		-- Treesitter
-		"nvim-treesitter/nvim-treesitter",
-		build = ":TSUpdate",
-		config = function()
-			require("nv.core.treesitter").setup()
-		end,
-	},
-
 	-- See what keys do
 	{
 		"folke/which-key.nvim",

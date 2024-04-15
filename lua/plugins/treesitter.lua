@@ -1,12 +1,5 @@
-local M = {}
-local Log = require("core.log")
-
-M.setup = function()
-	local status_ok, configs = pcall(require, "nvim-treesitter.configs")
-	if not status_ok then
-		Log:error("Failed to load nvim-treesitter.configs")
-		return
-	end
+local function configureTreesitter()
+	local configs = require("nvim-treesitter.configs")
 
 	local treesitter_config = {
 		on_config_done = nil,
@@ -85,5 +78,9 @@ M.setup = function()
 	configs.setup(treesitter_config)
 end
 
-M.config = function() end
-return M
+return {
+	-- Treesitter
+	"nvim-treesitter/nvim-treesitter",
+	build = ":TSUpdate",
+	config = configureTreesitter,
+}
