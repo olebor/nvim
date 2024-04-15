@@ -1,12 +1,5 @@
-local M = {}
-local Log = require("core.log")
-
-M.config = function()
-	local status_ok, which_key = pcall(require, "which-key")
-	if not status_ok then
-		Log:error("Failed to load whichkey")
-		return
-	end
+local function configureWhichkey()
+	local which_key = require("which-key")
 
 	local setup = {
 		plugins = {
@@ -55,14 +48,14 @@ M.config = function()
 			winblend = 0,
 		},
 		layout = {
-			height = { min = 4, max = 25 }, -- min and max height of the columns
-			width = { min = 20, max = 50 }, -- min and max width of the columns
-			spacing = 3, -- spacing between columns
-			align = "center", -- align columns left, center or right
+			height = { min = 4, max = 25 },                                     -- min and max height of the columns
+			width = { min = 20, max = 50 },                                     -- min and max width of the columns
+			spacing = 3,                                                        -- spacing between columns
+			align = "center",                                                   -- align columns left, center or right
 		},
-		ignore_missing = true, -- enable this to hide mappings for which you didn't specify a label
+		ignore_missing = true,                                                  -- enable this to hide mappings for which you didn't specify a label
 		hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ " }, -- hide mapping boilerplate
-		show_help = false, -- show help message on the command line when the popup is visible
+		show_help = false,                                                      -- show help message on the command line when the popup is visible
 		-- triggers = "auto", -- automatically setup triggers
 		-- triggers = {"<leader>"} -- or specify a list manually
 		triggers_blacklist = {
@@ -213,4 +206,8 @@ M.config = function()
 	which_key.register(m_mappings, m_opts)
 end
 
-return M
+return {
+	"folke/which-key.nvim",
+	event = "VeryLazy",
+	init = configureWhichkey,
+}

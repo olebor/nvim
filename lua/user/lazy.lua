@@ -56,14 +56,6 @@ local plugins = {
 		},
 	},
 
-	-- See what keys do
-	{
-		"folke/which-key.nvim",
-		event = "VeryLazy",
-		init = function()
-			require("nv.core.whichkey").config()
-		end,
-	},
 }
 
 require("lazy").setup(plugins, {})
