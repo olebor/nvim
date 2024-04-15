@@ -100,14 +100,6 @@ local plugins = {
 
 	{ "kosayoda/nvim-lightbulb" },
 
-	{
-		-- https://github.com/simrat39/symbols-outline.nvim
-		"simrat39/symbols-outline.nvim",
-		config = function()
-			require("nv.core.symbols-outline").config()
-		end,
-	},
-
 	{ "tom-anders/telescope-vim-bookmarks.nvim" },
 
 	-- " Telescope
