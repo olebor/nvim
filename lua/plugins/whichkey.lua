@@ -161,7 +161,6 @@ local function configureWhichkey()
 			P = { "<cmd>Lspsaga preview_definition<cr>", "preview definition" },
 			-- TODO: Review
 			-- a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
-			-- d = { "<cmd>TroubleToggle<cr>", "Diagnostics" },
 			-- l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
 			-- q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", "Quickfix" },
 			-- R = { "<cmd>TroubleToggle lsp_references<cr>", "References" },
@@ -177,7 +176,7 @@ local function configureWhichkey()
 		},
 		t = {
 			name = "Terminal",
-			g = { "<cmd>lua _LAZYGIT_TOGGLE()<cr>", "NCDU" },
+			g = { "<cmd>lua _LAZYGIT_TOGGLE()<cr>", "LazyGit" },
 			t = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
 			h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
 			v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
