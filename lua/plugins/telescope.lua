@@ -1,13 +1,5 @@
-local M = {}
-local Log = require("core.log")
-
-M.config = function()
-	local status_telescope, telescope = pcall(require, "telescope")
-	if not status_telescope then
-		Log:error("Failed to load telescope")
-		return
-	end
-
+local function configureTelescope()
+	local telescope = require("telescope")
 	local actions = require("telescope.actions")
 	local sorters = require("telescope.sorters")
 	local previewers = require("telescope.previewers")
@@ -72,4 +64,9 @@ M.config = function()
 	})
 end
 
-return M
+return {
+	"nvim-telescope/telescope.nvim",
+	event = "VeryLazy",
+	dependencies = { "nvim-lua/plenary.nvim" },
+	config = configureTelescope,
+}

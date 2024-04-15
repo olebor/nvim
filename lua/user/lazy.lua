@@ -83,20 +83,10 @@ local plugins = {
 		end,
 	},
 
-	-- Rainbow brackets (Requires treesitter)
-	-- { "p00f/nvim-ts-rainbow" },
-
 	-- TODO: Move and make config-pattern for these
 
 	{ "tom-anders/telescope-vim-bookmarks.nvim" },
 
-	-- " Telescope
-	{
-		"nvim-telescope/telescope.nvim",
-		config = function()
-			require("nv.core.telescope").config()
-		end,
-	},
 
 	-- See what keys do
 	{
