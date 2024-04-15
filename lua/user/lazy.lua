@@ -32,8 +32,6 @@ local plugins = {
 	-- For telescope etc
 	{ "nvim-lua/popup.nvim" },
 
-	{ "tom-anders/telescope-vim-bookmarks.nvim" },
-
 	-- LSP
 	{ "williamboman/mason.nvim" },
 	{ "williamboman/mason-lspconfig.nvim" },
@@ -56,13 +54,6 @@ local plugins = {
 			"hrsh7th/cmp-path",
 			"hrsh7th/cmp-nvim-lua",
 		},
-	},
-
-	{
-		"MattesGroeger/vim-bookmarks",
-		config = function()
-			require("nv.core.bookmarks").config()
-		end,
 	},
 
 	{
