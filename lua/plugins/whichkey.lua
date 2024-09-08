@@ -101,12 +101,10 @@ local function configureWhichkey()
 
 	local mappings = {
 		-- Single letter mappings
-		--	["b"] = { "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>", "Buffers", },
 		["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
 		["w"] = { "<cmd>:Bwipeout<CR>", "Wipe Buffer" },
 		["n"] = { "<cmd>nohlsearch<CR>", "No HL" },
 		["7"] = { "<plug>NERDCommenterInvert", "Comment" },
-		["p"] = { "<cmd>Telescope git_files<cr>", "Search Git Files" },
 		["h"] = { "<C-W>s", "Split Below" },
 		["v"] = { "<C-W>v", "Split Right" },
 		["="] = { "<C-W>=", "Balance Buffers" },
@@ -125,12 +123,8 @@ local function configureWhichkey()
 		},
 		f = {
 			name = "Find",
-			e = { ":CtrlSFToggle", "Toggle Search Panel" },
-			f = { "<Plug>CtrlSFPrompt", "Find in files" },
-			F = { "<Plug>CtrlSFCwordPath", "Find string under cursor" },
-			w = { "<Plug>CtrlSFCCwordPath", "Find word under cursor" },
-			v = { "<Plug>CtrlSFVwordExec", "Search selected string immediately" },
-			V = { "<Plug>CtrlSFVwordPath", "Search selected string" },
+			f = { ":Telescope find_files<cr>", "Live grep" },
+			g = { ":Telescope git_files<cr>", "Live grep" },
 			t = { ":Telescope live_grep<cr>", "Live grep" },
 		},
 		g = {
