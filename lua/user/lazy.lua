@@ -31,13 +31,6 @@ local plugins = {
 
 	-- For telescope etc
 	{ "nvim-lua/popup.nvim" },
-
-	-- LSP
-	{ "williamboman/mason.nvim" },
-	{ "williamboman/mason-lspconfig.nvim" },
-	{ "neovim/nvim-lspconfig" },
-	{ "tamago324/nlsp-settings.nvim" },
-	{ "tami5/lspsaga.nvim" }, -- Used for rename
 }
 
 require("lazy").setup(plugins, {})
