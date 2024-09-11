@@ -108,6 +108,7 @@ local function configureWhichkey()
 		["h"] = { "<C-W>s", "Split Below" },
 		["v"] = { "<C-W>v", "Split Right" },
 		["="] = { "<C-W>=", "Balance Buffers" },
+		["p"] = { ":Telescope find_files<cr>", "Live grep" },
 		-- Multi level mappings
 		--
 		b = {

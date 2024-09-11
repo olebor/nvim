@@ -89,11 +89,12 @@ local function lsp_keymaps(bufnr)
 		{ desc = "LSP: [B]uffer [S]ymbols", buffer = bufnr }
 	)
 
-	nnoremap(
-		"<leader>ps",
-		require("telescope.builtin").lsp_workspace_symbols,
-		{ desc = "LSP: [P]roject [S]ymbols", buffer = bufnr }
-	)
+	-- Conflicts with <Leader>p (open files)
+	-- nnoremap(
+	-- "<leader>ps",
+	-- require("telescope.builtin").lsp_workspace_symbols,
+	-- { desc = "LSP: [P]roject [S]ymbols", buffer = bufnr }
+	-- )
 end
 
 M.on_attach = function(client, bufnr)
