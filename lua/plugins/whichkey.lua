@@ -145,7 +145,8 @@ local function configureWhichkey()
 		},
 		l = {
 			name = "LSP",
-			L = { "<cmd>Lspsaga show_line_diagnostics<cr>", "line_diagnostics" },
+			-- L = { "<cmd>Lspsaga show_line_diagnostics<cr>", "line_diagnostics" },
+			L = { '<cmd>lua vim.diagnostic.open_float({ scope="line" })<cr>', "line_diagnostics" },
 			f = { "<cmd>lua vim.lsp.buf.format({timeout_ms = 5000, async = true})<cr>", "Format" },
 			r = { "<cmd>Lspsaga rename<cr>", "Rename" },
 			i = { "<cmd>LspInfo<cr>", "Info" },
