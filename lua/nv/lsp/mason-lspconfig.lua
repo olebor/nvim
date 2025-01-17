@@ -9,6 +9,6 @@ module.setup {
 		"lua_ls",
 		"tsserver",
 		"terraformls",
-		"yamlls"
+		"yamlls",
 	},
 }
