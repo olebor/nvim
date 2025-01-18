@@ -24,7 +24,7 @@ return {
 					"lazy",
 					"mason",
 					"notify",
-					"nvimtree",
+					"NvimTree",
 					"dashboard",
 				},
 				callback = function()
