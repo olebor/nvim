@@ -1,6 +1,9 @@
+-- none-ls is a fork of null-ls.nvim that is more actively maintained.
+-- https://github.com/nvimtools/none-ls.nvim
+
 return {
 
-	"jose-elias-alvarez/null-ls.nvim",
+	"nvimtools/none-ls.nvim",
 
 	config = function()
 		local null_ls = require("null-ls")

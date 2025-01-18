@@ -20,7 +20,7 @@
   "mini.indentscope": { "branch": "main", "commit": "93a515fe0f38165a0d3c0f8fcae459294608851f" },
   "nerdcommenter": { "branch": "master", "commit": "ab2ae4d502a26bc591db78a8548823ddd04bbc9c" },
   "nlsp-settings.nvim": { "branch": "main", "commit": "64976a5ac70a9a43f3b1b42c5b1564f7f0e4077e" },
-  "null-ls.nvim": { "branch": "main", "commit": "0010ea927ab7c09ef0ce9bf28c2b573fc302f5a7" },
+  "none-ls.nvim": { "branch": "main", "commit": "af318216b744f2fe2d5afa6febb01f455ae61d6c" },
   "nvim": { "branch": "main", "commit": "fc98570d85ae772e56dc42cf8d7d6a497a909bdb" },
   "nvim-autopairs": { "branch": "master", "commit": "ae5b41ce880a6d850055e262d6dfebd362bb276e" },
   "nvim-bufferline.lua": { "branch": "main", "commit": "655133c3b4c3e5e05ec549b9f8cc2894ac6f51b3" },
