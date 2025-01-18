@@ -1,7 +1,8 @@
 -- Hop to anywhere
+-- Forked: smoka7/hop.nvim
 
 return {
-	"phaazon/hop.nvim",
+	"smoka7/hop.nvim",
 	config = function()
 		vim.api.nvim_set_keymap("n", "s", ":HopChar1<cr>", {
 			silent = true,
@@ -10,6 +11,8 @@ return {
 			silent = true,
 		})
 
-		require("hop").setup()
+		require("hop").setup(
+			{ keys = 'etovxqpdygfblzhckisuran' }
+		)
 	end,
 }
