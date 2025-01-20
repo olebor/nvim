@@ -18,16 +18,13 @@ return {
 			debug = true,
 			diagnostics_format = "[#{c}] #{m} (#{s})",
 			sources = {
-				-- Enable ESLint for diagnostics
-				diagnostics.eslint_d,
-
-				-- diagnostics.eslint_d,
 				-- Formatting js/ts with prettier + eslint
+				-- This works now (eslint lsp running after) but not sure why
 				formatting.prettier,
-				formatting.eslint_d,
+				-- formatting.eslint_d,
 
+				-- Lua
 				formatting.stylua,
-				-- formatting.terraform,
 			},
 		})
 	end,

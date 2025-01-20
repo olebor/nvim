@@ -10,5 +10,6 @@ module.setup {
 		"tsserver",
 		"terraformls",
 		"yamlls",
+		"eslint"
 	},
 }

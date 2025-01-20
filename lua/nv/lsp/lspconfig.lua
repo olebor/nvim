@@ -10,6 +10,24 @@ local handlers = require("nv.lsp.handlers")
 
 handlers.setup()
 
+-- ****************************************************************************
+--
+-- JS Dev - tesserver + eslint
+--
+-- ****************************************************************************
+lspconfig.tsserver.setup({
+	on_attach = handlers.on_attach,
+})
+
+lspconfig.eslint.setup({
+	on_attach = handlers.on_attach,
+})
+
+-- ****************************************************************************
+--
+-- Other
+--
+-- ****************************************************************************
 lspconfig.lua_ls.setup({
 	on_attach = handlers.on_attach,
 	settings = {
@@ -19,10 +37,6 @@ lspconfig.lua_ls.setup({
 			},
 		},
 	},
-})
-
-lspconfig.tsserver.setup({
-	on_attach = handlers.on_attach,
 })
 
 lspconfig.terraformls.setup({

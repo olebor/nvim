@@ -57,7 +57,7 @@ M.setup = function()
 	})
 end
 
-local lu = require("nv.lsp.utils")
+local lspUtils = require("nv.lsp.utils")
 
 local function lsp_keymaps(bufnr)
 	local opts = { noremap = true, silent = true }
@@ -76,13 +76,13 @@ local function lsp_keymaps(bufnr)
 
 	--
 	nnoremap("gr", require("telescope.builtin").lsp_references, { desc = "LSP: [G]oto [R]eferences", buffer = bufnr })
-
 	nnoremap(
 		"gi",
 		require("telescope.builtin").lsp_implementations,
 		{ desc = "LSP: [G]oto [I]mplementation", buffer = bufnr }
 	)
 
+	-- Also mapped in which-key (<leader>ls)
 	nnoremap(
 		"<leader>bs",
 		require("telescope.builtin").lsp_document_symbols,
@@ -107,7 +107,7 @@ M.on_attach = function(client, bufnr)
 	end
 
 	lsp_keymaps(bufnr)
-	lu.setup_document_highlight(client, bufnr)
+	lspUtils.setup_document_highlight(client, bufnr)
 end
 
 return M
