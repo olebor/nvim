@@ -1,14 +1,5 @@
 # Neovim Config
 
-Heavily inspired by [LunarVim](https://github.com/ChristianChiarulli/LunarVim), but stripped a bit to fit my needs.
-
-
-# Init
-
-```
-:PackerCompile
-```
-
 ## Install Neovim
 
 - Mac
@@ -29,7 +20,8 @@ Heavily inspired by [LunarVim](https://github.com/ChristianChiarulli/LunarVim), 
 ## Other useful stuff
 
 - NodeJS
-  - `npm install -g neovim prettier eslint_d`
+  - `npm install -g neovim prettier`
+  - `npm install -g vscode-langservers-extracted` (Should be handled by mason)
 - Treesitter
 - rg (ripgrep)
 - fd (https://github.com/sharkdp/fd)
@@ -48,27 +40,6 @@ defaults write -g InitialKeyRepeat -int 10 # normal minimum is 15 (225 ms)
 defaults write -g KeyRepeat -int 1 # normal minimum is 2 (30 ms)
 ```
 
-# Language and Formatters
-
-## Lua
-
-** Language Server **
-(https://github.com/sumneko/lua-language-server/wiki/Build-and-Run-(Standalone))
-(https://github.com/Koihik/LuaFormatter)
-
-```
-yay -S lua-language-server
-
-```
-
-** Formatter **
-
-```
-sudo pacman -S cmake
-sudo pacman -S luarocks
-sudo luarocks install --server=https://luarocks.org/dev luaformatter
-```
-
 # Debugging
 
 ```
@@ -77,5 +48,4 @@ sudo luarocks install --server=https://luarocks.org/dev luaformatter
 
 # Remember after upgrade
 
-- Upgrade all plugins `:PackerSync`
 - Upgrade Treesitter `:TSUpdate`
