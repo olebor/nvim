@@ -15,7 +15,7 @@ handlers.setup()
 -- JS Dev - tesserver + eslint
 --
 -- ****************************************************************************
-lspconfig.tsserver.setup({
+lspconfig.ts_ls.setup({
 	on_attach = handlers.on_attach,
 })
 
