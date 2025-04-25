@@ -150,6 +150,10 @@ local function configureWhichkey()
 			r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
 			o = { "<cmd>SymbolsOutline<cr>", "Outline" },
 			s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
+			-- s = {
+				-- "<cmd>lua require('telescope.builtin').lsp_document_symbols({ symbols='function'})<cr>",
+				-- "Document Symbols",
+			-- },
 			-- TODO: Review
 			-- a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
 			-- l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
