@@ -4,6 +4,7 @@ return {
 	{
 		"zbirenbaum/copilot.lua",
 		cmd = "Copilot",
+		enabled = true,
 		event = { "BufEnter" },
 		config = function()
 			require("copilot").setup({
