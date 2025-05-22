@@ -151,8 +151,8 @@ local function configureWhichkey()
 			o = { "<cmd>SymbolsOutline<cr>", "Outline" },
 			s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
 			-- s = {
-				-- "<cmd>lua require('telescope.builtin').lsp_document_symbols({ symbols='function'})<cr>",
-				-- "Document Symbols",
+			-- "<cmd>lua require('telescope.builtin').lsp_document_symbols({ symbols='function'})<cr>",
+			-- "Document Symbols",
 			-- },
 			-- TODO: Review
 			-- a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
@@ -178,26 +178,17 @@ local function configureWhichkey()
 		},
 	}
 
-	local vopts = {
-		mode = "v", -- VISUAL mode
-		prefix = "<leader>",
-		buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
-		silent = true, -- use `silent` when creating keymaps
-		noremap = true, -- use `noremap` when creating keymaps
-		nowait = true, -- use `nowait` when creating keymaps
-	}
-
 	-- Mappings in Visual mode
-	local vmappings = {
-		["7"] = { "<plug>NERDCommenterInvert", "Comment" },
-		s = { "<esc><cmd>'<,'>SnipRun<cr>", "Run range" },
+	local v_mappings = {
+		mode = "v",
+		{ "<leader>7", "<plug>NERDCommenterInvert", desc = "Comment" },
 	}
 
 	-- Apply mappings
 	which_key.setup(setup)
 	which_key.register(mappings, opts)
-	which_key.register(vmappings, vopts)
 	which_key.register(m_mappings, m_opts)
+	which_key.add(v_mappings)
 end
 
 return {
