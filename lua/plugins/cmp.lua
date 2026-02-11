@@ -44,7 +44,6 @@ local function configureCmp()
 		buffer = 1,
 		path = 1,
 		nvim_lsp = 0,
-		luasnip = 1,
 	}
 
 	local duplicates_default = 0
@@ -61,7 +60,6 @@ local function configureCmp()
 		},
 		experimental = {
 			ghost_text = true,
-			native_menu = false,
 		},
 		formatting = {
 			format = function(entry, vim_item)

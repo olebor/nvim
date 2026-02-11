@@ -37,3 +37,11 @@ api.nvim_create_autocmd("FileType", {
 	command = ":set foldexpr=nvim_treesitter#foldexpr()",
 	group = jstsFilesGrp,
 })
+
+local jsonFilesGrp = api.nvim_create_augroup("filetype_json", { clear = true })
+
+api.nvim_create_autocmd("FileType", {
+	pattern = { "json" },
+	command = ":set foldmethod=indent",
+	group = jsonFilesGrp,
+})

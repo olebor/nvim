@@ -15,7 +15,7 @@ return {
 		local diagnostics = null_ls.builtins.diagnostics
 
 		null_ls.setup({
-			debug = true,
+			debug = false,
 			diagnostics_format = "[#{c}] #{m} (#{s})",
 			sources = {
 				-- Formatting js/ts with prettier + eslint

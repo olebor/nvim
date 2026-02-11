@@ -7,13 +7,10 @@ return {
 		cmd = { "Spectre" },
 		dependencies = {
 			"nvim-lua/plenary.nvim",
-			"catppuccin/nvim",
 		},
 		config = function()
-			local theme = require("catppuccin.palettes").get_palette("macchiato")
-
-			vim.api.nvim_set_hl(0, "SpectreSearch", { bg = theme.red, fg = theme.base })
-			vim.api.nvim_set_hl(0, "SpectreReplace", { bg = theme.green, fg = theme.base })
+			vim.api.nvim_set_hl(0, "SpectreSearch", { bg = "#ff5555", fg = "#282a36" })
+			vim.api.nvim_set_hl(0, "SpectreReplace", { bg = "#50fa7b", fg = "#282a36" })
 
 			require("spectre").setup({
 				highlight = {
