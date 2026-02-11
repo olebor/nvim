@@ -40,22 +40,33 @@ local function configureWhichkey()
 			scroll_down = "<c-d>", -- binding to scroll down inside the popup
 			scroll_up = "<c-u>", -- binding to scroll up inside the popup
 		},
-		window = {
-			border = "rounded", -- none, single, double, shadow
-			position = "bottom", -- bottom, top
-			margin = { 1, 0, 1, 0 }, -- extra window margin [top, right, bottom, left]
-			padding = { 2, 2, 2, 2 }, -- extra window padding [top, right, bottom, left]
-			winblend = 0,
-		},
+		win = {
+			-- don't allow the popup to overlap with the cursor
+			no_overlap = true,
+			-- width = 1,
+			-- height = { min = 4, max = 25 },
+			-- col = 0,
+			-- row = math.huge,
+			border = "single", -- none, single, double, shadow
+			padding = { 1, 2 }, -- extra window padding [top/bottom, right/left]
+			title = true,
+			title_pos = "center",
+			zindex = 1000,
+			-- Additional vim.wo and vim.bo options
+			bo = {},
+			wo = {
+				-- winblend = 10, -- value between 0-100 0 for fully opaque and 100 for fully transparent
+			},
+		},                         -- },
 		layout = {
-			height = { min = 4, max = 25 },                                     -- min and max height of the columns
-			width = { min = 20, max = 50 },                                     -- min and max width of the columns
-			spacing = 3,                                                        -- spacing between columns
-			align = "center",                                                   -- align columns left, center or right
+			height = { min = 4, max = 25 }, -- min and max height of the columns
+			width = { min = 20, max = 50 }, -- min and max width of the columns
+			spacing = 3,           -- spacing between columns
+			align = "center",      -- align columns left, center or right
 		},
-		ignore_missing = true,                                                  -- enable this to hide mappings for which you didn't specify a label
-		hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ " }, -- hide mapping boilerplate
-		show_help = false,                                                      -- show help message on the command line when the popup is visible
+		ignore_missing = true,     -- enable this to hide mappings for which you didn't specify a label
+		-- hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ " }, -- hide mapping boilerplate
+		show_help = false,         -- show help message on the command line when the popup is visible
 		-- triggers = "auto", -- automatically setup triggers
 		-- triggers = {"<leader>"} -- or specify a list manually
 		triggers_blacklist = {
@@ -114,7 +125,7 @@ local function configureWhichkey()
 		b = {
 			name = "Buffer",
 			b = {
-				"<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+				"<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false,layout_config={width=0.6}})<cr>",
 				"Find Buffers",
 			},
 			c = { "<cmd>:set cc=80<cr>", "Highlight col 80" },
@@ -169,13 +180,19 @@ local function configureWhichkey()
 			q = { "<cmd>lua require('surround').toggle_quotes()<cr>", "Quotes" },
 			b = { "<cmd>lua require('surround').toggle_brackets()<cr>", "Brackets" },
 		},
-		t = {
-			name = "Terminal",
-			g = { "<cmd>lua _LAZYGIT_TOGGLE()<cr>", "LazyGit" },
-			t = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
-			h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
-			v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
-		},
+		-- t = {
+		-- name = "Terminal",
+		-- g = { "<cmd>lua _LAZYGIT_TOGGLE()<cr>", "LazyGit" },
+		-- t = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
+		-- h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
+		-- v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
+		-- },
+	}
+
+	local t_mapping = {
+		mode = "n",
+		{ "<leader>t",  group = "Terminal" },
+		{ "<leader>tt", "<cmd>ToggleTerm direction=float<cr>", desc = "Floating Terminal" },
 	}
 
 	-- Mappings in Visual mode
@@ -189,6 +206,7 @@ local function configureWhichkey()
 	which_key.register(mappings, opts)
 	which_key.register(m_mappings, m_opts)
 	which_key.add(v_mappings)
+	which_key.add(t_mapping)
 end
 
 return {
