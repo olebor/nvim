@@ -15,23 +15,15 @@ M.capabilities = cmp_nvim_lsp.default_capabilities(M.capabilities)
 
 -- TODO: backfill this to template
 M.setup = function()
-	local signs = {
-		{ name = "DiagnosticSignError", text = "" },
-		{ name = "DiagnosticSignWarn", text = "" },
-		{ name = "DiagnosticSignHint", text = "" },
-		{ name = "DiagnosticSignInfo", text = "" },
-	}
-
-	for _, sign in ipairs(signs) do
-		vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
-	end
-
-	local config = {
-		-- disable virtual text
+	vim.diagnostic.config({
 		virtual_text = false,
-		-- show signs
 		signs = {
-			active = signs,
+			text = {
+				[vim.diagnostic.severity.ERROR] = "",
+				[vim.diagnostic.severity.WARN] = "",
+				[vim.diagnostic.severity.HINT] = "",
+				[vim.diagnostic.severity.INFO] = "",
+			},
 		},
 		update_in_insert = true,
 		underline = true,
@@ -40,20 +32,10 @@ M.setup = function()
 			focusable = false,
 			style = "minimal",
 			border = "rounded",
-			source = "always",
+			source = true,
 			header = "",
 			prefix = "",
 		},
-	}
-
-	vim.diagnostic.config(config)
-
-	vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-		border = "rounded",
-	})
-
-	vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-		border = "rounded",
 	})
 end
 
@@ -64,14 +46,14 @@ local function lsp_keymaps(bufnr)
 	local keymap = vim.api.nvim_buf_set_keymap
 	keymap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
 	keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
-	keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
+	keymap(bufnr, "n", "K", '<cmd>lua vim.lsp.buf.hover({ border = "rounded" })<CR>', opts)
 	keymap(bufnr, "n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
 
 	--
 	keymap(bufnr, "n", "gl", '<cmd>lua vim.diagnostic.open_float({ scope="line" })<CR>', opts)
-	keymap(bufnr, "n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
-	keymap(bufnr, "n", "[d", '<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>', opts)
-	keymap(bufnr, "n", "]d", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
+	keymap(bufnr, "n", "<C-k>", '<cmd>lua vim.lsp.buf.signature_help({ border = "rounded" })<CR>', opts)
+	keymap(bufnr, "n", "[d", '<cmd>lua vim.diagnostic.jump({ count = -1, float = { border = "rounded" } })<CR>', opts)
+	keymap(bufnr, "n", "]d", '<cmd>lua vim.diagnostic.jump({ count = 1, float = { border = "rounded" } })<CR>', opts)
 	keymap(bufnr, "n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
 
 	--
@@ -102,7 +84,7 @@ M.on_attach = function(client, bufnr)
 		client.server_capabilities.documentFormattingProvider = false
 	end
 
-	if client.name == "sumneko_lua" then
+	if client.name == "lua_ls" then
 		client.server_capabilities.documentFormattingProvider = false
 	end
 
