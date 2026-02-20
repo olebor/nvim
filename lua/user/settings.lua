@@ -33,3 +33,4 @@ vim.o.list = true
 vim.o.listchars = "tab:| ,trail:~,extends:>,precedes:<,space:·"
 
 vim.o.relativenumber = false
+vim.o.autoread = true                   -- Auto-reload files changed outside the editor

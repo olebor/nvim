@@ -38,6 +38,25 @@ api.nvim_create_autocmd("FileType", {
 	group = jstsFilesGrp,
 })
 
+--------------------------------------------------------------------------------
+--
+-- Auto-reload files changed outside the editor
+--
+--------------------------------------------------------------------------------
+local autoReadGrp = api.nvim_create_augroup("AutoRead", { clear = true })
+
+api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold" }, {
+	command = "silent! checktime",
+	group = autoReadGrp,
+})
+
+api.nvim_create_autocmd("FileChangedShellPost", {
+	callback = function()
+		vim.notify("File changed on disk. Buffer reloaded.", vim.log.levels.INFO)
+	end,
+	group = autoReadGrp,
+})
+
 local jsonFilesGrp = api.nvim_create_augroup("filetype_json", { clear = true })
 
 api.nvim_create_autocmd("FileType", {
