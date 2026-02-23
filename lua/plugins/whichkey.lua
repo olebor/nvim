@@ -90,6 +90,8 @@ local function configureWhichkey()
 		{ "<leader>gb", "<cmd>Gitsigns blame_line<cr>", desc = "Blame line" },
 		{ "<leader>gc", "<cmd>Telescope git_commits<cr>", desc = "Checkout commit" },
 		{ "<leader>gd", "<cmd>Gitsigns diffthis HEAD<cr>", desc = "Diff" },
+		{ "<leader>gw", "<cmd>lua require('telescope').extensions.git_worktree.git_worktree()<cr>", desc = "Worktrees" },
+		{ "<leader>gW", "<cmd>lua require('telescope').extensions.git_worktree.create_git_worktree()<cr>", desc = "Create Worktree" },
 
 		-- LSP group
 		{ "<leader>l", group = "LSP" },
