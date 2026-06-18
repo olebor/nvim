@@ -25,7 +25,7 @@ M.setup = function()
 				[vim.diagnostic.severity.INFO] = "",
 			},
 		},
-		update_in_insert = true,
+		update_in_insert = false,
 		underline = true,
 		severity_sort = true,
 		float = {
@@ -47,7 +47,6 @@ local function lsp_keymaps(bufnr)
 	keymap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
 	keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
 	keymap(bufnr, "n", "K", '<cmd>lua vim.lsp.buf.hover({ border = "rounded" })<CR>', opts)
-	keymap(bufnr, "n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
 
 	--
 	keymap(bufnr, "n", "gl", '<cmd>lua vim.diagnostic.open_float({ scope="line" })<CR>', opts)

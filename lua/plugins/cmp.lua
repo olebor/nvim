@@ -79,14 +79,13 @@ local function configureCmp()
 			end,
 		},
 		sources = { -- Copilot Source
-			{ name = "copilot",   group_index = 2 },
+			{ name = "copilot", group_index = 2 },
 			-- Other Sources
 			{ name = "nvim_lsp" },
 			{ name = "path" },
 			{ name = "vsnip" },
 			{ name = "nvim_lua" },
 			{ name = "buffer" },
-			{ name = "treesitter" },
 			-- { name = "crates" } -- rust (crates.io)
 		},
 		mapping = {
