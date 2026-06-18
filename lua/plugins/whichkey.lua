@@ -111,6 +111,14 @@ local function configureWhichkey()
 		{ "<leader>t", group = "Terminal" },
 		{ "<leader>tt", "<cmd>ToggleTerm direction=float<cr>", desc = "Floating Terminal" },
 
+		-- ── Trouble (diagnostics) ─────────────────────────────────
+		{ "<leader>x", group = "Trouble" },
+		{ "<leader>xx", "<cmd>Trouble diagnostics toggle<cr>", desc = "Diagnostics (project)" },
+		{ "<leader>xX", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", desc = "Diagnostics (buffer)" },
+		{ "<leader>xs", "<cmd>Trouble symbols toggle<cr>", desc = "Symbols" },
+		{ "<leader>xl", "<cmd>Trouble loclist toggle<cr>", desc = "Location List" },
+		{ "<leader>xq", "<cmd>Trouble qflist toggle<cr>", desc = "Quickfix List" },
+
 		-- ── Visual mode ───────────────────────────────────────────
 		{ "<leader>7", "<plug>NERDCommenterInvert", desc = "Comment", mode = "v" },
 	})
