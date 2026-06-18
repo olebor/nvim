@@ -35,7 +35,7 @@ local function configureWhichkey()
 	})
 
 	which_key.add({
-		-- Bookmark mappings (m prefix)
+		-- ── Bookmarks (m prefix) ──────────────────────────────────
 		{ "ma", "<cmd>BookmarkAnnotate<cr>", desc = "Annotate" },
 		{ "mc", "<cmd>BookmarkClear<cr>", desc = "Clear" },
 		{ "mm", "<cmd>BookmarkToggle<cr>", desc = "Toggle" },
@@ -48,7 +48,7 @@ local function configureWhichkey()
 		},
 		{ "mx", "<cmd>BookmarkClearAll<cr>", desc = "Clear All" },
 
-		-- Leader single-key mappings
+		-- ── Leader single-key ─────────────────────────────────────
 		{ "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "Explorer" },
 		{ "<leader>w", "<cmd>:Bwipeout<CR>", desc = "Wipe Buffer" },
 		{ "<leader>n", "<cmd>nohlsearch<CR>", desc = "No HL" },
@@ -58,7 +58,7 @@ local function configureWhichkey()
 		{ "<leader>=", "<C-W>=", desc = "Balance Buffers" },
 		{ "<leader>p", ":Telescope find_files<cr>", desc = "Find Files" },
 
-		-- Buffer group
+		-- ── Buffer ────────────────────────────────────────────────
 		{ "<leader>b", group = "Buffer" },
 		{
 			"<leader>bb",
@@ -70,19 +70,18 @@ local function configureWhichkey()
 		{ "<leader>bn", "<cmd>:set nowrap<cr>", desc = "No Wrap" },
 		{ "<leader>bt", "<cmd>:set textwidth=72<cr>", desc = "Hard wrap 72" },
 
-		-- Find group
+		-- ── Find ──────────────────────────────────────────────────
 		{ "<leader>f", group = "Find" },
 		{ "<leader>ff", ":Telescope find_files<cr>", desc = "Find Files" },
 		{ "<leader>fg", ":Telescope git_files<cr>", desc = "Git Files" },
 		{ "<leader>ft", ":Telescope live_grep<cr>", desc = "Live Grep" },
-		{ "<leader>fw", "<cmd>lua require('telescope').extensions.git_worktree.git_worktree()<cr>", desc = "Worktrees" },
 		{
-			"<leader>fW",
-			"<cmd>lua require('telescope').extensions.git_worktree.create_git_worktree()<cr>",
-			desc = "Create Worktree",
+			"<leader>fw",
+			"<cmd>lua require('telescope').extensions.git_worktree.git_worktree()<cr>",
+			desc = "Worktrees",
 		},
 
-		-- Git group
+		-- ── Git ───────────────────────────────────────────────────
 		{ "<leader>g", group = "Git" },
 		{ "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", desc = "Lazygit" },
 		{ "<leader>gj", "<cmd>lua require 'gitsigns'.next_hunk()<cr>", desc = "Next Hunk" },
@@ -96,31 +95,19 @@ local function configureWhichkey()
 		{ "<leader>gb", "<cmd>Gitsigns blame_line<cr>", desc = "Blame line" },
 		{ "<leader>gc", "<cmd>Telescope git_commits<cr>", desc = "Checkout commit" },
 		{ "<leader>gd", "<cmd>Gitsigns diffthis HEAD<cr>", desc = "Diff" },
-		{ "<leader>gw", "<cmd>lua require('telescope').extensions.git_worktree.git_worktree()<cr>", desc = "Worktrees" },
-		{ "<leader>gW", "<cmd>lua require('telescope').extensions.git_worktree.create_git_worktree()<cr>", desc = "Create Worktree" },
 
-		-- LSP group
+		-- ── LSP ───────────────────────────────────────────────────
 		{ "<leader>l", group = "LSP" },
 		{ "<leader>lL", '<cmd>lua vim.diagnostic.open_float({ scope="line" })<cr>', desc = "Line Diagnostics" },
 		{ "<leader>lf", "<cmd>lua vim.lsp.buf.format({timeout_ms = 5000, async = true})<cr>", desc = "Format" },
 		{ "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<cr>", desc = "Rename" },
-		{ "<leader>lo", "<cmd>SymbolsOutline<cr>", desc = "Outline" },
 		{ "<leader>ls", "<cmd>Telescope lsp_document_symbols<cr>", desc = "Document Symbols" },
 
-		-- Surround group
-		{ "<leader>s", group = "Surround" },
-		{ "<leader>s.", "<cmd>lua require('surround').repeat_last()<cr>", desc = "Repeat" },
-		{ "<leader>sa", "<cmd>lua require('surround').surround_add(true)<cr>", desc = "Add" },
-		{ "<leader>sd", "<cmd>lua require('surround').surround_delete()<cr>", desc = "Delete" },
-		{ "<leader>sr", "<cmd>lua require('surround').surround_replace()<cr>", desc = "Replace" },
-		{ "<leader>sq", "<cmd>lua require('surround').toggle_quotes()<cr>", desc = "Quotes" },
-		{ "<leader>sb", "<cmd>lua require('surround').toggle_brackets()<cr>", desc = "Brackets" },
-
-		-- Terminal group
+		-- ── Terminal ──────────────────────────────────────────────
 		{ "<leader>t", group = "Terminal" },
 		{ "<leader>tt", "<cmd>ToggleTerm direction=float<cr>", desc = "Floating Terminal" },
 
-		-- Visual mode mappings
+		-- ── Visual mode ───────────────────────────────────────────
 		{ "<leader>7", "<plug>NERDCommenterInvert", desc = "Comment", mode = "v" },
 	})
 end
