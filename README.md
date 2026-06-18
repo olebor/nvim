@@ -80,16 +80,34 @@ The UI uses glyphs for the statusline, diagnostics, and completion icons. Withou
 ```bash
 # Mac
 brew install --cask font-jetbrains-mono-nerd-font
+
+# Linux — drop a font in the user fonts dir and refresh the cache
+mkdir -p ~/.local/share/fonts && cd ~/.local/share/fonts
+curl -fLO https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip
+unzip -o JetBrainsMono.zip && fc-cache -f
 ```
 
 ### Command-line tools
 
 ```bash
-# Mac (brew); use your package manager of choice on Linux
+# Mac
 brew install ripgrep fd lazygit node stylua
 
 # Node provider + global prettier fallback (conform prefers a local node_modules)
 npm install -g neovim prettier
+```
+
+```bash
+# Debian/Ubuntu
+sudo apt install ripgrep fd-find nodejs npm
+npm install -g neovim prettier
+
+# apt installs fd as `fdfind`; symlink it so Telescope finds `fd`
+mkdir -p ~/.local/bin && ln -sf "$(command -v fdfind)" ~/.local/bin/fd
+
+# lazygit and stylua aren't in apt — grab a lazygit release binary, and stylua via cargo
+#   https://github.com/jesseduffield/lazygit/releases
+cargo install stylua
 ```
 
 | Tool       | Needed for                              |
@@ -102,10 +120,15 @@ npm install -g neovim prettier
 
 Formatting tools (prettier, stylua) are **not** managed by Mason — conform runs whatever it finds on `PATH` (or in a project's `node_modules`), so they have to be installed here.
 
-For `make lint` / `make style` you also need:
+For `make lint` / `make style` you also need luacheck, shellcheck, and shfmt:
 
 ```bash
+# Mac
 brew install luacheck shellcheck shfmt   # stylua already installed above
+
+# Debian/Ubuntu — shellcheck via apt, luacheck via luarocks
+sudo apt install shellcheck shfmt        # if shfmt is missing: go install mvdan.cc/sh/v3/cmd/shfmt@latest
+sudo apt install luarocks && sudo luarocks install luacheck
 ```
 
 ### Key Repeat (macOS)
