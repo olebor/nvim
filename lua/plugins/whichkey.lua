@@ -99,7 +99,11 @@ local function configureWhichkey()
 		-- ── LSP ───────────────────────────────────────────────────
 		{ "<leader>l", group = "LSP" },
 		{ "<leader>lL", '<cmd>lua vim.diagnostic.open_float({ scope="line" })<cr>', desc = "Line Diagnostics" },
-		{ "<leader>lf", "<cmd>lua vim.lsp.buf.format({timeout_ms = 5000, async = true})<cr>", desc = "Format" },
+		{
+			"<leader>lf",
+			"<cmd>lua require('conform').format({ async = true, lsp_format = 'fallback' })<cr>",
+			desc = "Format",
+		},
 		{ "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<cr>", desc = "Rename" },
 		{ "<leader>ls", "<cmd>Telescope lsp_document_symbols<cr>", desc = "Document Symbols" },
 

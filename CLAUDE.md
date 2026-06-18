@@ -19,7 +19,7 @@ Personal Neovim config. Plugin manager: lazy.nvim. Colorscheme: Dracula (customi
 - Keybindings: core bindings in `lua/user/keymappings.lua`, leader-prefixed bindings in `lua/plugins/whichkey.lua`. Do not change keybindings unless explicitly asked.
 - LSP servers managed by Mason. Server list in `lua/nv/lsp/mason-lspconfig.lua`.
 - Snippet engine is vsnip (not luasnip).
-- Formatting handled by none-ls (prettier for JS/TS, stylua for Lua).
+- Formatting handled by conform.nvim (prettier for JS/TS, stylua for Lua), with format-on-save enabled. Linting for JS/TS comes from the eslint LSP.
 
 ## Linting
 
