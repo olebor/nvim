@@ -58,40 +58,9 @@ These are set per-buffer in `nv/lsp/handlers.lua`, so they only exist when an LS
 | `<leader>lf` | Format buffer (conform)         |
 | `<leader>lr` | Rename symbol                   |
 
-## Plugins
+## Setup on a New Machine
 
-| Plugin             | Purpose                            |
-| ------------------ | ---------------------------------- |
-| telescope.nvim     | Fuzzy finder                       |
-| nvim-tree          | File explorer                      |
-| nvim-cmp + copilot | Completion (with Copilot via cmp)  |
-| treesitter         | Syntax highlighting and folding    |
-| gitsigns + lazygit | Git integration                    |
-| git-worktree.nvim  | Worktree switching (`<leader>fw`)  |
-| flash.nvim         | Quick cursor jumping (`s` / `S`)   |
-| trouble.nvim       | Diagnostics / quickfix list        |
-| persistence.nvim   | Per-directory session save/restore |
-| bufferline         | Buffer tabs                        |
-| lualine            | Status line                        |
-| which-key          | Keybinding discovery               |
-| mason + lspconfig  | LSP server management              |
-| conform.nvim       | Formatting (prettier, stylua)      |
-| toggleterm         | Floating terminal                  |
-| nvim-spectre       | Project-wide search and replace    |
-
-## LSP Servers
-
-Managed by Mason. Auto-installed:
-
-- `lua_ls` -- Lua
-- `vtsls` -- TypeScript/JavaScript (faster than ts_ls)
-- `eslint` -- JS/TS linting
-- `terraformls` -- Terraform
-- `yamlls` -- YAML
-
-Formatting is handled by **conform.nvim** (not the LSP): prettier for JS/TS/JSON/YAML/HTML/CSS/Markdown, stylua for Lua. It runs **on save**, and falls back to the LSP for filetypes without a configured formatter. conform also picks up a project-local `node_modules/.bin/prettier` automatically.
-
-## Install
+Everything inside Neovim — plugins, LSP servers, Treesitter parsers — installs itself on first launch (lazy.nvim + Mason). The list below is the stuff you have to provide from outside.
 
 ### Neovim
 
@@ -104,15 +73,40 @@ curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
 chmod +x nvim.appimage && sudo mv nvim.appimage /usr/local/bin/nvim
 ```
 
-### Dependencies
+### A Nerd Font
+
+The UI uses glyphs for the statusline, diagnostics, and completion icons. Without a [Nerd Font](https://www.nerdfonts.com/) they show up as boxes. Install one and set it as your terminal font:
 
 ```bash
+# Mac
+brew install --cask font-jetbrains-mono-nerd-font
+```
+
+### Command-line tools
+
+```bash
+# Mac (brew); use your package manager of choice on Linux
+brew install ripgrep fd lazygit node stylua
+
+# Node provider + global prettier fallback (conform prefers a local node_modules)
 npm install -g neovim prettier
 ```
 
-- [ripgrep](https://github.com/BurntSushi/ripgrep) -- for Telescope live grep
-- [fd](https://github.com/sharkdp/fd) -- for Telescope file finder
-- [lazygit](https://github.com/jesseduffield/lazygit) -- for `<leader>gg`
+| Tool       | Needed for                              |
+| ---------- | --------------------------------------- |
+| ripgrep    | Telescope live grep                     |
+| fd         | Telescope file finder                   |
+| lazygit    | `<leader>gg`                            |
+| node / npm | vtsls, Copilot, and prettier formatting |
+| stylua     | Lua formatting on save                  |
+
+Formatting tools (prettier, stylua) are **not** managed by Mason — conform runs whatever it finds on `PATH` (or in a project's `node_modules`), so they have to be installed here.
+
+For `make lint` / `make style` you also need:
+
+```bash
+brew install luacheck shellcheck shfmt   # stylua already installed above
+```
 
 ### Key Repeat (macOS)
 
