@@ -58,6 +58,18 @@ local function configureWhichkey()
 		{ "<leader>=", "<C-W>=", desc = "Balance Buffers" },
 		{ "<leader>p", ":Telescope find_files<cr>", desc = "Find Files" },
 
+		-- ── Claude Code ───────────────────────────────────────────
+		{ "<leader>a", group = "Claude Code" },
+		{ "<leader>ac", "<cmd>ClaudeCode<cr>", desc = "Toggle Claude" },
+		{ "<leader>af", "<cmd>ClaudeCodeFocus<cr>", desc = "Focus Claude" },
+		{ "<leader>ar", "<cmd>ClaudeCode --resume<cr>", desc = "Resume session" },
+		{ "<leader>aC", "<cmd>ClaudeCode --continue<cr>", desc = "Continue last session" },
+		{ "<leader>am", "<cmd>ClaudeCodeSelectModel<cr>", desc = "Select model" },
+		{ "<leader>ab", "<cmd>ClaudeCodeAdd %<cr>", desc = "Add current buffer" },
+		{ "<leader>as", "<cmd>ClaudeCodeSend<cr>", desc = "Send selection", mode = "v" },
+		{ "<leader>aa", "<cmd>ClaudeCodeDiffAccept<cr>", desc = "Accept diff" },
+		{ "<leader>ad", "<cmd>ClaudeCodeDiffDeny<cr>", desc = "Deny diff" },
+
 		-- ── Buffer ────────────────────────────────────────────────
 		{ "<leader>b", group = "Buffer" },
 		{
