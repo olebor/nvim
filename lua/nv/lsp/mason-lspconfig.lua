@@ -6,7 +6,7 @@ end
 module.setup({
 	ensure_installed = {
 		"lua_ls",
-		"ts_ls",
+		"vtsls",
 		"terraformls",
 		"yamlls",
 		"eslint",

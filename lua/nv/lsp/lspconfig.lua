@@ -10,26 +10,30 @@ local handlers = require("nv.lsp.handlers")
 
 handlers.setup()
 
--- ****************************************************************************
---
--- JS Dev - tesserver + eslint
---
--- ****************************************************************************
-lspconfig.ts_ls.setup({
+-- Defaults shared by every server. capabilities advertises nvim-cmp's
+-- completion features to the server (previously computed but never passed).
+local default_opts = {
 	on_attach = handlers.on_attach,
-})
-
-lspconfig.eslint.setup({
-	on_attach = handlers.on_attach,
-})
+	capabilities = handlers.capabilities,
+}
 
 -- ****************************************************************************
 --
--- Other
+-- Servers that only need the defaults
+-- (vtsls = fast TypeScript server, eslint = JS/TS linting, terraform)
 --
 -- ****************************************************************************
-lspconfig.lua_ls.setup({
-	on_attach = handlers.on_attach,
+local servers = { "vtsls", "eslint", "terraformls" }
+for _, server in ipairs(servers) do
+	lspconfig[server].setup(default_opts)
+end
+
+-- ****************************************************************************
+--
+-- Servers needing extra settings
+--
+-- ****************************************************************************
+lspconfig.lua_ls.setup(vim.tbl_extend("force", default_opts, {
 	settings = {
 		Lua = {
 			diagnostics = {
@@ -37,17 +41,12 @@ lspconfig.lua_ls.setup({
 			},
 		},
 	},
-})
+}))
 
-lspconfig.terraformls.setup({
-	on_attach = handlers.on_attach,
-})
-
-lspconfig.yamlls.setup({
-	on_attach = handlers.on_attach,
+lspconfig.yamlls.setup(vim.tbl_extend("force", default_opts, {
 	settings = {
 		yaml = {
 			keyOrdering = false,
 		},
 	},
-})
+}))
