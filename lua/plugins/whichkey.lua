@@ -75,6 +75,12 @@ local function configureWhichkey()
 		{ "<leader>ff", ":Telescope find_files<cr>", desc = "Find Files" },
 		{ "<leader>fg", ":Telescope git_files<cr>", desc = "Git Files" },
 		{ "<leader>ft", ":Telescope live_grep<cr>", desc = "Live Grep" },
+		{ "<leader>fw", "<cmd>lua require('telescope').extensions.git_worktree.git_worktree()<cr>", desc = "Worktrees" },
+		{
+			"<leader>fW",
+			"<cmd>lua require('telescope').extensions.git_worktree.create_git_worktree()<cr>",
+			desc = "Create Worktree",
+		},
 
 		-- Git group
 		{ "<leader>g", group = "Git" },
