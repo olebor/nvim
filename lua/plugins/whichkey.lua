@@ -93,6 +93,7 @@ local function configureWhichkey()
 		{ "<leader>gu", "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>", desc = "Undo Stage Hunk" },
 		{ "<leader>go", "<cmd>Telescope git_status<cr>", desc = "Open changed file" },
 		{ "<leader>gb", "<cmd>Gitsigns blame_line<cr>", desc = "Blame line" },
+		{ "<leader>gB", "<cmd>Gitsigns toggle_current_line_blame<cr>", desc = "Toggle inline blame" },
 		{ "<leader>gc", "<cmd>Telescope git_commits<cr>", desc = "Checkout commit" },
 		{ "<leader>gd", "<cmd>Gitsigns diffthis HEAD<cr>", desc = "Diff" },
 
@@ -110,6 +111,12 @@ local function configureWhichkey()
 		-- ── Terminal ──────────────────────────────────────────────
 		{ "<leader>t", group = "Terminal" },
 		{ "<leader>tt", "<cmd>ToggleTerm direction=float<cr>", desc = "Floating Terminal" },
+
+		-- ── Session ───────────────────────────────────────────────
+		{ "<leader>S", group = "Session" },
+		{ "<leader>Ss", "<cmd>lua require('persistence').load()<cr>", desc = "Restore (cwd)" },
+		{ "<leader>Sl", "<cmd>lua require('persistence').load({ last = true })<cr>", desc = "Restore last" },
+		{ "<leader>Sd", "<cmd>lua require('persistence').stop()<cr>", desc = "Don't save session" },
 
 		-- ── Trouble (diagnostics) ─────────────────────────────────
 		{ "<leader>x", group = "Trouble" },
