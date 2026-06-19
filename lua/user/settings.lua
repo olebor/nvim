@@ -34,3 +34,49 @@ vim.o.listchars = "tab:| ,trail:~,extends:>,precedes:<,space:·"
 
 vim.o.relativenumber = false
 vim.o.autoread = true                   -- Auto-reload files changed outside the editor
+
+-- Folding (driven by nvim-ufo, see lua/plugins/ufo.lua)
+vim.o.foldlevel = 99                    -- Start with all folds open
+vim.o.foldlevelstart = 99               -- Open all folds when opening a buffer
+vim.o.foldenable = true                 -- Enable folding
+vim.o.foldcolumn = "0"                  -- Native fold column off; drawn via statuscolumn below
+vim.opt.fillchars = { eob = " ", fold = " " }
+
+-- Custom gutter: a clean fold arrow (open/closed) with no nesting-level digits,
+-- alongside the usual sign column and line numbers. The native foldcolumn shows
+-- fold-level numbers when nesting exceeds its width, which is noisy.
+local FOLD_OPEN = "\226\150\190" -- ▾
+local FOLD_CLOSED = "\226\150\184" -- ▸
+
+function _G.NvFoldColumn()
+	local lnum = vim.v.lnum
+	if vim.fn.foldlevel(lnum) == 0 then
+		return " " -- no fold on this line
+	end
+	-- Closed fold: foldclosed() gives the exact start line, so this is reliable
+	-- even for adjacent same-level folds.
+	local closedStart = vim.fn.foldclosed(lnum)
+	if closedStart ~= -1 then
+		return closedStart == lnum and FOLD_CLOSED or " "
+	end
+	-- Open fold: mark the opening line (level higher than the line above).
+	if vim.fn.foldlevel(lnum) > vim.fn.foldlevel(lnum - 1) then
+		return FOLD_OPEN
+	end
+	return " "
+end
+
+function _G.NvNumberColumn()
+	if not (vim.wo.number or vim.wo.relativenumber) then
+		return ""
+	end
+	local num = vim.v.lnum
+	if vim.wo.relativenumber and vim.v.relnum > 0 then
+		num = vim.v.relnum
+	end
+	-- Highlight the current line's number like the native number column does.
+	return (vim.v.relnum == 0 and "%#CursorLineNr#" or "%#LineNr#") .. num
+end
+
+-- Layout: fold arrow | signs | (right-aligned) number | text
+vim.opt.statuscolumn = "%#FoldColumn#%{%v:lua.NvFoldColumn()%}%*%s%=%{%v:lua.NvNumberColumn()%} "

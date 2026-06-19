@@ -12,31 +12,8 @@ api.nvim_create_autocmd("TextYankPost", {
 	group = yankGrp,
 })
 
---------------------------------------------------------------------------------
---
--- Folding
---
---------------------------------------------------------------------------------
-local allFilesGrp = api.nvim_create_augroup("all_files", { clear = true })
-
-api.nvim_create_autocmd("BufRead", {
-	command = ":set foldlevel=20",
-	group = allFilesGrp,
-})
-
-local jstsFilesGrp = api.nvim_create_augroup("filetype_js_ts", { clear = true })
-
-api.nvim_create_autocmd("FileType", {
-	pattern = { "javascript", "typescript" },
-	command = ":set foldmethod=expr",
-	group = jstsFilesGrp,
-})
-
-api.nvim_create_autocmd("FileType", {
-	pattern = { "javascript", "typescript" },
-	command = ":set foldexpr=nvim_treesitter#foldexpr()",
-	group = jstsFilesGrp,
-})
+-- Folding is handled globally by nvim-ufo (see lua/plugins/ufo.lua) and the
+-- fold settings in lua/user/settings.lua.
 
 --------------------------------------------------------------------------------
 --
@@ -55,12 +32,4 @@ api.nvim_create_autocmd("FileChangedShellPost", {
 		vim.notify("File changed on disk. Buffer reloaded.", vim.log.levels.INFO)
 	end,
 	group = autoReadGrp,
-})
-
-local jsonFilesGrp = api.nvim_create_augroup("filetype_json", { clear = true })
-
-api.nvim_create_autocmd("FileType", {
-	pattern = { "json" },
-	command = ":set foldmethod=indent",
-	group = jsonFilesGrp,
 })
