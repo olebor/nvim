@@ -108,6 +108,9 @@ local function configureWhichkey()
 		{ "<leader>gB", "<cmd>Gitsigns toggle_current_line_blame<cr>", desc = "Toggle inline blame" },
 		{ "<leader>gc", "<cmd>Telescope git_commits<cr>", desc = "Checkout commit" },
 		{ "<leader>gd", "<cmd>Gitsigns diffthis HEAD<cr>", desc = "Diff" },
+		{ "<leader>gv", "<cmd>DiffviewOpen<cr>", desc = "Diffview (changes)" },
+		{ "<leader>gh", "<cmd>DiffviewFileHistory %<cr>", desc = "File history" },
+		{ "<leader>gx", "<cmd>DiffviewClose<cr>", desc = "Close Diffview" },
 
 		-- ── LSP ───────────────────────────────────────────────────
 		{ "<leader>l", group = "LSP" },
