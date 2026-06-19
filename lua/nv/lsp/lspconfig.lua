@@ -1,39 +1,31 @@
-local Log = require("core.log")
-
-local status_ok, lspconfig = pcall(require, "lspconfig")
-if not status_ok then
-	Log:error("LSP Config failed")
-	return
-end
+-- Neovim 0.11 native LSP configuration.
+--
+-- nvim-lspconfig still ships each server's base definition (cmd, filetypes,
+-- root markers) as `lsp/<server>.lua` files that Neovim discovers automatically,
+-- so we no longer use the deprecated `require('lspconfig').<server>.setup()`
+-- framework. mason-lspconfig (automatic_enable = true) enables the installed
+-- servers for us; here we only register shared defaults and per-server overrides
+-- via vim.lsp.config().
 
 local handlers = require("nv.lsp.handlers")
 
 handlers.setup()
 
 -- Defaults shared by every server. capabilities advertises nvim-cmp's
--- completion features to the server (previously computed but never passed).
-local default_opts = {
-	on_attach = handlers.on_attach,
+-- completion features to the server; on_attach wires up buffer-local
+-- keymaps and document highlighting.
+vim.lsp.config("*", {
 	capabilities = handlers.capabilities,
-}
+	on_attach = handlers.on_attach,
+})
 
 -- ****************************************************************************
 --
--- Servers that only need the defaults
--- (vtsls = fast TypeScript server, eslint = JS/TS linting, terraform)
+-- Servers needing extra settings (merged on top of the defaults above and
+-- nvim-lspconfig's base config).
 --
 -- ****************************************************************************
-local servers = { "vtsls", "eslint", "terraformls" }
-for _, server in ipairs(servers) do
-	lspconfig[server].setup(default_opts)
-end
-
--- ****************************************************************************
---
--- Servers needing extra settings
---
--- ****************************************************************************
-lspconfig.lua_ls.setup(vim.tbl_extend("force", default_opts, {
+vim.lsp.config("lua_ls", {
 	settings = {
 		Lua = {
 			diagnostics = {
@@ -41,12 +33,12 @@ lspconfig.lua_ls.setup(vim.tbl_extend("force", default_opts, {
 			},
 		},
 	},
-}))
+})
 
-lspconfig.yamlls.setup(vim.tbl_extend("force", default_opts, {
+vim.lsp.config("yamlls", {
 	settings = {
 		yaml = {
 			keyOrdering = false,
 		},
 	},
-}))
+})
