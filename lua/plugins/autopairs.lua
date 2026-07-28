@@ -32,11 +32,10 @@ return {
 			)
 		end
 
-		require("nvim-treesitter.configs").setup({
-			autopairs = {
-				enable = true,
-			},
-		})
+		-- (The old `nvim-treesitter.configs` "autopairs" module registration used
+		-- to sit here. It's gone on nvim-treesitter `main`, and was already a
+		-- no-op: nvim-autopairs talks to `vim.treesitter` directly, driven by the
+		-- `check_ts`/`ts_config` options above.)
 
 		local ts_conds = require("nvim-autopairs.ts-conds")
 
