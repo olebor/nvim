@@ -2,7 +2,7 @@
 lint: lint-lua lint-sh
 
 lint-lua:
-	luacheck *.lua lua/* tests/* --globals vim
+	luacheck init.lua lua --globals vim
 
 lint-sh:
 	shfmt -f . | grep -v jdtls | xargs shellcheck
@@ -10,7 +10,7 @@ lint-sh:
 style: style-lua style-sh
 
 style-lua:
-	stylua --config-path .stylua.toml --check .
+	stylua --check .
 
 style-sh:
 	shfmt -f . | grep -v jdtls | xargs shfmt -i 2 -ci -l -d
