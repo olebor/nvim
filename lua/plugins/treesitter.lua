@@ -35,7 +35,19 @@ local function configureTreesitter()
 	local ts = require("nvim-treesitter")
 
 	ts.setup({})
-	ts.install(ensure_installed)
+
+	-- `main` builds every parser by shelling out to the tree-sitter CLI, so
+	-- without it each install fails separately and floods the messages with
+	-- ENOENT. Say it once instead, and leave the already-built parsers alone.
+	if vim.fn.executable("tree-sitter") == 1 then
+		ts.install(ensure_installed)
+	else
+		vim.notify(
+			"nvim-treesitter: `tree-sitter` CLI not found on PATH, skipping parser install.\n"
+				.. "Install it (macOS: brew install tree-sitter-cli), then run :TSUpdate.",
+			vim.log.levels.WARN
+		)
+	end
 
 	-- Highlighting and indenting are opt-in per buffer on this branch. Keyed off
 	-- the filetype's language rather than a filetype list so any parser that is
