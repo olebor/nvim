@@ -91,7 +91,7 @@ unzip -o JetBrainsMono.zip && fc-cache -f
 
 ```bash
 # Mac
-brew install ripgrep fd lazygit node stylua
+brew install ripgrep fd lazygit node stylua tree-sitter-cli
 
 # Node provider + global prettier fallback (conform prefers a local node_modules)
 npm install -g neovim prettier
@@ -105,9 +105,10 @@ npm install -g neovim prettier
 # apt installs fd as `fdfind`; symlink it so Telescope finds `fd`
 mkdir -p ~/.local/bin && ln -sf "$(command -v fdfind)" ~/.local/bin/fd
 
-# lazygit and stylua aren't in apt — grab a lazygit release binary, and stylua via cargo
+# lazygit, stylua and the tree-sitter CLI aren't in apt — grab a lazygit release
+# binary, and the other two via cargo
 #   https://github.com/jesseduffield/lazygit/releases
-cargo install stylua
+cargo install stylua tree-sitter-cli
 ```
 
 | Tool       | Needed for                              |
@@ -117,6 +118,7 @@ cargo install stylua
 | lazygit    | `<leader>gg`                            |
 | node / npm | vtsls, Copilot, and prettier formatting |
 | stylua     | Lua formatting on save                  |
+| tree-sitter-cli | Building Treesitter parsers (nvim-treesitter `main`) |
 
 Formatting tools (prettier, stylua) are **not** managed by Mason — conform runs whatever it finds on `PATH` (or in a project's `node_modules`), so they have to be installed here.
 
