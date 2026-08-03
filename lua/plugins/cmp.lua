@@ -81,6 +81,9 @@ local function configureCmp()
 		sources = { -- Copilot Source
 			{ name = "copilot", group_index = 2 },
 			-- Other Sources
+			-- lazydev completes `require "modname"` in Lua. group_index 0 tells
+			-- lazydev to suppress LuaLS's own (very noisy) module completions.
+			{ name = "lazydev", group_index = 0 },
 			{ name = "nvim_lsp" },
 			{ name = "path" },
 			{ name = "vsnip" },

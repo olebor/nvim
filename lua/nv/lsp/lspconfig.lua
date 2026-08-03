@@ -25,15 +25,8 @@ vim.lsp.config("*", {
 -- nvim-lspconfig's base config).
 --
 -- ****************************************************************************
-vim.lsp.config("lua_ls", {
-	settings = {
-		Lua = {
-			diagnostics = {
-				globals = { "vim" },
-			},
-		},
-	},
-})
+-- lua_ls needs no `diagnostics.globals = { "vim" }` workaround here: lazydev.nvim
+-- feeds it the real Neovim runtime types, which cover the `vim` global properly.
 
 vim.lsp.config("yamlls", {
 	settings = {
